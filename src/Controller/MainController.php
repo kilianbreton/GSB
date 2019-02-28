@@ -20,7 +20,7 @@ class MainController
         $vis->setVisAdresse('z0z0z');
         $vis->setVisCp('z0z0z');
         $vis->setVisVille('z0z0z');
- //       $vis->setVisDateembauche(new DateTimeImmutable());
+        $vis->setVisDateembauche(new DateTimeImmutable());
         $vis->setVisPassword('z0z0z');
         $vis->setVisSalt('z0z0z');
         $vis->setSecCode('z');
