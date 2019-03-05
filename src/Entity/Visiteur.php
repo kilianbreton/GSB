@@ -5,223 +5,98 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\VisiteurRepository")
+ * Visiteur
+ *
+ * @ORM\Table(name="visiteur", indexes={@ORM\Index(name="SEC_CODE", columns={"SEC_CODE"}), @ORM\Index(name="LAB_CODE", columns={"LAB_CODE"})})
+ * @ORM\Entity
  */
 class Visiteur
 {
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @var string
+     *
+     * @ORM\Column(name="VIS_MATRICULE", type="string", length=10, nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
+    private $visMatricule;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @var string
+     *
+     * @ORM\Column(name="VIS_LOGIN", type="string", length=32, nullable=false)
      */
-    private $vis_matricule;
+    private $visLogin;
 
     /**
-     * @ORM\Column(type="string", length=32)
+     * @var string|null
+     *
+     * @ORM\Column(name="VIS_NOM", type="string", length=25, nullable=true)
      */
-    private $vis_login;
+    private $visNom;
 
     /**
-     * @ORM\Column(type="string", length=25)
+     * @var string|null
+     *
+     * @ORM\Column(name="Vis_PRENOM", type="string", length=50, nullable=true)
      */
-    private $vis_nom;
+    private $visPrenom;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @var string|null
+     *
+     * @ORM\Column(name="VIS_ADRESSE", type="string", length=50, nullable=true)
      */
-    private $vis_prenom;
+    private $visAdresse;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @var string|null
+     *
+     * @ORM\Column(name="VIS_CP", type="string", length=5, nullable=true)
      */
-    private $vis_adresse;
+    private $visCp;
 
     /**
-     * @ORM\Column(type="string", length=5)
+     * @var string|null
+     *
+     * @ORM\Column(name="VIS_VILLE", type="string", length=30, nullable=true)
      */
-    private $vis_cp;
+    private $visVille;
 
     /**
-     * @ORM\Column(type="string", length=30)
+     * @var \DateTime|null
+     *
+     * @ORM\Column(name="VIS_DATEEMBAUCHE", type="datetime", nullable=true)
      */
-    private $vis_ville;
+    private $visDateembauche;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @var string
+     *
+     * @ORM\Column(name="VIS_PASSWORD", type="string", length=64, nullable=false)
      */
-    private $vis_dateembauche;
+    private $visPassword;
 
     /**
-     * @ORM\Column(type="string", length=128)
+     * @var string
+     *
+     * @ORM\Column(name="VIS_SALT", type="string", length=255, nullable=false)
      */
-    private $vis_password;
+    private $visSalt;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string|null
+     *
+     * @ORM\Column(name="SEC_CODE", type="string", length=1, nullable=true)
      */
-    private $vis_salt;
+    private $secCode;
 
     /**
-     * @ORM\Column(type="string", length=1)
+     * @var string
+     *
+     * @ORM\Column(name="LAB_CODE", type="string", length=2, nullable=false)
      */
-    private $sec_code;
+    private $labCode;
 
-    /**
-     * @ORM\Column(type="string", length=2)
-     */
-    private $lab_code;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
-    public function getVisMatricule(): ?string
-    {
-        return $this->vis_matricule;
-    }
-
-    public function setVisMatricule(string $vis_matricule): self
-    {
-        $this->vis_matricule = $vis_matricule;
-
-        return $this;
-    }
-
-    public function getVisLogin(): ?string
-    {
-        return $this->vis_login;
-    }
-
-    public function setVisLogin(string $vis_login): self
-    {
-        $this->vis_login = $vis_login;
-
-        return $this;
-    }
-
-    public function getVisNom(): ?string
-    {
-        return $this->vis_nom;
-    }
-
-    public function setVisNom(string $vis_nom): self
-    {
-        $this->vis_nom = $vis_nom;
-
-        return $this;
-    }
-
-    public function getVisPrenom(): ?string
-    {
-        return $this->vis_prenom;
-    }
-
-    public function setVisPrenom(string $vis_prenom): self
-    {
-        $this->vis_prenom = $vis_prenom;
-
-        return $this;
-    }
-
-    public function getVisAdresse(): ?string
-    {
-        return $this->vis_adresse;
-    }
-
-    public function setVisAdresse(string $vis_adresse): self
-    {
-        $this->vis_adresse = $vis_adresse;
-
-        return $this;
-    }
-
-    public function getVisCp(): ?string
-    {
-        return $this->vis_cp;
-    }
-
-    public function setVisCp(string $vis_cp): self
-    {
-        $this->vis_cp = $vis_cp;
-
-        return $this;
-    }
-
-    public function getVisVille(): ?string
-    {
-        return $this->vis_ville;
-    }
-
-    public function setVisVille(string $vis_ville): self
-    {
-        $this->vis_ville = $vis_ville;
-
-        return $this;
-    }
-
-    public function getVisDateembauche(): ?\DateTimeInterface
-    {
-        return $this->vis_dateembauche;
-    }
-
-    public function setVisDateembauche(\DateTimeInterface $vis_dateembauche): self
-    {
-        $this->vis_dateembauche = $vis_dateembauche;
-
-        return $this;
-    }
-
-    public function getVisPassword(): ?string
-    {
-        return $this->vis_password;
-    }
-
-    public function setVisPassword(string $vis_password): self
-    {
-        $this->vis_password = $vis_password;
-
-        return $this;
-    }
-
-    public function getVisSalt(): ?string
-    {
-        return $this->vis_salt;
-    }
-
-    public function setVisSalt(string $vis_salt): self
-    {
-        $this->vis_salt = $vis_salt;
-
-        return $this;
-    }
-
-    public function getSecCode(): ?string
-    {
-        return $this->sec_code;
-    }
-
-    public function setSecCode(string $sec_code): self
-    {
-        $this->sec_code = $sec_code;
-
-        return $this;
-    }
-
-    public function getLabCode(): ?string
-    {
-        return $this->lab_code;
-    }
-
-    public function setLabCode(string $lab_code): self
-    {
-        $this->lab_code = $lab_code;
-
-        return $this;
-    }
 }
