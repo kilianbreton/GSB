@@ -47,10 +47,10 @@ class __TwigTemplate_5b9c46a29620f2475da47651d711ae69d363ce6cab91c73cd47a626ae45
         ";
         // line 9
         $this->displayBlock('body', $context, $blocks);
-        // line 10
+        // line 11
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 11
+        // line 12
         echo "    </body>
 </html>
 ";
@@ -106,6 +106,8 @@ class __TwigTemplate_5b9c46a29620f2475da47651d711ae69d363ce6cab91c73cd47a626ae45
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
+        // line 10
+        echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -114,7 +116,7 @@ class __TwigTemplate_5b9c46a29620f2475da47651d711ae69d363ce6cab91c73cd47a626ae45
 
     }
 
-    // line 10
+    // line 11
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -138,7 +140,7 @@ class __TwigTemplate_5b9c46a29620f2475da47651d711ae69d363ce6cab91c73cd47a626ae45
 
     public function getDebugInfo()
     {
-        return array (  118 => 10,  101 => 9,  84 => 6,  66 => 5,  54 => 11,  51 => 10,  49 => 9,  45 => 7,  43 => 6,  39 => 5,  33 => 1,);
+        return array (  120 => 11,  110 => 10,  101 => 9,  84 => 6,  66 => 5,  54 => 12,  51 => 11,  49 => 9,  45 => 7,  43 => 6,  39 => 5,  33 => 1,);
     }
 
     public function getSourceContext()
@@ -151,7 +153,8 @@ class __TwigTemplate_5b9c46a29620f2475da47651d711ae69d363ce6cab91c73cd47a626ae45
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+        {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>

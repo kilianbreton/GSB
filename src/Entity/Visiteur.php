@@ -93,10 +93,65 @@ class Visiteur
 
     /**
      * @var string
-     *
+     * 
      * @ORM\Column(name="LAB_CODE", type="string", length=2, nullable=false)
      */
     private $labCode;
 
+    public function getMat()
+    {
+        return $this->visMatricule;
+    }
+    public function getLogin()
+    {
+        return $this->visLogin;
+    }
+    public function getNom()
+    {
+        return $this->visNom;
+    }
+    public function getPrenom()
+    {
+        return $this->visPrenom;
+    }
+    public function getAdresse()
+    {
+        return $this->visAdresse;
+    }
+   
+    public function getCp()
+    {
+        return $this->visCp;
+    }
+  
+    public function getVille()
+    {
+        return $this->visVille;
+    }
+   
+    public function getDateEmbauche()
+    {
+        //return $this->visDateembauche;
+        return "";
+    }
 
+    public function getPassword()
+    {
+        return $this->visPassword;
+    }
+   
+    public function getSalt()
+    {
+        return $this->visSalt;
+    }
+  
+    public function getLabCode()
+    {
+        return $this->labCode;
+    }
+   
+    public function getSecCode()
+    {
+        return $this->secCode;
+    }
 }
