@@ -20,8 +20,10 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
             '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
             '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
-            '/' => [[['_route' => 'index', '_controller' => 'App\\Controller\\VisiteursController::index'], null, null, null, false, false, null]],
+            '/' => [[['_route' => 'index', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::index'], null, null, null, false, false, null]],
             '/praticien' => [[['_route' => 'praticien', '_controller' => 'App\\Controller\\PraticienController::index'], null, null, null, false, false, null]],
+            '/admin/visiteur' => [[['_route' => 'admin.visiteurs', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::index'], null, null, null, false, false, null]],
+            '/admin/new_vis' => [[['_route' => 'new.visiteurs', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::new'], null, null, null, false, false, null]],
         ];
         $this->regexpList = [
             0 => '{^(?'
@@ -40,6 +42,10 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
                             .'|(*:159)'
                         .')'
                     .')'
+                    .'|/admin/(?'
+                        .'|del_vis/([^/]++)(*:195)'
+                        .'|edit_vis/([^/]++)(*:220)'
+                    .')'
                 .')/?$}sDu',
         ];
         $this->dynamicRoutes = [
@@ -50,6 +56,8 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'], ['token'], null, null, false, false, null]],
             149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'], ['token'], null, null, false, false, null]],
             159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+            195 => [[['_route' => 'del.visiteurs', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::del'], ['id'], null, null, false, true, null]],
+            220 => [[['_route' => 'edit.visiteurs', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::edit'], ['id'], null, null, false, true, null]],
         ];
     }
 }

@@ -32,8 +32,12 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
         '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception::showAction'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
         '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception::cssAction'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
-        'index' => [[], ['_controller' => 'App\\Controller\\VisiteursController::index'], [], [['text', '/']], [], []],
+        'index' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::index'], [], [['text', '/']], [], []],
         'praticien' => [[], ['_controller' => 'App\\Controller\\PraticienController::index'], [], [['text', '/praticien']], [], []],
+        'admin.visiteurs' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::index'], [], [['text', '/admin/visiteur']], [], []],
+        'del.visiteurs' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::del'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/del_vis']], [], []],
+        'edit.visiteurs' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::edit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/edit_vis']], [], []],
+        'new.visiteurs' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::new'], [], [['text', '/admin/new_vis']], [], []],
     ];
         }
     }

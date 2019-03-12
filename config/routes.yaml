@@ -1,8 +1,28 @@
 index:
     path: /
-    controller: App\Controller\VisiteursController::index
+    controller: App\Controller\Admin\AdminVisiteursController::index
 
 praticien:
     path: /praticien
     controller: App\Controller\PraticienController::index
     
+#VISITEURS#########################################################################################################
+
+admin.visiteurs:
+    path: /admin/visiteur
+    controller: App\Controller\Admin\AdminVisiteursController::index
+
+    
+del.visiteurs:
+    path: /admin/del_vis/{id}
+    controller: App\Controller\Admin\AdminVisiteursController::del
+
+    
+edit.visiteurs:
+    path: /admin/edit_vis/{id}
+    controller: App\Controller\Admin\AdminVisiteursController::edit
+
+
+new.visiteurs:
+    path: /admin/new_vis
+    controller: App\Controller\Admin\AdminVisiteursController::new
