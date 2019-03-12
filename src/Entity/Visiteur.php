@@ -124,15 +124,15 @@ class Visiteur
         return $this->visCp;
     }
   
-    public function getVille()
+    public function getVille() :String
     {
         return $this->visVille;
     }
    
     public function getDateEmbauche()
     {
-        //return $this->visDateembauche;
-        return "";
+        return $this->visDateembauche;
+      //  return $this->visDateembauche->format('Y-m-d H:i:s');
     }
 
     public function getPassword()
@@ -153,5 +153,132 @@ class Visiteur
     public function getSecCode()
     {
         return $this->secCode;
+    }
+
+    public function getVisMatricule(): ?string
+    {
+        return $this->visMatricule;
+    }
+
+    public function getVisLogin(): ?string
+    {
+        return $this->visLogin;
+    }
+
+    public function setVisLogin(string $visLogin): self
+    {
+        $this->visLogin = $visLogin;
+
+        return $this;
+    }
+
+    public function getVisNom(): ?string
+    {
+        return $this->visNom;
+    }
+
+    public function setVisNom(?string $visNom): self
+    {
+        $this->visNom = $visNom;
+
+        return $this;
+    }
+
+    public function getVisPrenom(): ?string
+    {
+        return $this->visPrenom;
+    }
+
+    public function setVisPrenom(?string $visPrenom): self
+    {
+        $this->visPrenom = $visPrenom;
+
+        return $this;
+    }
+
+    public function getVisAdresse(): ?string
+    {
+        return $this->visAdresse;
+    }
+
+    public function setVisAdresse(?string $visAdresse): self
+    {
+        $this->visAdresse = $visAdresse;
+
+        return $this;
+    }
+
+    public function getVisCp(): ?string
+    {
+        return $this->visCp;
+    }
+
+    public function setVisCp(?string $visCp): self
+    {
+        $this->visCp = $visCp;
+
+        return $this;
+    }
+
+    public function getVisVille(): ?string
+    {
+        return $this->visVille;
+    }
+
+    public function setVisVille(?string $visVille): self
+    {
+        $this->visVille = $visVille;
+
+        return $this;
+    }
+
+    public function getVisDateembauche(): ?\DateTimeInterface
+    {
+        return $this->visDateembauche;
+    }
+
+    public function setVisDateembauche(?\DateTime $visDateembauche): self
+    {
+        $this->visDateembauche = $visDateembauche;
+
+        return $this;
+    }
+
+    public function getVisPassword(): ?string
+    {
+        return $this->visPassword;
+    }
+
+    public function setVisPassword(string $visPassword): self
+    {
+        $this->visPassword = $visPassword;
+
+        return $this;
+    }
+
+    public function getVisSalt(): ?string
+    {
+        return $this->visSalt;
+    }
+
+    public function setVisSalt(string $visSalt): self
+    {
+        $this->visSalt = $visSalt;
+
+        return $this;
+    }
+
+    public function setSecCode(?string $secCode): self
+    {
+        $this->secCode = $secCode;
+
+        return $this;
+    }
+
+    public function setLabCode(string $labCode): self
+    {
+        $this->labCode = $labCode;
+
+        return $this;
     }
 }

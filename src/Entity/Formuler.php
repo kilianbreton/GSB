@@ -30,5 +30,15 @@ class Formuler
      */
     private $preCode;
 
+    public function getMedDepotlegal(): ?string
+    {
+        return $this->medDepotlegal;
+    }
+
+    public function getPreCode(): ?string
+    {
+        return $this->preCode;
+    }
+
 
 }

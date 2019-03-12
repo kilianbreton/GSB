@@ -28,5 +28,22 @@ class Specialite
      */
     private $speLibelle;
 
+    public function getSpeCode(): ?string
+    {
+        return $this->speCode;
+    }
+
+    public function getSpeLibelle(): ?string
+    {
+        return $this->speLibelle;
+    }
+
+    public function setSpeLibelle(?string $speLibelle): self
+    {
+        $this->speLibelle = $speLibelle;
+
+        return $this;
+    }
+
 
 }

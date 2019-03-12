@@ -83,7 +83,7 @@ class AdminVisiteursController extends AbstractController
     public function delete($id,Request $request){
         $visiteur = $this->repository->find($id);
  
-        if($visiteur != null && $this->isCsrfTokenValid('delete_vis'.$visiteur->getId(),$request->get('_TOKEN'))){
+        if($visiteur != null && $this->isCsrfTokenValid('delete_vis'.$visiteur->getMat(),$request->get('_TOKEN'))){
             dump("supp");
             $em = $this->getDoctrine()->getManager();
             $em->remove($visiteur);

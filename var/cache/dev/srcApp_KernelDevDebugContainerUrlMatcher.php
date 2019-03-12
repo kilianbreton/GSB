@@ -56,7 +56,7 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'], ['token'], null, null, false, false, null]],
             149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'], ['token'], null, null, false, false, null]],
             159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-            195 => [[['_route' => 'del.visiteurs', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::del'], ['id'], null, null, false, true, null]],
+            195 => [[['_route' => 'del.visiteurs', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::delete'], ['id'], null, null, false, true, null]],
             220 => [[['_route' => 'edit.visiteurs', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::edit'], ['id'], null, null, false, true, null]],
         ];
     }

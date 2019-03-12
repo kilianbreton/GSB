@@ -37,5 +37,27 @@ class Constituer
      */
     private $cstQte;
 
+    public function getMedDepotlegal(): ?string
+    {
+        return $this->medDepotlegal;
+    }
+
+    public function getCmpCode(): ?string
+    {
+        return $this->cmpCode;
+    }
+
+    public function getCstQte(): ?float
+    {
+        return $this->cstQte;
+    }
+
+    public function setCstQte(?float $cstQte): self
+    {
+        $this->cstQte = $cstQte;
+
+        return $this;
+    }
+
 
 }

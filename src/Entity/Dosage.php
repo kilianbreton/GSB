@@ -35,5 +35,34 @@ class Dosage
      */
     private $dosUnite;
 
+    public function getDosCode(): ?string
+    {
+        return $this->dosCode;
+    }
+
+    public function getDosQuantite(): ?string
+    {
+        return $this->dosQuantite;
+    }
+
+    public function setDosQuantite(?string $dosQuantite): self
+    {
+        $this->dosQuantite = $dosQuantite;
+
+        return $this;
+    }
+
+    public function getDosUnite(): ?string
+    {
+        return $this->dosUnite;
+    }
+
+    public function setDosUnite(?string $dosUnite): self
+    {
+        $this->dosUnite = $dosUnite;
+
+        return $this;
+    }
+
 
 }

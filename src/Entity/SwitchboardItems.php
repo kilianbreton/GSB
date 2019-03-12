@@ -51,5 +51,51 @@ class SwitchboardItems
      */
     private $argument;
 
+    public function getSwitchboardid(): ?int
+    {
+        return $this->switchboardid;
+    }
+
+    public function getItemnumber(): ?int
+    {
+        return $this->itemnumber;
+    }
+
+    public function getItemtext(): ?string
+    {
+        return $this->itemtext;
+    }
+
+    public function setItemtext(?string $itemtext): self
+    {
+        $this->itemtext = $itemtext;
+
+        return $this;
+    }
+
+    public function getCommand(): ?int
+    {
+        return $this->command;
+    }
+
+    public function setCommand(?int $command): self
+    {
+        $this->command = $command;
+
+        return $this;
+    }
+
+    public function getArgument(): ?string
+    {
+        return $this->argument;
+    }
+
+    public function setArgument(?string $argument): self
+    {
+        $this->argument = $argument;
+
+        return $this;
+    }
+
 
 }

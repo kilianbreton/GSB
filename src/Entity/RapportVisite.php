@@ -58,5 +58,63 @@ class RapportVisite
      */
     private $rapMotif;
 
+    public function getVisMatricule(): ?string
+    {
+        return $this->visMatricule;
+    }
+
+    public function getRapNum(): ?int
+    {
+        return $this->rapNum;
+    }
+
+    public function getPraNum(): ?int
+    {
+        return $this->praNum;
+    }
+
+    public function setPraNum(int $praNum): self
+    {
+        $this->praNum = $praNum;
+
+        return $this;
+    }
+
+    public function getRapDate(): ?\DateTimeInterface
+    {
+        return $this->rapDate;
+    }
+
+    public function setRapDate(?\DateTimeInterface $rapDate): self
+    {
+        $this->rapDate = $rapDate;
+
+        return $this;
+    }
+
+    public function getRapBilan(): ?string
+    {
+        return $this->rapBilan;
+    }
+
+    public function setRapBilan(?string $rapBilan): self
+    {
+        $this->rapBilan = $rapBilan;
+
+        return $this;
+    }
+
+    public function getRapMotif(): ?string
+    {
+        return $this->rapMotif;
+    }
+
+    public function setRapMotif(?string $rapMotif): self
+    {
+        $this->rapMotif = $rapMotif;
+
+        return $this;
+    }
+
 
 }

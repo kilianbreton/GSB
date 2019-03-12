@@ -30,5 +30,15 @@ class Interagir
      */
     private $medMedPerturbe;
 
+    public function getMedPerturbateur(): ?string
+    {
+        return $this->medPerturbateur;
+    }
+
+    public function getMedMedPerturbe(): ?string
+    {
+        return $this->medMedPerturbe;
+    }
+
 
 }

@@ -46,5 +46,32 @@ class Offrir
      */
     private $offQte;
 
+    public function getVisMatricule(): ?string
+    {
+        return $this->visMatricule;
+    }
+
+    public function getRapNum(): ?int
+    {
+        return $this->rapNum;
+    }
+
+    public function getMedDepotlegal(): ?string
+    {
+        return $this->medDepotlegal;
+    }
+
+    public function getOffQte(): ?int
+    {
+        return $this->offQte;
+    }
+
+    public function setOffQte(?int $offQte): self
+    {
+        $this->offQte = $offQte;
+
+        return $this;
+    }
+
 
 }

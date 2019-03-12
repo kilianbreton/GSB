@@ -28,5 +28,22 @@ class Famille
      */
     private $famLibelle;
 
+    public function getFamCode(): ?string
+    {
+        return $this->famCode;
+    }
+
+    public function getFamLibelle(): ?string
+    {
+        return $this->famLibelle;
+    }
+
+    public function setFamLibelle(?string $famLibelle): self
+    {
+        $this->famLibelle = $famLibelle;
+
+        return $this;
+    }
+
 
 }

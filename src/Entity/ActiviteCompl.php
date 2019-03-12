@@ -49,5 +49,58 @@ class ActiviteCompl
      */
     private $acMotif;
 
+    public function getAcNum(): ?int
+    {
+        return $this->acNum;
+    }
+
+    public function getAcDate(): ?\DateTimeInterface
+    {
+        return $this->acDate;
+    }
+
+    public function setAcDate(?\DateTimeInterface $acDate): self
+    {
+        $this->acDate = $acDate;
+
+        return $this;
+    }
+
+    public function getAcLieu(): ?string
+    {
+        return $this->acLieu;
+    }
+
+    public function setAcLieu(?string $acLieu): self
+    {
+        $this->acLieu = $acLieu;
+
+        return $this;
+    }
+
+    public function getAcTheme(): ?string
+    {
+        return $this->acTheme;
+    }
+
+    public function setAcTheme(?string $acTheme): self
+    {
+        $this->acTheme = $acTheme;
+
+        return $this;
+    }
+
+    public function getAcMotif(): ?string
+    {
+        return $this->acMotif;
+    }
+
+    public function setAcMotif(?string $acMotif): self
+    {
+        $this->acMotif = $acMotif;
+
+        return $this;
+    }
+
 
 }

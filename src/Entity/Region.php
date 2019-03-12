@@ -35,5 +35,34 @@ class Region
      */
     private $regNom;
 
+    public function getRegCode(): ?string
+    {
+        return $this->regCode;
+    }
+
+    public function getSecCode(): ?string
+    {
+        return $this->secCode;
+    }
+
+    public function setSecCode(string $secCode): self
+    {
+        $this->secCode = $secCode;
+
+        return $this;
+    }
+
+    public function getRegNom(): ?string
+    {
+        return $this->regNom;
+    }
+
+    public function setRegNom(?string $regNom): self
+    {
+        $this->regNom = $regNom;
+
+        return $this;
+    }
+
 
 }

@@ -56,5 +56,70 @@ class Historique
      */
     private $ip;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getMatricule(): ?string
+    {
+        return $this->matricule;
+    }
+
+    public function setMatricule(string $matricule): self
+    {
+        $this->matricule = $matricule;
+
+        return $this;
+    }
+
+    public function getDateDeb(): ?\DateTimeInterface
+    {
+        return $this->dateDeb;
+    }
+
+    public function setDateDeb(\DateTimeInterface $dateDeb): self
+    {
+        $this->dateDeb = $dateDeb;
+
+        return $this;
+    }
+
+    public function getDateFin(): ?\DateTimeInterface
+    {
+        return $this->dateFin;
+    }
+
+    public function setDateFin(?\DateTimeInterface $dateFin): self
+    {
+        $this->dateFin = $dateFin;
+
+        return $this;
+    }
+
+    public function getEchec(): ?bool
+    {
+        return $this->echec;
+    }
+
+    public function setEchec(bool $echec): self
+    {
+        $this->echec = $echec;
+
+        return $this;
+    }
+
+    public function getIp(): ?string
+    {
+        return $this->ip;
+    }
+
+    public function setIp(string $ip): self
+    {
+        $this->ip = $ip;
+
+        return $this;
+    }
+
 
 }

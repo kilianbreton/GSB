@@ -28,5 +28,22 @@ class Composant
      */
     private $cmpLibelle;
 
+    public function getCmpCode(): ?string
+    {
+        return $this->cmpCode;
+    }
+
+    public function getCmpLibelle(): ?string
+    {
+        return $this->cmpLibelle;
+    }
+
+    public function setCmpLibelle(?string $cmpLibelle): self
+    {
+        $this->cmpLibelle = $cmpLibelle;
+
+        return $this;
+    }
+
 
 }

@@ -28,5 +28,20 @@ class Secteur
      */
     private $secLibelle;
 
+    public function getSecCode() : String{
+        return $this->secCode;
+    }
+
+    public function getSecLibelle() : String{
+        return $this->secLibelle;
+    }
+
+    public function setSecLibelle(?string $secLibelle): self
+    {
+        $this->secLibelle = $secLibelle;
+
+        return $this;
+    }
+
 
 }

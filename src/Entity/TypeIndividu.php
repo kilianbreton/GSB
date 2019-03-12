@@ -28,5 +28,22 @@ class TypeIndividu
      */
     private $tinLibelle;
 
+    public function getTinCode(): ?string
+    {
+        return $this->tinCode;
+    }
+
+    public function getTinLibelle(): ?string
+    {
+        return $this->tinLibelle;
+    }
+
+    public function setTinLibelle(?string $tinLibelle): self
+    {
+        $this->tinLibelle = $tinLibelle;
+
+        return $this;
+    }
+
 
 }

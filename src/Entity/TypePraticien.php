@@ -35,5 +35,34 @@ class TypePraticien
      */
     private $typLieu;
 
+    public function getTypCode(): ?string
+    {
+        return $this->typCode;
+    }
+
+    public function getTypLibelle(): ?string
+    {
+        return $this->typLibelle;
+    }
+
+    public function setTypLibelle(?string $typLibelle): self
+    {
+        $this->typLibelle = $typLibelle;
+
+        return $this;
+    }
+
+    public function getTypLieu(): ?string
+    {
+        return $this->typLieu;
+    }
+
+    public function setTypLieu(?string $typLieu): self
+    {
+        $this->typLieu = $typLieu;
+
+        return $this;
+    }
+
 
 }

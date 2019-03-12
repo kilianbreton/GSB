@@ -37,5 +37,27 @@ class Inviter
      */
     private $specialisteon;
 
+    public function getAcNum(): ?int
+    {
+        return $this->acNum;
+    }
+
+    public function getPraNum(): ?int
+    {
+        return $this->praNum;
+    }
+
+    public function getSpecialisteon(): ?bool
+    {
+        return $this->specialisteon;
+    }
+
+    public function setSpecialisteon(?bool $specialisteon): self
+    {
+        $this->specialisteon = $specialisteon;
+
+        return $this;
+    }
+
 
 }

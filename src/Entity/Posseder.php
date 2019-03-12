@@ -44,5 +44,39 @@ class Posseder
      */
     private $posCoefprescription;
 
+    public function getPraNum(): ?int
+    {
+        return $this->praNum;
+    }
+
+    public function getSpeCode(): ?string
+    {
+        return $this->speCode;
+    }
+
+    public function getPosDiplome(): ?string
+    {
+        return $this->posDiplome;
+    }
+
+    public function setPosDiplome(?string $posDiplome): self
+    {
+        $this->posDiplome = $posDiplome;
+
+        return $this;
+    }
+
+    public function getPosCoefprescription(): ?float
+    {
+        return $this->posCoefprescription;
+    }
+
+    public function setPosCoefprescription(?float $posCoefprescription): self
+    {
+        $this->posCoefprescription = $posCoefprescription;
+
+        return $this;
+    }
+
 
 }

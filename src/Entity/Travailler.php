@@ -46,5 +46,32 @@ class Travailler
      */
     private $traRole;
 
+    public function getVisMatricule(): ?string
+    {
+        return $this->visMatricule;
+    }
+
+    public function getJjmmaa(): ?\DateTimeInterface
+    {
+        return $this->jjmmaa;
+    }
+
+    public function getRegCode(): ?string
+    {
+        return $this->regCode;
+    }
+
+    public function getTraRole(): ?string
+    {
+        return $this->traRole;
+    }
+
+    public function setTraRole(?string $traRole): self
+    {
+        $this->traRole = $traRole;
+
+        return $this;
+    }
+
 
 }

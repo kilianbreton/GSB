@@ -46,5 +46,32 @@ class Prescrire
      */
     private $prePosologie;
 
+    public function getMedDepotlegal(): ?string
+    {
+        return $this->medDepotlegal;
+    }
+
+    public function getTinCode(): ?string
+    {
+        return $this->tinCode;
+    }
+
+    public function getDosCode(): ?string
+    {
+        return $this->dosCode;
+    }
+
+    public function getPrePosologie(): ?string
+    {
+        return $this->prePosologie;
+    }
+
+    public function setPrePosologie(?string $prePosologie): self
+    {
+        $this->prePosologie = $prePosologie;
+
+        return $this;
+    }
+
 
 }

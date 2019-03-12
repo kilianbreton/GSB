@@ -35,7 +35,7 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'index' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::index'], [], [['text', '/']], [], []],
         'praticien' => [[], ['_controller' => 'App\\Controller\\PraticienController::index'], [], [['text', '/praticien']], [], []],
         'admin.visiteurs' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::index'], [], [['text', '/admin/visiteur']], [], []],
-        'del.visiteurs' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::del'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/del_vis']], [], []],
+        'del.visiteurs' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/del_vis']], [], []],
         'edit.visiteurs' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::edit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/edit_vis']], [], []],
         'new.visiteurs' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::new'], [], [['text', '/admin/new_vis']], [], []],
     ];

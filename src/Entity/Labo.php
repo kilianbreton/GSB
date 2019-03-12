@@ -36,4 +36,33 @@ class Labo
     private $labChefvente;
 
 
+    public function getLabCode() : String{
+        return $this->labCode;  
+    }
+
+    public function getLabNom() : String{
+        return $this->labNom;  
+    }
+
+    public function getLabChefVente() : String{
+        return $this->labChefvente;  
+    }
+
+    public function setLabNom(?string $labNom): self
+    {
+        $this->labNom = $labNom;
+
+        return $this;
+    }
+
+    public function setLabChefvente(?string $labChefvente): self
+    {
+        $this->labChefvente = $labChefvente;
+
+        return $this;
+    }
+
+
+
+
 }

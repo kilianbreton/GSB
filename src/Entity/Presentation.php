@@ -28,5 +28,22 @@ class Presentation
      */
     private $preLibelle;
 
+    public function getPreCode(): ?string
+    {
+        return $this->preCode;
+    }
+
+    public function getPreLibelle(): ?string
+    {
+        return $this->preLibelle;
+    }
+
+    public function setPreLibelle(?string $preLibelle): self
+    {
+        $this->preLibelle = $preLibelle;
+
+        return $this;
+    }
+
 
 }

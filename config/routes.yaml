@@ -15,7 +15,7 @@ admin.visiteurs:
     
 del.visiteurs:
     path: /admin/del_vis/{id}
-    controller: App\Controller\Admin\AdminVisiteursController::del
+    controller: App\Controller\Admin\AdminVisiteursController::delete
 
     
 edit.visiteurs:

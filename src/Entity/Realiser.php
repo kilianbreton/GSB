@@ -37,5 +37,27 @@ class Realiser
      */
     private $reaMttfrais;
 
+    public function getAcNum(): ?int
+    {
+        return $this->acNum;
+    }
+
+    public function getVisMatricule(): ?string
+    {
+        return $this->visMatricule;
+    }
+
+    public function getReaMttfrais(): ?float
+    {
+        return $this->reaMttfrais;
+    }
+
+    public function setReaMttfrais(?float $reaMttfrais): self
+    {
+        $this->reaMttfrais = $reaMttfrais;
+
+        return $this;
+    }
+
 
 }
