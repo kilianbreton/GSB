@@ -6,7 +6,16 @@ praticien:
     path: /praticien
     controller: App\Controller\PraticienController::index
     
+login:
+    path: /login
+    controller: App\Controller\SecurityController::login
+
+logout:
+    path: /logout
 #VISITEURS#########################################################################################################
+admin:
+    path: /admin
+    controller: App\Controller\AdminIndexController::index
 
 admin.visiteurs:
     path: /admin/visiteur

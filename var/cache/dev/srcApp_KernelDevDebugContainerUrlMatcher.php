@@ -22,6 +22,9 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
             '/' => [[['_route' => 'index', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::index'], null, null, null, false, false, null]],
             '/praticien' => [[['_route' => 'praticien', '_controller' => 'App\\Controller\\PraticienController::index'], null, null, null, false, false, null]],
+            '/login' => [[['_route' => 'login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
+            '/logout' => [[['_route' => 'logout'], null, null, null, false, false, null]],
+            '/admin' => [[['_route' => 'admin', '_controller' => 'App\\Controller\\AdminIndexController::index'], null, null, null, false, false, null]],
             '/admin/visiteur' => [[['_route' => 'admin.visiteurs', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::index'], null, null, null, false, false, null]],
             '/admin/new_vis' => [[['_route' => 'new.visiteurs', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::new'], null, null, null, false, false, null]],
         ];

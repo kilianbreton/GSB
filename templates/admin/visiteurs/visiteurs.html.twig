@@ -20,21 +20,21 @@
             {% for vis in visiteurs %}
             <tbody>
                 <tr>
-                    <th>{{ vis.getMat }}</th>
-                    <th>{{ vis.getLogin }}</th>
-                    <th>{{ vis.getNom }}</th>
-                    <th>{{ vis.getPrenom }}</th>
-                    <th>{{ vis.getAdresse }}</th>
-                    <th>{{ vis.getCp }}</th>
-                    <th>{{ vis.getVille }}</th>
-                    <th>{{ vis.getDateEmbauche }}</th>
+                    <th>{{ vis.getVisMatricule }}</th>
+                    <th>{{ vis.getVisLogin }}</th>
+                    <th>{{ vis.getVisNom }}</th>
+                    <th>{{ vis.getVisPrenom }}</th>
+                    <th>{{ vis.getVisAdresse }}</th>
+                    <th>{{ vis.getVisCp }}</th>
+                    <th>{{ vis.getVisVille }}</th>
+                    <th>{{ vis.getVisDateembaucheStr }}</th>
                     <th>{{ vis.getLabCode }}</th>
                     <th>{{ vis.getSecCode }}</th>
                     <th>
-                        <a href="{{ path('edit.visiteurs', {id: vis.getMat}) }}" class="btn btn-secondary">Editer</a>
-                        <form method="POST" action="{{ path('del.visiteurs', {id: vis.getMat}) }}" style="display: inline-block" onsubmit="return confirm('Êtes vous sûr ?')">
+                        <a href="{{ path('edit.visiteurs', {id: vis.getVisMatricule}) }}" class="btn btn-secondary">Editer</a>
+                        <form method="POST" action="{{ path('del.visiteurs', {id: vis.getVisMatricule}) }}" style="display: inline-block" onsubmit="return confirm('Êtes vous sûr ?')">
                             <input type="hidden" name="_method" value="DELETE">
-                            <input type="hidden" name="_TOKEN" value="{{ csrf_token("delete_vis" ~ vis.getMat) }}">
+                            <input type="hidden" name="_TOKEN" value="{{ csrf_token("delete_vis" ~ vis.getVisMatricule) }}">
                             <button class="btn btn-danger">Supprimer</button>
                         </form>
                     </th>

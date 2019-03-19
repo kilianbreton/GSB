@@ -42,8 +42,7 @@ class VisiteurType extends AbstractType
             ->add('LabCode',EntityType::class,[
                 'class' =>  Labo::class,
                 'choice_label' => 'LabNom',
-                'label'      =>  'Labo'])
-        ;
+                'label'      =>  'Labo']);
     }
 
     public function configureOptions(OptionsResolver $resolver)

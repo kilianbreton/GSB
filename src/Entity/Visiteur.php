@@ -2,7 +2,9 @@
 
 namespace App\Entity;
 
+use Serializable;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Visiteur
@@ -10,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="visiteur", indexes={@ORM\Index(name="SEC_CODE", columns={"SEC_CODE"}), @ORM\Index(name="LAB_CODE", columns={"LAB_CODE"})})
  * @ORM\Entity
  */
-class Visiteur
+class Visiteur implements UserInterface,\Serializable
 {
     /**
      * @var string
@@ -98,63 +100,9 @@ class Visiteur
      */
     private $labCode;
 
-    public function getMat()
-    {
-        return $this->visMatricule;
-    }
-    public function getLogin()
-    {
-        return $this->visLogin;
-    }
-    public function getNom()
-    {
-        return $this->visNom;
-    }
-    public function getPrenom()
-    {
-        return $this->visPrenom;
-    }
-    public function getAdresse()
-    {
-        return $this->visAdresse;
-    }
    
-    public function getCp()
-    {
-        return $this->visCp;
-    }
+   
   
-    public function getVille() :String
-    {
-        return $this->visVille;
-    }
-   
-    public function getDateEmbauche()
-    {
-        return $this->visDateembauche;
-      //  return $this->visDateembauche->format('Y-m-d H:i:s');
-    }
-
-    public function getPassword()
-    {
-        return $this->visPassword;
-    }
-   
-    public function getSalt()
-    {
-        return $this->visSalt;
-    }
-  
-    public function getLabCode()
-    {
-        return $this->labCode;
-    }
-   
-    public function getSecCode()
-    {
-        return $this->secCode;
-    }
-
     public function getVisMatricule(): ?string
     {
         return $this->visMatricule;
@@ -237,6 +185,12 @@ class Visiteur
         return $this->visDateembauche;
     }
 
+    public function getVisDateembaucheStr(): String
+    {
+        return $this->visDateembauche->format('Y-m-d H:i:s');
+    }
+
+
     public function setVisDateembauche(?\DateTime $visDateembauche): self
     {
         $this->visDateembauche = $visDateembauche;
@@ -280,5 +234,67 @@ class Visiteur
         $this->labCode = $labCode;
 
         return $this;
+    }
+
+    public function getLabCode() : string{
+        return $this->labCode;
+    }
+
+    public function getSecCode() {
+        return $this->secCode;
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////
+    // UserInterface ////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public function getRoles(){
+  //      if($this->visLogin== "bswiss"){
+            return ['ROLE_ADMIN'];
+    //    }
+      //  else{
+        //    return ['ROLE_USER'];
+        //}
+        
+    }
+
+    public function getUsername(){
+        return $this->visLogin;
+    }
+
+    public function getSalt(){
+        //return $this->visSalt;
+        return null;
+    }
+
+
+    public function getPassword(){
+        return $this->visPassword;
+    }
+
+    public function eraseCredentials(){
+
+    }
+
+
+    
+    //////////////////////////////////////////////////////////////////////////////////////////////////
+    // Serialisation ////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public function serialize(){
+        return serialize([
+            $this->visMatricule,
+            $this->visLogin,
+            $this->visPassword
+        ]);
+    }
+
+    public function unserialize($serialized){
+        list(
+            $this->visMatricule,
+            $this->visLogin,
+            $this->visPassword
+        ) = \unserialize($serialized, ['allowed_classes' => false]);
     }
 }
