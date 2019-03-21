@@ -79,7 +79,6 @@ class AdminVisiteursController extends AbstractController
     }
 
 
-
     public function delete($id,Request $request){
         $visiteur = $this->repository->find($id);
  
@@ -95,5 +94,28 @@ class AdminVisiteursController extends AbstractController
     }
     
 
+    //Profile
+    public function editMe(Request $request){
+       // $visiteur = $this->repository->find($id);
+       $visiteur = $this->getUser(); 
+       $form = $this->createForm(VisiteurType::class,$visiteur);
+        
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $em = $this->getDoctrine()->getManager();
+            $em->flush();
+            $this->addFlash("success","Le visiteur a bien été modifé");
+            return $this->redirectToRoute("admin.visiteurs");
+        }
+
+
+        return $this->render('admin/visiteurs/edit.html.twig', [
+            'current_menu' => 'visiteur',
+            'visiteur'      => $visiteur,
+            'form'         => $form->createView()
+        ]);
+
+    } 
 
 }

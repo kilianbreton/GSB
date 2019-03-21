@@ -141,7 +141,13 @@ class __TwigTemplate_dfd794e6d4794309e04af16cdc7123349239ec665e32c7f5621290f2b5c
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 44
         echo "        </table>
+        <div class=\"text-right\">
+            <a href=\"";
+        // line 46
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("new.visiteurs");
+        echo "\" class=\"btn btn-primary\">Créer</a>
         </div>
+    </div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -163,7 +169,7 @@ class __TwigTemplate_dfd794e6d4794309e04af16cdc7123349239ec665e32c7f5621290f2b5c
 
     public function getDebugInfo()
     {
-        return array (  143 => 44,  130 => 37,  125 => 35,  121 => 34,  116 => 32,  112 => 31,  108 => 30,  104 => 29,  100 => 28,  96 => 27,  92 => 26,  88 => 25,  84 => 24,  80 => 23,  76 => 21,  72 => 20,  53 => 3,  44 => 2,  15 => 1,);
+        return array (  147 => 46,  143 => 44,  130 => 37,  125 => 35,  121 => 34,  116 => 32,  112 => 31,  108 => 30,  104 => 29,  100 => 28,  96 => 27,  92 => 26,  88 => 25,  84 => 24,  80 => 23,  76 => 21,  72 => 20,  53 => 3,  44 => 2,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -212,7 +218,10 @@ class __TwigTemplate_dfd794e6d4794309e04af16cdc7123349239ec665e32c7f5621290f2b5c
             <tbody>
             {% endfor %}
         </table>
+        <div class=\"text-right\">
+            <a href=\"{{ path('new.visiteurs') }}\" class=\"btn btn-primary\">Créer</a>
         </div>
+    </div>
 {% endblock %}", "admin/visiteurs/visiteurs.html.twig", "C:\\wamp64\\www\\gsbMVC\\GSB\\templates\\admin\\visiteurs\\visiteurs.html.twig");
     }
 }

@@ -12,6 +12,10 @@ login:
 
 logout:
     path: /logout
+
+profile:
+    path: /profile
+    controller: App\Controller\Admin\AdminVisiteursController::editMe
 #VISITEURS#########################################################################################################
 admin:
     path: /admin

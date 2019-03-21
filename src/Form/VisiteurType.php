@@ -17,23 +17,23 @@ class VisiteurType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('Login',TextType::class,[
+            ->add('visLogin',TextType::class,[
                 'label' => 'Login'])
-            ->add('Nom',TextType::class,[
+            ->add('visNom',TextType::class,[
                 'label' => 'Nom'])
-            ->add('Prenom',TextType::class,[
+            ->add('visPrenom',TextType::class,[
                 'label' => 'Prénom'])
-            ->add('Adresse',TextType::class,[
+            ->add('visAdresse',TextType::class,[
                 'label' => 'Adresse'])
-            ->add('Cp',TextType::class,[
+            ->add('visCp',TextType::class,[
                 'label' => 'CP'])
-            ->add('Ville',TextType::class,[
+            ->add('visVille',TextType::class,[
                 'label' => 'Ville'])
             ->add('visDateEmbauche',DateTimeType::class,[
                 'label' => 'Date Embauche'])
-            ->add('Password',TextType::class,[
+            ->add('visPassword',TextType::class,[
                 'label' => 'MDP'])
-            ->add('Salt',TextType::class,[
+            ->add('visSalt',TextType::class,[
                 'label' => 'SALT'])
             ->add('SecCode',EntityType::class,[
                 'class' =>  Secteur::class,
@@ -42,7 +42,8 @@ class VisiteurType extends AbstractType
             ->add('LabCode',EntityType::class,[
                 'class' =>  Labo::class,
                 'choice_label' => 'LabNom',
-                'label'      =>  'Labo']);
+                'label'      =>  'Labo',]
+            );
     }
 
     public function configureOptions(OptionsResolver $resolver)

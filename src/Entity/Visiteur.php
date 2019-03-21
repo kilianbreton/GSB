@@ -236,7 +236,7 @@ class Visiteur implements UserInterface,\Serializable
         return $this;
     }
 
-    public function getLabCode() : string{
+    public function getLabCode() : ?string{
         return $this->labCode;
     }
 
@@ -250,7 +250,7 @@ class Visiteur implements UserInterface,\Serializable
 
     public function getRoles(){
   //      if($this->visLogin== "bswiss"){
-            return ['ROLE_ADMIN'];
+            return ['ROLE_ADMIN','ROLE_USER'];
     //    }
       //  else{
         //    return ['ROLE_USER'];
