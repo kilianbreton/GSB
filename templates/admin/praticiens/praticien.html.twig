@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+            
+                    <th>Adresse</th>
+                    <th>Ville</th>
+                    <th>CP</th>
+                    <th>Coef</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            {% for prat in praticiens %}
+            <tbody>
+                <tr>
+                    <th>{{ prat.getPraNom }}</th>
+                    <th>{{ prat.getPraPrenom }}</th>
+                    <th>{{ prat.getPraAdresse }}</th>
+                    <th>{{ prat.getPraVille }}</th>
+                    <th>{{ prat.getPraCp }}</th>
+                    <th>{{ prat.getPraCoefnotoriete }}</th>
+                    <th>{{ prat.getTypCode }}</th>
+                   
+                    <th>
+                        <a href="{{ path('edit.visiteurs', {id: prat.getPraNum}) }}" class="btn btn-secondary">Editer</a>
+                        <form method="POST" action="{{ path('del.visiteurs', {id: prat.getPraNum}) }}" style="display: inline-block" onsubmit="return confirm('Êtes vous sûr ?')">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_TOKEN" value="{{ csrf_token("delete_vis" ~ prat.getPraNum) }}">
+                            <button class="btn btn-danger">Supprimer</button>
+                        </form>
+                    </th>
+                </tr> 
+            <tbody>
+            {% endfor %}
+        </table>
+        <div class="text-right">
+            <a href="{{ path('new.visiteurs') }}" class="btn btn-primary">Créer</a>
+        </div>
+    </div>
+{% endblock %}

@@ -39,3 +39,10 @@ edit.visiteurs:
 new.visiteurs:
     path: /admin/new_vis
     controller: App\Controller\Admin\AdminVisiteursController::new
+
+
+#PRATICIENS#########################################################################################################
+
+admin.praticien:
+   path: /admin/praticien
+   controller: App\Controller\Admin\AdminPraticienController::index

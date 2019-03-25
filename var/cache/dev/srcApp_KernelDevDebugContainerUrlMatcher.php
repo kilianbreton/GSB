@@ -28,6 +28,7 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             '/admin' => [[['_route' => 'admin', '_controller' => 'App\\Controller\\AdminIndexController::index'], null, null, null, false, false, null]],
             '/admin/visiteur' => [[['_route' => 'admin.visiteurs', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::index'], null, null, null, false, false, null]],
             '/admin/new_vis' => [[['_route' => 'new.visiteurs', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::new'], null, null, null, false, false, null]],
+            '/admin/praticien' => [[['_route' => 'admin.praticien', '_controller' => 'App\\Controller\\Admin\\AdminPraticienController::index'], null, null, null, false, false, null]],
         ];
         $this->regexpList = [
             0 => '{^(?'
