@@ -1,0 +1,42 @@
+footer {
+    position:fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333399;
+    border-top-width: 7px;
+    border-style: solid;
+    border-top-color: #87CEFA;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    margin-top: 0%;
+    text-align: center;
+    z-index: 100;
+    color: white;
+}
+
+#bloc1 {
+    position: relative;
+    top:0px;
+    text-align: center;
+    color:black;
+    font-family:"Kabrio-Soft-Regular-trial.ttf", Sans-Serif;
+    color: white;
+}
+
+#piedDePage {
+    position: relative;
+    float:bottom;
+}
+
+#liens li {
+    text-decoration: none;
+    display: inline;
+}
+
+#liens a {
+    position: relative;
+    color: white;
+    right: 22px;
+}

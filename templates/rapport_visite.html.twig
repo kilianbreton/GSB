@@ -1,0 +1,119 @@
+
+<script>
+	function ajouterLigne()
+	{
+		var medicindex = document.getElementById('med').selectedIndex;
+		var medic = document.getElementById('med').value;
+		var qte = document.getElementById('qte').value
+		var tableau = document.getElementById("tableau");
+		
+
+		var listemedic = document.getElementById("listemedic");
+		listemedic.value = listemedic.value + medicindex + "," + qte + ";";
+		var ligne = tableau.insertRow(-1);//on a ajouté une ligne
+
+		var colonne1 = ligne.insertCell(0);//on a une ajouté une cellule
+		colonne1.innerHTML += medic;//on y met le contenu de titre
+
+		var colonne2 = ligne.insertCell(1);//on ajoute la seconde cellule
+		colonne2.innerHTML += qte;
+	}
+	
+	function effacerTableau()
+	{
+		var tableau = document.getElementById("tableau");
+		var tableRows = tableau.getElementsByTagName('tr');
+		var rowCount = tableRows.length;
+		for(var x = rowCount-1; x>0; x--){
+			tableau.deleteRow(x);
+		}		
+	}
+</script>
+
+	  <meta charset="utf-8" />
+        <link rel="stylesheet" href="rapport_visite.css">
+        <title>rapport_visiteur</title>
+        	<a class="co_deco" href="disconnect.php">DECONNEXION</a>
+
+    </head>
+	<body>
+			<h1>Compte-Rendus</h1>
+
+		{% block menu %}{% endblock %}
+
+		</nav>
+		<div class="trait"> </div> 	<!--Le trait -->
+
+	<div id="bloc">
+
+
+
+
+
+		<form action="traitement_rapport.php" method="post">
+			<div >
+				<span  class="inu">Matricule visiteur :</span>
+				<?php echo "<input name='vis_mat' value=\"".$_SESSION['userid']."\">"; ?>
+			</div>
+			
+			<!--menu déroulant de la sélection du praticien -->
+			<div >
+				<span  class="inu">Praticien :</span>
+				<select name="prat">
+
+				</select>
+				
+			</div>
+			
+			<br>
+			<div >
+				<span  class="inu">Date Rapport ( format : aaaa-mm-jj ) : </span><input name="date">
+			</div>
+			<div >
+				<span  class="inu">Motif visite : </span> <input name="mot_vis">
+			</div>
+			<div >
+				<span  class="inu">Bilan : </span><input name="bilan">
+			</div>
+			<input id="listemedic" name="listemedic" type="hidden">
+			
+			
+			
+			
+			<input class="buttonValid" type="submit">
+			<br>
+		</form>
+
+		<?php
+			if(isset($_SESSION["makePDF"]) && !empty($_SESSION["makePDF"])){
+				echo '<a class="myLink1" href="makepdf.php">Imprimer</a> ';
+			}
+
+		?>
+		
+		<!--tableau d'échantillons -->
+		
+			<div >
+				<span  class="inu">Médicament : </span>
+				<select id="med" name="med">
+
+				</select>
+				<br/>
+				<span  class="inu">Nombre d'échantillons : </span><input id="qte" name="nb_ech">
+			</div>
+
+			<a class="myLink1" href="javascript:ajouterLigne();">Ajouter</a> <!-- appelle la fonction javascript ajouterligne()-->
+			<div >
+				<span  class="inu">Offre d'échantillons :</span> <br/>
+					
+				<table id="tableau" border='1px solid black'>
+					<tr>
+						<th>Médicament</th>
+						<th>Nombre d'échantillons</th>
+					</tr>
+				</table>
+			</div>
+		<a class="myLink2" href="javascript:effacerTableau();">Effacer le tableau</a>
+	</div>
+
+	{% block footer %}{% endblock %}

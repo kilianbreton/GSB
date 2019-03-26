@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<a href="connexion.php"><img class="logo" src="images/logo.png"></a>
+
+	<form action="" method="POST"> <!-- Nom du fichier � changer selon le nom voulu -->
+		<input class="formulCo" type="login" name="login" placeholder="utilisateur">
+		<input class="formulCo" type="password" name="password" placeholder="mot de passe"> <br>
+		<input  class="button_co" type="submit" value="Se connecter">
+	</form>
+{%  endblock %}

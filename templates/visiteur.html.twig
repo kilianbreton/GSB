@@ -1,0 +1,13 @@
+
+    <body>
+    <a class="co_deco" href="disconnect.php">Déconnexion</a>
+    <h1>Gestion Visiteurs</h1>
+		{% block menu %}{% endblock %}
+
+		<hr>
+     
+      <form action="visiteur.php" method="POST" enctype="multipart/form-data">
+         <input type = "file" name = "csv" />
+         <input type = "submit" value="Importer"/>			
+      </form>
+	{% block footer %}{% endblock %}

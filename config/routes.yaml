@@ -1,8 +1,11 @@
 index:
     path: /
-    controller: App\Controller\MainController::index
+    controller: App\Controller\MainController::addAction
 
 praticien:
     path: /praticien
-    controller: App\Controller\PraticienController::index
+    controller: App\Controller\MainController::addAction
     
+medicament:
+    path: /medicament
+    controller: App\Controller\MainController::addAction2
