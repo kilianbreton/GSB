@@ -5,14 +5,12 @@
 
 
 
-
 {% block praticien %}    
- <div class="container">
+ <div class="container1">
                  {{ form_start(selectprat) }}
 
    				 {{ form_end(selectprat) }}
    				 
-
    				<table class="table">
    					<tr>
        					<td>Numéro : {{ prat.getPraNum }}  </td>
@@ -36,5 +34,36 @@
        					<td>Code Postal : {{ prat.getPraCp }} </td>
        				</tr>
    				</table>
-   </div>				    
+   </div>		
+   
+   
+    <div class="container2">
+                 {{ form_start(selectprat) }}
+
+   				 {{ form_end(selectprat) }}
+   				 
+   				<table class="table">
+   					<tr>
+       					<td>Numéro : {{ prat.getPraNum }}  </td>
+       				</tr>
+   					<tr>	
+       					<td>Nom : {{ prat.getPraNom }} </td>
+       				</tr>
+       				<tr>
+       					<td>Prenom : {{ prat.getPraPrenom }} </td>
+       				</tr>
+       				<tr>
+       					<td>Adresse : {{ prat.getPraAdresse }} </td>
+       				</tr>
+       				<tr>
+       					<td>Ville : {{ prat.getPraVille }} </td>
+       				</tr>
+       				<tr>
+       					<td>Coeff. notoriété : {{ prat.getPraCoefnotoriete }} </td>
+       				</tr>
+       				<tr>
+       					<td>Code Postal : {{ prat.getPraCp }} </td>
+       				</tr>
+   				</table>
+   </div>	  		    
 {% endblock %}

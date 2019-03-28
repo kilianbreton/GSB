@@ -55,13 +55,19 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 \t\t<nav>
 \t\t\t<ul id=\"navigation\">
 \t\t\t\t<li><a  href=\"index.php\">ACCUEIL</a></li>
-\t\t\t\t<li><a  href=\"medicament.php\">MÉDICAMENT</a></li>
+\t\t\t\t<!-- <li><a  href=\"medicament.html.twig\">MÉDICAMENT</a></li> -->
+\t\t\t\t<li><a  href=";
+        // line 19
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("medicament");
+        echo ">MÉDICAMENT</a></li>
 \t\t\t\t<li><a  href=\"visiteur.php\">VISITEUR</a></li>
-\t\t\t\t<li><a  href=\"practicien.php\">PRATICIEN</a></li>
+\t\t\t\t<li><a  href=";
+        // line 21
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("praticien");
+        echo ">PRATICIEN</a></li>
 \t\t\t\t<li><a  href=\"rapport_visite.php\">COMPTE-RENDUS</a></li>
 \t\t\t</ul>
 \t\t</nav>
-\t\t
 \t\t
         ";
         // line 26
@@ -239,9 +245,14 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  221 => 31,  204 => 30,  187 => 27,  170 => 26,  153 => 13,  139 => 7,  134 => 6,  125 => 5,  107 => 4,  82 => 32,  79 => 31,  77 => 30,  73 => 28,  70 => 27,  68 => 26,  52 => 13,  47 => 10,  45 => 5,  41 => 4,  36 => 1,);
+        return array (  227 => 31,  210 => 30,  193 => 27,  176 => 26,  159 => 13,  145 => 7,  140 => 6,  131 => 5,  113 => 4,  88 => 32,  85 => 31,  83 => 30,  79 => 28,  76 => 27,  74 => 26,  66 => 21,  61 => 19,  52 => 13,  47 => 10,  45 => 5,  41 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -263,13 +274,13 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 \t\t<nav>
 \t\t\t<ul id=\"navigation\">
 \t\t\t\t<li><a  href=\"index.php\">ACCUEIL</a></li>
-\t\t\t\t<li><a  href=\"medicament.php\">MÉDICAMENT</a></li>
+\t\t\t\t<!-- <li><a  href=\"medicament.html.twig\">MÉDICAMENT</a></li> -->
+\t\t\t\t<li><a  href={{ path('medicament') }}>MÉDICAMENT</a></li>
 \t\t\t\t<li><a  href=\"visiteur.php\">VISITEUR</a></li>
-\t\t\t\t<li><a  href=\"practicien.php\">PRATICIEN</a></li>
+\t\t\t\t<li><a  href={{ path('praticien') }}>PRATICIEN</a></li>
 \t\t\t\t<li><a  href=\"rapport_visite.php\">COMPTE-RENDUS</a></li>
 \t\t\t</ul>
 \t\t</nav>
-\t\t
 \t\t
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}

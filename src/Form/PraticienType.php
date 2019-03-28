@@ -21,7 +21,7 @@ class PraticienType extends AbstractType
                   'label'=>' '
               ))
               
-              ->add('ListePrat', SubmitType::class, ['label' => 'Liste praticien'])
+              
               
               ->add('rechercher', SubmitType::class, ['label' => 'rechercher'])
       

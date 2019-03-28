@@ -393,6 +393,9 @@
         <argument type="service" id=".service_locator.KTVqfp6.App\Controller\MainController"/>
       </call>
     </service>
+    <service id="App\Form\MedicamentType" class="App\Form\MedicamentType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\PraticienType" class="App\Form\PraticienType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -657,6 +660,7 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\MedicamentType</argument>
         <argument>App\Form\PraticienType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
@@ -901,7 +905,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.kKFf3Nt"/>
+      <argument type="service" id=".service_locator.tfIgUuk"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4260,6 +4264,8 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\MainController" class="App\Controller\MainController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\MedicamentType" class="App\Form\MedicamentType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\MedicamentType" class="App\Form\MedicamentType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PraticienType" class="App\Form\PraticienType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\PraticienType" class="App\Form\PraticienType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PraticienRepository" class="App\Repository\PraticienRepository" autowire="true" abstract="true"/>
@@ -4487,9 +4493,10 @@
       <argument type="service" id="debug.argument_resolver.variadic.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.kKFf3Nt" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.tfIgUuk" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\MedicamentType" type="service" id="App\Form\MedicamentType"/>
         <argument key="App\Form\PraticienType" type="service" id="App\Form\PraticienType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>

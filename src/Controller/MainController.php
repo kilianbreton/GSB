@@ -9,6 +9,7 @@ use App\Form\MedicamentType;
 use App\Form\PraticienType;
 use App\Entity\Praticien;
 use Symfony\Component\HttpFoundation\Request;
+use App\Repository\PraticienRepository;
 
 
 
@@ -25,12 +26,6 @@ class MainController extends AbstractController
 
         $formPrat->handleRequest($request);
 
-
-        
-        if ($formPrat->isSubmitted() && 'ListePrat' === $formPrat->getClickedButton()->getName()) {
-           
-        }
-           
         if ($formPrat->isSubmitted() && 'rechercher' === $formPrat->getClickedButton()->getName()) {
             $praticien = $formPrat->getData()->getTypCode();
          }
@@ -41,6 +36,8 @@ class MainController extends AbstractController
             'prat' => $praticien
         ]);          
     }
+    
+    
     
     
     
