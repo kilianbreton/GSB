@@ -100,6 +100,12 @@ class Visiteur implements UserInterface,\Serializable
      */
     private $labCode;
 
+ 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $Roles;
+
    
    
   
@@ -249,13 +255,10 @@ class Visiteur implements UserInterface,\Serializable
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
     public function getRoles(){
-  //      if($this->visLogin== "bswiss"){
-            return ['ROLE_ADMIN','ROLE_USER'];
-    //    }
-      //  else{
-        //    return ['ROLE_USER'];
-        //}
-        
+        if($this->Roles == 'ROLE_ADMIN')
+            return [$this->Roles, 'ROLE_USER'];
+        else
+            return [$this->Roles];
     }
 
     public function getUsername(){
@@ -296,5 +299,15 @@ class Visiteur implements UserInterface,\Serializable
             $this->visLogin,
             $this->visPassword
         ) = \unserialize($serialized, ['allowed_classes' => false]);
+    }
+
+  
+  
+
+    public function setRoles(?string $Roles): self
+    {
+        $this->Roles = $Roles;
+
+        return $this;
     }
 }
