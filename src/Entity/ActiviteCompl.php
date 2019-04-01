@@ -18,6 +18,8 @@ class ActiviteCompl
      * @ORM\Column(name="AC_NUM", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\OneToMany(targetEntity="App\Entity\Inviter", mappedBy="acNum")
+     * @ORM\OneToMany(targetEntity="App\Entity\Realiser", mappedBy="acNum")
      */
     private $acNum;
 

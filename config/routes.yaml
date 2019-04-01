@@ -46,3 +46,18 @@ new.visiteurs:
 admin.praticien:
    path: /admin/praticien
    controller: App\Controller\Admin\AdminPraticienController::index
+
+    
+del.praticien:
+    path: /admin/del_prat/{id}
+    controller: App\Controller\Admin\AdminPraticienController::delete
+
+    
+edit.praticien:
+    path: /admin/edit_prat/{id}
+    controller: App\Controller\Admin\AdminPraticienController::edit
+
+
+new.praticien:
+    path: /admin/new_prat
+    controller: App\Controller\Admin\AdminPraticienController::new

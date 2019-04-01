@@ -18,6 +18,7 @@ class Famille
      * @ORM\Column(name="FAM_CODE", type="string", length=3, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\OneToMany(targetEntity="App\Entity\Medicament", mappedBy="famCode")
      */
     private $famCode;
 

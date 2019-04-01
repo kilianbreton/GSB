@@ -18,6 +18,8 @@ class RapportVisite
      * @ORM\Column(name="VIS_MATRICULE", type="string", length=10, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Visiteur", inversedBy="visMatricule")
+     * @ORM\OneToMany(targetEntity="App\Entity\Offrir", mappedBy="visMatricule")
      */
     private $visMatricule;
 
@@ -27,6 +29,7 @@ class RapportVisite
      * @ORM\Column(name="RAP_NUM", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToMany(targetEntity="App\Entity\Offrir", mappedBy="rapNum")
      */
     private $rapNum;
 
@@ -34,6 +37,7 @@ class RapportVisite
      * @var int
      *
      * @ORM\Column(name="PRA_NUM", type="integer", nullable=false)
+     * @ORM\OneToMany(targetEntity="App\Entity\Praticien", mappedBy="praNum")
      */
     private $praNum;
 
@@ -57,6 +61,8 @@ class RapportVisite
      * @ORM\Column(name="RAP_MOTIF", type="string", length=255, nullable=true)
      */
     private $rapMotif;
+    
+    public $meds ;
 
     public function getVisMatricule(): ?string
     {

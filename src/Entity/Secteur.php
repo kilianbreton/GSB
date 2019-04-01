@@ -18,6 +18,8 @@ class Secteur
      * @ORM\Column(name="SEC_CODE", type="string", length=1, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\OneToMany(targetEntity="App\Entity\Visiteur", mappedBy="secCode")
+     * @ORM\OneToMany(targetEntity="App\Entity\Region", mappedBy="secCode")
      */
     private $secCode;
 
@@ -28,11 +30,13 @@ class Secteur
      */
     private $secLibelle;
 
-    public function getSecCode() : String{
+    public function getSecCode(): ?string
+    {
         return $this->secCode;
     }
 
-    public function getSecLibelle() : String{
+    public function getSecLibelle(): ?string
+    {
         return $this->secLibelle;
     }
 

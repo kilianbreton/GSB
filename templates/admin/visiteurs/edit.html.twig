@@ -1,6 +1,6 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/index.html.twig' %}
 
-{% block body %}
+{% block content %}
    
     <div class="container">
         {{ include('admin/visiteurs/form.html.twig', {form: form, button: 'Enregistrer'}) }}

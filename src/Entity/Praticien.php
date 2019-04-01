@@ -18,6 +18,9 @@ class Praticien
      * @ORM\Column(name="PRA_NUM", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\OneToMany(targetEntity="App\Entity\Inviter", mappedBy="praNum")
+     * @ORM\OneToMany(targetEntity="App\Entity\RapportVisite", mappedBy="praNum")
+     * @ORM\OneToMany(targetEntity="App\Entity\Posseder", mappedBy="praNum")
      */
     private $praNum;
 
@@ -67,6 +70,7 @@ class Praticien
      * @var string
      *
      * @ORM\Column(name="TYP_CODE", type="string", length=3, nullable=false)
+     * @ORM\ManyToOne(targetEntity="App\Entity\TypePraticien", inversedBy="typCode")
      */
     private $typCode;
 

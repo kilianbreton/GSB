@@ -18,6 +18,7 @@ class Region
      * @ORM\Column(name="REG_CODE", type="string", length=2, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\OneToMany(targetEntity="App\Entity\Travailler", mappedBy="regCode")
      */
     private $regCode;
 
@@ -25,6 +26,7 @@ class Region
      * @var string
      *
      * @ORM\Column(name="SEC_CODE", type="string", length=1, nullable=false)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Secteur", inversedBy="secCode")
      */
     private $secCode;
 

@@ -18,6 +18,7 @@ class Offrir
      * @ORM\Column(name="VIS_MATRICULE", type="string", length=10, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\ManyToOne(targetEntity="App\Entity\RapportVisite", inversedBy="visMatricule")
      */
     private $visMatricule;
 
@@ -27,6 +28,7 @@ class Offrir
      * @ORM\Column(name="RAP_NUM", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\ManyToOne(targetEntity="App\Entity\RapportVisite", inversedBy="rapNum")
      */
     private $rapNum;
 
@@ -36,6 +38,7 @@ class Offrir
      * @ORM\Column(name="MED_DEPOTLEGAL", type="string", length=10, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Medicament", inversedBy="medDepotlegal")
      */
     private $medDepotlegal;
 

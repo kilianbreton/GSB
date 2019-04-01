@@ -18,6 +18,7 @@ class Labo
      * @ORM\Column(name="LAB_CODE", type="string", length=2, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\OneToMany(targetEntity="App\Entity\Visiteur", mappedBy="labCode")
      */
     private $labCode;
 
@@ -35,17 +36,14 @@ class Labo
      */
     private $labChefvente;
 
-
-    public function getLabCode() : String{
-        return $this->labCode;  
+    public function getLabCode(): ?string
+    {
+        return $this->labCode;
     }
 
-    public function getLabNom() : String{
-        return $this->labNom;  
-    }
-
-    public function getLabChefVente() : String{
-        return $this->labChefvente;  
+    public function getLabNom(): ?string
+    {
+        return $this->labNom;
     }
 
     public function setLabNom(?string $labNom): self
@@ -55,14 +53,17 @@ class Labo
         return $this;
     }
 
+    public function getLabChefvente(): ?string
+    {
+        return $this->labChefvente;
+    }
+
     public function setLabChefvente(?string $labChefvente): self
     {
         $this->labChefvente = $labChefvente;
 
         return $this;
     }
-
-
 
 
 }

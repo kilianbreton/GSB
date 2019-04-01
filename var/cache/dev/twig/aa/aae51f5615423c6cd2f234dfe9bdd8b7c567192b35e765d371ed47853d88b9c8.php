@@ -12,15 +12,15 @@ class __TwigTemplate_28b0ff3d13b558b666fd5e80f0cbba3c0577d1888ff065168a75012ab8a
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "admin/praticiens/praticien.html.twig", 1);
+        $this->parent = $this->loadTemplate("admin/index.html.twig", "admin/praticiens/praticien.html.twig", 1);
         $this->blocks = [
-            'body' => [$this, 'block_body'],
+            'content' => [$this, 'block_content'],
         ];
     }
 
     protected function doGetParent(array $context)
     {
-        return "base.html.twig";
+        return "admin/index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -41,13 +41,13 @@ class __TwigTemplate_28b0ff3d13b558b666fd5e80f0cbba3c0577d1888ff065168a75012ab8a
     }
 
     // line 2
-    public function block_body($context, array $blocks = [])
+    public function block_content($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 3
         echo "    <div class=\"container\">
@@ -104,11 +104,11 @@ class __TwigTemplate_28b0ff3d13b558b666fd5e80f0cbba3c0577d1888ff065168a75012ab8a
                     <th>
                         <a href=\"";
             // line 29
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("edit.visiteurs", ["id" => twig_get_attribute($this->env, $this->source, $context["prat"], "getPraNum", [])]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("edit.praticien", ["id" => twig_get_attribute($this->env, $this->source, $context["prat"], "getPraNum", [])]), "html", null, true);
             echo "\" class=\"btn btn-secondary\">Editer</a>
                         <form method=\"POST\" action=\"";
             // line 30
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("del.visiteurs", ["id" => twig_get_attribute($this->env, $this->source, $context["prat"], "getPraNum", [])]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("del.praticien", ["id" => twig_get_attribute($this->env, $this->source, $context["prat"], "getPraNum", [])]), "html", null, true);
             echo "\" style=\"display: inline-block\" onsubmit=\"return confirm('Êtes vous sûr ?')\">
                             <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
                             <input type=\"hidden\" name=\"_TOKEN\" value=\"";
@@ -130,7 +130,7 @@ class __TwigTemplate_28b0ff3d13b558b666fd5e80f0cbba3c0577d1888ff065168a75012ab8a
         <div class=\"text-right\">
             <a href=\"";
         // line 41
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("new.visiteurs");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("new.praticien");
         echo "\" class=\"btn btn-primary\">Créer</a>
         </div>
     </div>
@@ -160,8 +160,8 @@ class __TwigTemplate_28b0ff3d13b558b666fd5e80f0cbba3c0577d1888ff065168a75012ab8a
 
     public function getSourceContext()
     {
-        return new Twig_Source("{% extends 'base.html.twig' %}
-{% block body %}
+        return new Twig_Source("{% extends 'admin/index.html.twig' %}
+{% block content %}
     <div class=\"container\">
         <table class=\"table table-striped\">
             <thead>
@@ -188,8 +188,8 @@ class __TwigTemplate_28b0ff3d13b558b666fd5e80f0cbba3c0577d1888ff065168a75012ab8a
                     <th>{{ prat.getTypCode }}</th>
                    
                     <th>
-                        <a href=\"{{ path('edit.visiteurs', {id: prat.getPraNum}) }}\" class=\"btn btn-secondary\">Editer</a>
-                        <form method=\"POST\" action=\"{{ path('del.visiteurs', {id: prat.getPraNum}) }}\" style=\"display: inline-block\" onsubmit=\"return confirm('Êtes vous sûr ?')\">
+                        <a href=\"{{ path('edit.praticien', {id: prat.getPraNum}) }}\" class=\"btn btn-secondary\">Editer</a>
+                        <form method=\"POST\" action=\"{{ path('del.praticien', {id: prat.getPraNum}) }}\" style=\"display: inline-block\" onsubmit=\"return confirm('Êtes vous sûr ?')\">
                             <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
                             <input type=\"hidden\" name=\"_TOKEN\" value=\"{{ csrf_token(\"delete_vis\" ~ prat.getPraNum) }}\">
                             <button class=\"btn btn-danger\">Supprimer</button>
@@ -200,7 +200,7 @@ class __TwigTemplate_28b0ff3d13b558b666fd5e80f0cbba3c0577d1888ff065168a75012ab8a
             {% endfor %}
         </table>
         <div class=\"text-right\">
-            <a href=\"{{ path('new.visiteurs') }}\" class=\"btn btn-primary\">Créer</a>
+            <a href=\"{{ path('new.praticien') }}\" class=\"btn btn-primary\">Créer</a>
         </div>
     </div>
 {% endblock %}", "admin/praticiens/praticien.html.twig", "C:\\wamp64\\www\\gsbMVC\\GSB\\templates\\admin\\praticiens\\praticien.html.twig");

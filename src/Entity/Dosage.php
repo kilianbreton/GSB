@@ -18,6 +18,7 @@ class Dosage
      * @ORM\Column(name="DOS_CODE", type="string", length=10, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     *  @ORM\OneToMany(targetEntity="App\Entity\Prescrire", mappedBy="dosCode")
      */
     private $dosCode;
 

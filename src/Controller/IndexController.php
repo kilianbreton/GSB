@@ -36,6 +36,7 @@ class IndexController extends AbstractController{
                 return $this->redirectToRoute('admin');
             }
         }
+        dump($user->getRoles());
         return $this->render('base.html.twig');   
     }
 

@@ -18,6 +18,7 @@ class Presentation
      * @ORM\Column(name="PRE_CODE", type="string", length=2, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\OneToMany(targetEntity="App\Entity\Formuler", mappedBy="preCode")
      */
     private $preCode;
 

@@ -18,6 +18,12 @@ class Medicament
      * @ORM\Column(name="MED_DEPOTLEGAL", type="string", length=10, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\OneToMany(targetEntity="App\Entity\Offrir", mappedBy="medDepotlegal")
+     * @ORM\OneToMany(targetEntity="App\Entity\Prescrire", mappedBy="medDepotlegal")
+     * @ORM\OneToMany(targetEntity="App\Entity\Formuler", mappedBy="medDepotlegal")
+     * @ORM\OneToMany(targetEntity="App\Entity\Constituer", mappedBy="medDepotlegal")
+     * @ORM\OneToMany(targetEntity="App\Entity\Interagir", mappedBy="$medPerturbateur")
+     * @ORM\OneToMany(targetEntity="App\Entity\Interagir", mappedBy="$medMedPerturbe")
      */
     private $medDepotlegal;
 
@@ -32,6 +38,7 @@ class Medicament
      * @var string
      *
      * @ORM\Column(name="FAM_CODE", type="string", length=3, nullable=false)
+     * @ORM\ManyToOne(targetEntity="App\Entity\Famille", inversedBy="famCode")
      */
     private $famCode;
 

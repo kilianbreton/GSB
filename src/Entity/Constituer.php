@@ -18,6 +18,7 @@ class Constituer
      * @ORM\Column(name="MED_DEPOTLEGAL", type="string", length=10, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Medicament", inversedBy="medDepotlegal")
      */
     private $medDepotlegal;
 
@@ -27,6 +28,7 @@ class Constituer
      * @ORM\Column(name="CMP_CODE", type="string", length=4, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Composant", inversedBy="cmpCode")
      */
     private $cmpCode;
 

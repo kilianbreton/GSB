@@ -29,6 +29,7 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             '/admin/visiteur' => [[['_route' => 'admin.visiteurs', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::index'], null, null, null, false, false, null]],
             '/admin/new_vis' => [[['_route' => 'new.visiteurs', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::new'], null, null, null, false, false, null]],
             '/admin/praticien' => [[['_route' => 'admin.praticien', '_controller' => 'App\\Controller\\Admin\\AdminPraticienController::index'], null, null, null, false, false, null]],
+            '/admin/new_prat' => [[['_route' => 'new.praticien', '_controller' => 'App\\Controller\\Admin\\AdminPraticienController::new'], null, null, null, false, false, null]],
         ];
         $this->regexpList = [
             0 => '{^(?'
@@ -48,8 +49,14 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
                         .')'
                     .')'
                     .'|/admin/(?'
-                        .'|del_vis/([^/]++)(*:195)'
-                        .'|edit_vis/([^/]++)(*:220)'
+                        .'|del_(?'
+                            .'|vis/([^/]++)(*:198)'
+                            .'|prat/([^/]++)(*:219)'
+                        .')'
+                        .'|edit_(?'
+                            .'|vis/([^/]++)(*:248)'
+                            .'|prat/([^/]++)(*:269)'
+                        .')'
                     .')'
                 .')/?$}sDu',
         ];
@@ -61,8 +68,10 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'], ['token'], null, null, false, false, null]],
             149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'], ['token'], null, null, false, false, null]],
             159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-            195 => [[['_route' => 'del.visiteurs', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::delete'], ['id'], null, null, false, true, null]],
-            220 => [[['_route' => 'edit.visiteurs', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::edit'], ['id'], null, null, false, true, null]],
+            198 => [[['_route' => 'del.visiteurs', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::delete'], ['id'], null, null, false, true, null]],
+            219 => [[['_route' => 'del.praticien', '_controller' => 'App\\Controller\\Admin\\AdminPraticienController::delete'], ['id'], null, null, false, true, null]],
+            248 => [[['_route' => 'edit.visiteurs', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::edit'], ['id'], null, null, false, true, null]],
+            269 => [[['_route' => 'edit.praticien', '_controller' => 'App\\Controller\\Admin\\AdminPraticienController::edit'], ['id'], null, null, false, true, null]],
         ];
     }
 }

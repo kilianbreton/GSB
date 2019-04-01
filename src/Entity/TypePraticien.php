@@ -18,6 +18,7 @@ class TypePraticien
      * @ORM\Column(name="TYP_CODE", type="string", length=3, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\OneToMany(targetEntity="App\Entity\Praticien", mappedBy="typCode")
      */
     private $typCode;
 

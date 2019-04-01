@@ -5,6 +5,9 @@
             clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
             clone ($p['Doctrine\\ORM\\Mapping\\Id'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Id')),
             clone ($p['Doctrine\\ORM\\Mapping\\GeneratedValue'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\GeneratedValue')),
+            clone ($p['Doctrine\\ORM\\Mapping\\OneToMany'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\OneToMany')),
+            clone $p['Doctrine\\ORM\\Mapping\\OneToMany'],
+            clone $p['Doctrine\\ORM\\Mapping\\OneToMany'],
         ],
         null,
         [
@@ -18,12 +21,25 @@
                 'strategy' => [
                     2 => 'IDENTITY',
                 ],
+                'mappedBy' => [
+                    3 => 'visMatricule',
+                    'visMatricule',
+                    'visMatricule',
+                ],
+                'targetEntity' => [
+                    3 => 'App\\Entity\\RapportVisite',
+                    'App\\Entity\\Realiser',
+                    'App\\Entity\\Travailler',
+                ],
             ],
         ],
         [
             $o[0],
             $o[1],
             $o[2],
+            $o[3],
+            $o[4],
+            $o[5],
         ],
         []
     );

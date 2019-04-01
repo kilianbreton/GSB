@@ -14,12 +14,15 @@ use Symfony\Component\Security\Core\User\UserInterface;
  */
 class Visiteur implements UserInterface,\Serializable
 {
-    /**
+      /**
      * @var string
      *
      * @ORM\Column(name="VIS_MATRICULE", type="string", length=10, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\OneToMany(targetEntity="App\Entity\RapportVisite", mappedBy="visMatricule")
+     * @ORM\OneToMany(targetEntity="App\Entity\Realiser", mappedBy="visMatricule")
+     * @ORM\OneToMany(targetEntity="App\Entity\Travailler", mappedBy="visMatricule")
      */
     private $visMatricule;
 
@@ -100,7 +103,6 @@ class Visiteur implements UserInterface,\Serializable
      */
     private $labCode;
 
- 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */

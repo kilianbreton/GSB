@@ -18,6 +18,7 @@ class Travailler
      * @ORM\Column(name="VIS_MATRICULE", type="string", length=10, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Visiteur", inversedBy="visMatricule")
      */
     private $visMatricule;
 
@@ -36,6 +37,7 @@ class Travailler
      * @ORM\Column(name="REG_CODE", type="string", length=2, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
+     *  @ORM\ManyToOne(targetEntity="App\Entity\Region", inversedBy="regCode")
      */
     private $regCode;
 

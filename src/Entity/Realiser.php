@@ -18,6 +18,7 @@ class Realiser
      * @ORM\Column(name="AC_NUM", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
+     *  @ORM\ManyToOne(targetEntity="App\Entity\ActiviteCompl", inversedBy="acNum")
      */
     private $acNum;
 
@@ -27,6 +28,7 @@ class Realiser
      * @ORM\Column(name="VIS_MATRICULE", type="string", length=10, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Visiteur", inversedBy="visMatricule")
      */
     private $visMatricule;
 

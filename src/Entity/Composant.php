@@ -18,6 +18,7 @@ class Composant
      * @ORM\Column(name="CMP_CODE", type="string", length=4, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @ORM\OneToMany(targetEntity="App\Entity\Constituer", mappedBy="cmpCode")
      */
     private $cmpCode;
 

@@ -18,6 +18,7 @@ class Specialite
      * @ORM\Column(name="SPE_CODE", type="string", length=5, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     * OneToMany(targetEntity="App\Entity\Posseder", mappedBy="speCode")
      */
     private $speCode;
 

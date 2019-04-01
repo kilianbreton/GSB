@@ -18,6 +18,7 @@ class Interagir
      * @ORM\Column(name="MED_PERTURBATEUR", type="string", length=10, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Medicament", inversedBy="medDepotlegal")
      */
     private $medPerturbateur;
 
@@ -27,6 +28,7 @@ class Interagir
      * @ORM\Column(name="MED_MED_PERTURBE", type="string", length=10, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Medicament", inversedBy="medDepotlegal")
      */
     private $medMedPerturbe;
 
