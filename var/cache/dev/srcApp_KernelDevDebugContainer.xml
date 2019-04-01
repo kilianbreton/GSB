@@ -393,6 +393,14 @@
         <argument type="service" id=".service_locator.KTVqfp6.App\Controller\MainController"/>
       </call>
     </service>
+    <service id="App\Controller\triePraticienController" class="App\Controller\triePraticienController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="App\Repository\PraticienRepository"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.KTVqfp6.App\Controller\triePraticienController"/>
+      </call>
+    </service>
     <service id="App\Form\MedicamentType" class="App\Form\MedicamentType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -4264,6 +4272,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MainController" class="App\Controller\MainController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\MainController" class="App\Controller\MainController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\triePraticienController" class="App\Controller\triePraticienController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\triePraticienController" class="App\Controller\triePraticienController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\triePraticienController" class="App\Controller\triePraticienController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\MedicamentType" class="App\Form\MedicamentType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\MedicamentType" class="App\Form\MedicamentType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PraticienType" class="App\Form\PraticienType" autowire="true" abstract="true"/>
@@ -4690,6 +4701,12 @@
     <service id=".service_locator.KTVqfp6.App\Controller\MainController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\MainController"/>
       <argument>App\Controller\MainController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.KTVqfp6" method="withContext"/>
+    </service>
+    <service id=".service_locator.KTVqfp6.App\Controller\triePraticienController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\triePraticienController"/>
+      <argument>App\Controller\triePraticienController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.KTVqfp6" method="withContext"/>
     </service>

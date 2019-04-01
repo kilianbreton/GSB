@@ -11,26 +11,28 @@
 
    				 {{ form_end(selectmed) }}
    				 
-
-   				<table class="table">
-   					<tr>
-       					<td>Dépot légal : {{ medoc.getMedDepotlegal }}  </td>
-       				</tr>
-   					<tr>	
-       					<td>Nom : {{ medoc.getMedNomcommercial }} </td>
-       				</tr>
-       				<tr>
-       					<td>Code  : {{ medoc.getFamCode }} </td>
-       				</tr>
-       				<tr>
-       					<td>Composition  : {{ medoc.getMedComposition }} </td>
-       				</tr>
-       				<tr>
-       					<td>Effets  : {{ medoc.getMedEffets }} </td>
-       				</tr>
-       				<tr>
-       					<td>Contre indications : {{ medoc.getMedContreindic }} </td>
-       				</tr>
+   				  <table class="table">
+   					<thead class="thead-dark">
+           				<tr>
+                            <th>Dépot légal</th>
+                            <th>Nom</th>
+                            <th>Code</th>
+                            <th>Composition</th>
+                            <th>Effets</th>
+                            <th>Contre indications</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>{{ medoc.getMedDepotlegal }}</th>
+                            <th>{{ medoc.getMedNomcommercial }}</th>
+                            <th>{{ medoc.getFamCode }}</th>
+                            <th>{{ medoc.getMedComposition }}</th>
+                            <th>{{ medoc.getMedEffets }}</th>
+                            <th>{{ medoc.getMedContreindic }}</th>
+                   		</tr> 
+               		</tbody>
    				</table>
+
    </div>				    
 {% endblock %}

@@ -23,13 +23,11 @@ class PraticienRepository extends ServiceEntityRepository
     //  * @return Praticien[] Returns an array of Visiteur objects
     //  */
     
-    public function findByExampleField($value)
+    public function findByTypCode($value)
     {
         return $this->createQueryBuilder('v')
-            ->andWhere('v.exampleField = :val')
+            ->andWhere('v.TYP_CODE = :val')
             ->setParameter('val', $value)
-            ->orderBy('v.id', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;

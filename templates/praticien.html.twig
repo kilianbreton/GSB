@@ -6,64 +6,33 @@
 
 
 {% block praticien %}    
- <div class="container1">
+ <div class="container">
                  {{ form_start(selectprat) }}
-
    				 {{ form_end(selectprat) }}
-   				 
-   				<table class="table">
-   					<tr>
-       					<td>Numéro : {{ prat.getPraNum }}  </td>
-       				</tr>
-   					<tr>	
-       					<td>Nom : {{ prat.getPraNom }} </td>
-       				</tr>
-       				<tr>
-       					<td>Prenom : {{ prat.getPraPrenom }} </td>
-       				</tr>
-       				<tr>
-       					<td>Adresse : {{ prat.getPraAdresse }} </td>
-       				</tr>
-       				<tr>
-       					<td>Ville : {{ prat.getPraVille }} </td>
-       				</tr>
-       				<tr>
-       					<td>Coeff. notoriété : {{ prat.getPraCoefnotoriete }} </td>
-       				</tr>
-       				<tr>
-       					<td>Code Postal : {{ prat.getPraCp }} </td>
-       				</tr>
-   				</table>
-   </div>		
-   
-   
-    <div class="container2">
-                 {{ form_start(selectprat) }}
 
-   				 {{ form_end(selectprat) }}
-   				 
    				<table class="table">
-   					<tr>
-       					<td>Numéro : {{ prat.getPraNum }}  </td>
-       				</tr>
-   					<tr>	
-       					<td>Nom : {{ prat.getPraNom }} </td>
-       				</tr>
-       				<tr>
-       					<td>Prenom : {{ prat.getPraPrenom }} </td>
-       				</tr>
-       				<tr>
-       					<td>Adresse : {{ prat.getPraAdresse }} </td>
-       				</tr>
-       				<tr>
-       					<td>Ville : {{ prat.getPraVille }} </td>
-       				</tr>
-       				<tr>
-       					<td>Coeff. notoriété : {{ prat.getPraCoefnotoriete }} </td>
-       				</tr>
-       				<tr>
-       					<td>Code Postal : {{ prat.getPraCp }} </td>
-       				</tr>
+   					<thead class="thead-dark">
+           				<tr>
+                            <th>Nom</th>
+                            <th>Prenom</th>
+                            <th>Adresse</th>
+                            <th>Ville</th>
+                            <th>CP</th>
+                            <th>Coef</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>{{ prat.getPraNom }}</th>
+                            <th>{{ prat.getPraPrenom }}</th>
+                            <th>{{ prat.getPraAdresse }}</th>
+                            <th>{{ prat.getPraVille }}</th>
+                            <th>{{ prat.getPraCp }}</th>
+                            <th>{{ prat.getPraCoefnotoriete }}</th>
+                            <th>{{ prat.getTypCode }}</th>
+                   		</tr> 
+               		</tbody>
    				</table>
-   </div>	  		    
+   </div>	
 {% endblock %}

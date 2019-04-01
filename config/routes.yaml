@@ -6,6 +6,17 @@ praticien:
     path: /praticien
     controller: App\Controller\MainController::addAction
     
+triePraticien:
+    path: /triePraticien
+    controller: App\Controller\triePraticienController::triePrat
+    
+#triePraticien:
+    #path: /triePraticien/{type}
+    #controller: App\Controller\triePraticienController::triePraticien
+
+    
 medicament:
     path: /medicament
     controller: App\Controller\MainController::addAction2
+
+    

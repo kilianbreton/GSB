@@ -20,6 +20,7 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
             'body' => [$this, 'block_body'],
             'javascripts' => [$this, 'block_javascripts'],
             'praticien' => [$this, 'block_praticien'],
+            'triePraticien' => [$this, 'block_triePraticien'],
             'medicament' => [$this, 'block_medicament'],
         ];
     }
@@ -36,69 +37,77 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
         echo "<!DOCTYPE html>
 <html>
     <head>
+
+
+
         <title>";
-        // line 4
+        // line 7
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
         ";
-        // line 5
+        // line 8
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 10
+        // line 13
         echo "          
     </head>
     <body>
     <h1>";
-        // line 13
+        // line 16
         $this->displayBlock('h1', $context, $blocks);
         echo "</h1>
     
 \t\t<nav>
 \t\t\t<ul id=\"navigation\">
 \t\t\t\t<li><a  href=\"index.php\">ACCUEIL</a></li>
-\t\t\t\t<!-- <li><a  href=\"medicament.html.twig\">MÉDICAMENT</a></li> -->
 \t\t\t\t<li><a  href=";
-        // line 19
+        // line 21
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("medicament");
         echo ">MÉDICAMENT</a></li>
 \t\t\t\t<li><a  href=\"visiteur.php\">VISITEUR</a></li>
 \t\t\t\t<li><a  href=";
-        // line 21
+        // line 23
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("praticien");
         echo ">PRATICIEN</a></li>
+\t\t\t\t<li><a  href=";
+        // line 24
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("triePraticien");
+        echo ">TRIE PRATICIEN</a></li>
 \t\t\t\t<li><a  href=\"rapport_visite.php\">COMPTE-RENDUS</a></li>
 \t\t\t</ul>
 \t\t</nav>
 \t\t
         ";
-        // line 26
+        // line 29
         $this->displayBlock('body', $context, $blocks);
-        // line 27
+        // line 30
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 28
+        // line 31
         echo "        
 \t    
 \t    ";
-        // line 30
+        // line 33
         $this->displayBlock('praticien', $context, $blocks);
-        // line 31
+        // line 34
+        echo "\t    ";
+        $this->displayBlock('triePraticien', $context, $blocks);
+        // line 35
         echo "\t    ";
         $this->displayBlock('medicament', $context, $blocks);
-        // line 32
+        // line 36
         echo "\t    
-        <div id=\"piedDePage\">\t
+       <!--  <div id=\"piedDePage\">\t
         \t<footer>
         \t\t<div id=\"bloc1\">
-        
-        \t\t<ul id=\"liens\">
-        \t\t\t<li><a href=\"#\" title=\"Contact\" >Contact</a></li>
-        \t\t\t<li><a href=\"#\" title=\"Developpeur\" >Developpeur</a></li>
-        \t\t\t<li><a href=\"#\" title=\"Developpeur\" >CGU</a></li>
-        \t\t</ul>\t\t
+            \t\t<ul id=\"liens\">
+            \t\t\t<li><a href=\"#\" title=\"Contact\" >Contact</a></li>
+            \t\t\t<li><a href=\"#\" title=\"Developpeur\" >Developpeur</a></li>
+            \t\t\t<li><a href=\"#\" title=\"Developpeur\" >CGU</a></li>
+            \t\t</ul>\t\t
         \t\t\t<p>Galaxy Swiss Bourdin | Version 2.25 | 2019</p>\t\t
         \t\t</div>
         \t</footer>
-        </div>
+        </div> -->
     </body>
 </html>";
         
@@ -109,7 +118,7 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 
     }
 
-    // line 4
+    // line 7
     public function block_title($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -127,7 +136,7 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 
     }
 
-    // line 5
+    // line 8
     public function block_stylesheets($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -136,12 +145,12 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 6
+        // line 9
         echo "        <link rel=\"stylesheet\" href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("CSS/base.css"), "html", null, true);
         echo "\">
         <link rel=\"stylesheet\" href=\"";
-        // line 7
+        // line 10
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("CSS/Menu.css"), "html", null, true);
         echo "\">
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
@@ -155,7 +164,7 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 
     }
 
-    // line 13
+    // line 16
     public function block_h1($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -172,7 +181,7 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 
     }
 
-    // line 26
+    // line 29
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -189,7 +198,7 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 
     }
 
-    // line 27
+    // line 30
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -206,7 +215,7 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 
     }
 
-    // line 30
+    // line 33
     public function block_praticien($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -223,7 +232,24 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 
     }
 
-    // line 31
+    // line 34
+    public function block_triePraticien($context, array $blocks = [])
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "triePraticien"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "triePraticien"));
+
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 35
     public function block_medicament($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -252,7 +278,7 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 
     public function getDebugInfo()
     {
-        return array (  227 => 31,  210 => 30,  193 => 27,  176 => 26,  159 => 13,  145 => 7,  140 => 6,  131 => 5,  113 => 4,  88 => 32,  85 => 31,  83 => 30,  79 => 28,  76 => 27,  74 => 26,  66 => 21,  61 => 19,  52 => 13,  47 => 10,  45 => 5,  41 => 4,  36 => 1,);
+        return array (  253 => 35,  236 => 34,  219 => 33,  202 => 30,  185 => 29,  168 => 16,  154 => 10,  149 => 9,  140 => 8,  122 => 7,  98 => 36,  95 => 35,  92 => 34,  90 => 33,  86 => 31,  83 => 30,  81 => 29,  73 => 24,  69 => 23,  64 => 21,  56 => 16,  51 => 13,  49 => 8,  45 => 7,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -260,6 +286,9 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
         return new Twig_Source("<!DOCTYPE html>
 <html>
     <head>
+
+
+
         <title>{% block title %}GSB{% endblock %}</title>
         {% block stylesheets %}
         <link rel=\"stylesheet\" href=\"{{ asset('CSS/base.css') }}\">
@@ -274,10 +303,10 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 \t\t<nav>
 \t\t\t<ul id=\"navigation\">
 \t\t\t\t<li><a  href=\"index.php\">ACCUEIL</a></li>
-\t\t\t\t<!-- <li><a  href=\"medicament.html.twig\">MÉDICAMENT</a></li> -->
 \t\t\t\t<li><a  href={{ path('medicament') }}>MÉDICAMENT</a></li>
 \t\t\t\t<li><a  href=\"visiteur.php\">VISITEUR</a></li>
 \t\t\t\t<li><a  href={{ path('praticien') }}>PRATICIEN</a></li>
+\t\t\t\t<li><a  href={{ path('triePraticien') }}>TRIE PRATICIEN</a></li>
 \t\t\t\t<li><a  href=\"rapport_visite.php\">COMPTE-RENDUS</a></li>
 \t\t\t</ul>
 \t\t</nav>
@@ -287,21 +316,21 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
         
 \t    
 \t    {% block praticien %}{% endblock %}
+\t    {% block triePraticien %}{% endblock %}
 \t    {% block medicament %}{% endblock %}
 \t    
-        <div id=\"piedDePage\">\t
+       <!--  <div id=\"piedDePage\">\t
         \t<footer>
         \t\t<div id=\"bloc1\">
-        
-        \t\t<ul id=\"liens\">
-        \t\t\t<li><a href=\"#\" title=\"Contact\" >Contact</a></li>
-        \t\t\t<li><a href=\"#\" title=\"Developpeur\" >Developpeur</a></li>
-        \t\t\t<li><a href=\"#\" title=\"Developpeur\" >CGU</a></li>
-        \t\t</ul>\t\t
+            \t\t<ul id=\"liens\">
+            \t\t\t<li><a href=\"#\" title=\"Contact\" >Contact</a></li>
+            \t\t\t<li><a href=\"#\" title=\"Developpeur\" >Developpeur</a></li>
+            \t\t\t<li><a href=\"#\" title=\"Developpeur\" >CGU</a></li>
+            \t\t</ul>\t\t
         \t\t\t<p>Galaxy Swiss Bourdin | Version 2.25 | 2019</p>\t\t
         \t\t</div>
         \t</footer>
-        </div>
+        </div> -->
     </body>
 </html>", "base.html.twig", "C:\\Users\\HENQUINET.SIO\\git\\GSB\\templates\\base.html.twig");
     }

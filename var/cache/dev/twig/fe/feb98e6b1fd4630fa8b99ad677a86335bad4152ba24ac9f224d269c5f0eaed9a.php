@@ -74,58 +74,57 @@ class __TwigTemplate_9526530f69646363ad46522276cf7331eb0a8cda021c47b71d751249b5c
         // line 10
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["selectprat"]) || array_key_exists("selectprat", $context) ? $context["selectprat"] : (function () { throw new Twig_Error_Runtime('Variable "selectprat" does not exist.', 10, $this->source); })()), 'form_start');
         echo "
-
    \t\t\t\t ";
-        // line 12
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["selectprat"]) || array_key_exists("selectprat", $context) ? $context["selectprat"] : (function () { throw new Twig_Error_Runtime('Variable "selectprat" does not exist.', 12, $this->source); })()), 'form_end');
+        // line 11
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["selectprat"]) || array_key_exists("selectprat", $context) ? $context["selectprat"] : (function () { throw new Twig_Error_Runtime('Variable "selectprat" does not exist.', 11, $this->source); })()), 'form_end');
         echo "
-   \t\t\t\t 
 
    \t\t\t\t<table class=\"table\">
-   \t\t\t\t\t<tr>
-       \t\t\t\t\t<td>Numéro : ";
-        // line 17
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["prat"]) || array_key_exists("prat", $context) ? $context["prat"] : (function () { throw new Twig_Error_Runtime('Variable "prat" does not exist.', 17, $this->source); })()), "getPraNum", []), "html", null, true);
-        echo "  </td>
-       \t\t\t\t</tr>
-   \t\t\t\t\t<tr>\t
-       \t\t\t\t\t<td>Nom : ";
-        // line 20
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["prat"]) || array_key_exists("prat", $context) ? $context["prat"] : (function () { throw new Twig_Error_Runtime('Variable "prat" does not exist.', 20, $this->source); })()), "getPraNom", []), "html", null, true);
-        echo " </td>
-       \t\t\t\t</tr>
-       \t\t\t\t<tr>
-       \t\t\t\t\t<td>Prenom : ";
-        // line 23
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["prat"]) || array_key_exists("prat", $context) ? $context["prat"] : (function () { throw new Twig_Error_Runtime('Variable "prat" does not exist.', 23, $this->source); })()), "getPraPrenom", []), "html", null, true);
-        echo " </td>
-       \t\t\t\t</tr>
-       \t\t\t\t<tr>
-       \t\t\t\t\t<td>Adresse : ";
-        // line 26
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["prat"]) || array_key_exists("prat", $context) ? $context["prat"] : (function () { throw new Twig_Error_Runtime('Variable "prat" does not exist.', 26, $this->source); })()), "getPraAdresse", []), "html", null, true);
-        echo " </td>
-       \t\t\t\t</tr>
-       \t\t\t\t<tr>
-       \t\t\t\t\t<td>Ville : ";
+   \t\t\t\t\t<thead class=\"thead-dark\">
+           \t\t\t\t<tr>
+                            <th>Nom</th>
+                            <th>Prenom</th>
+                            <th>Adresse</th>
+                            <th>Ville</th>
+                            <th>CP</th>
+                            <th>Coef</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>";
+        // line 27
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["prat"]) || array_key_exists("prat", $context) ? $context["prat"] : (function () { throw new Twig_Error_Runtime('Variable "prat" does not exist.', 27, $this->source); })()), "getPraNom", []), "html", null, true);
+        echo "</th>
+                            <th>";
+        // line 28
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["prat"]) || array_key_exists("prat", $context) ? $context["prat"] : (function () { throw new Twig_Error_Runtime('Variable "prat" does not exist.', 28, $this->source); })()), "getPraPrenom", []), "html", null, true);
+        echo "</th>
+                            <th>";
         // line 29
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["prat"]) || array_key_exists("prat", $context) ? $context["prat"] : (function () { throw new Twig_Error_Runtime('Variable "prat" does not exist.', 29, $this->source); })()), "getPraVille", []), "html", null, true);
-        echo " </td>
-       \t\t\t\t</tr>
-       \t\t\t\t<tr>
-       \t\t\t\t\t<td>Coeff. notoriété : ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["prat"]) || array_key_exists("prat", $context) ? $context["prat"] : (function () { throw new Twig_Error_Runtime('Variable "prat" does not exist.', 29, $this->source); })()), "getPraAdresse", []), "html", null, true);
+        echo "</th>
+                            <th>";
+        // line 30
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["prat"]) || array_key_exists("prat", $context) ? $context["prat"] : (function () { throw new Twig_Error_Runtime('Variable "prat" does not exist.', 30, $this->source); })()), "getPraVille", []), "html", null, true);
+        echo "</th>
+                            <th>";
+        // line 31
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["prat"]) || array_key_exists("prat", $context) ? $context["prat"] : (function () { throw new Twig_Error_Runtime('Variable "prat" does not exist.', 31, $this->source); })()), "getPraCp", []), "html", null, true);
+        echo "</th>
+                            <th>";
         // line 32
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["prat"]) || array_key_exists("prat", $context) ? $context["prat"] : (function () { throw new Twig_Error_Runtime('Variable "prat" does not exist.', 32, $this->source); })()), "getPraCoefnotoriete", []), "html", null, true);
-        echo " </td>
-       \t\t\t\t</tr>
-       \t\t\t\t<tr>
-       \t\t\t\t\t<td>Code Postal : ";
-        // line 35
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["prat"]) || array_key_exists("prat", $context) ? $context["prat"] : (function () { throw new Twig_Error_Runtime('Variable "prat" does not exist.', 35, $this->source); })()), "getPraCp", []), "html", null, true);
-        echo " </td>
-       \t\t\t\t</tr>
+        echo "</th>
+                            <th>";
+        // line 33
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["prat"]) || array_key_exists("prat", $context) ? $context["prat"] : (function () { throw new Twig_Error_Runtime('Variable "prat" does not exist.', 33, $this->source); })()), "getTypCode", []), "html", null, true);
+        echo "</th>
+                   \t\t</tr> 
+               \t\t</tbody>
    \t\t\t\t</table>
-   </div>\t\t\t\t    
+   </div>\t
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -147,7 +146,7 @@ class __TwigTemplate_9526530f69646363ad46522276cf7331eb0a8cda021c47b71d751249b5c
 
     public function getDebugInfo()
     {
-        return array (  124 => 35,  118 => 32,  112 => 29,  106 => 26,  100 => 23,  94 => 20,  88 => 17,  80 => 12,  75 => 10,  63 => 8,  45 => 4,  15 => 2,);
+        return array (  122 => 33,  118 => 32,  114 => 31,  110 => 30,  106 => 29,  102 => 28,  98 => 27,  79 => 11,  75 => 10,  63 => 8,  45 => 4,  15 => 2,);
     }
 
     public function getSourceContext()
@@ -162,35 +161,33 @@ class __TwigTemplate_9526530f69646363ad46522276cf7331eb0a8cda021c47b71d751249b5c
 {% block praticien %}    
  <div class=\"container\">
                  {{ form_start(selectprat) }}
-
    \t\t\t\t {{ form_end(selectprat) }}
-   \t\t\t\t 
 
    \t\t\t\t<table class=\"table\">
-   \t\t\t\t\t<tr>
-       \t\t\t\t\t<td>Numéro : {{ prat.getPraNum }}  </td>
-       \t\t\t\t</tr>
-   \t\t\t\t\t<tr>\t
-       \t\t\t\t\t<td>Nom : {{ prat.getPraNom }} </td>
-       \t\t\t\t</tr>
-       \t\t\t\t<tr>
-       \t\t\t\t\t<td>Prenom : {{ prat.getPraPrenom }} </td>
-       \t\t\t\t</tr>
-       \t\t\t\t<tr>
-       \t\t\t\t\t<td>Adresse : {{ prat.getPraAdresse }} </td>
-       \t\t\t\t</tr>
-       \t\t\t\t<tr>
-       \t\t\t\t\t<td>Ville : {{ prat.getPraVille }} </td>
-       \t\t\t\t</tr>
-       \t\t\t\t<tr>
-       \t\t\t\t\t<td>Coeff. notoriété : {{ prat.getPraCoefnotoriete }} </td>
-       \t\t\t\t</tr>
-       \t\t\t\t<tr>
-       \t\t\t\t\t<td>Code Postal : {{ prat.getPraCp }} </td>
-       \t\t\t\t</tr>
+   \t\t\t\t\t<thead class=\"thead-dark\">
+           \t\t\t\t<tr>
+                            <th>Nom</th>
+                            <th>Prenom</th>
+                            <th>Adresse</th>
+                            <th>Ville</th>
+                            <th>CP</th>
+                            <th>Coef</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>{{ prat.getPraNom }}</th>
+                            <th>{{ prat.getPraPrenom }}</th>
+                            <th>{{ prat.getPraAdresse }}</th>
+                            <th>{{ prat.getPraVille }}</th>
+                            <th>{{ prat.getPraCp }}</th>
+                            <th>{{ prat.getPraCoefnotoriete }}</th>
+                            <th>{{ prat.getTypCode }}</th>
+                   \t\t</tr> 
+               \t\t</tbody>
    \t\t\t\t</table>
-   </div>\t\t\t\t    
-{% endblock %}
-", "praticien.html.twig", "C:\\Users\\HENQUINET.SIO\\git\\GSB\\templates\\praticien.html.twig");
+   </div>\t
+{% endblock %}", "praticien.html.twig", "C:\\Users\\HENQUINET.SIO\\git\\GSB\\templates\\praticien.html.twig");
     }
 }
