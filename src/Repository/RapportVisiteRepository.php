@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\RapportVisite;
+use App\Entity\Visiteur;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 

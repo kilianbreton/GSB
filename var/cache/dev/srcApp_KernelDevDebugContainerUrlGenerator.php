@@ -46,6 +46,7 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'del.praticien' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AdminPraticienController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/del_prat']], [], []],
         'edit.praticien' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AdminPraticienController::edit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/edit_prat']], [], []],
         'new.praticien' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminPraticienController::new'], [], [['text', '/admin/new_prat']], [], []],
+        'admin.rapports' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminRapportController:index'], [], [['text', '/admin/rapports']], [], []],
     ];
         }
     }

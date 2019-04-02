@@ -61,3 +61,10 @@ edit.praticien:
 new.praticien:
     path: /admin/new_prat
     controller: App\Controller\Admin\AdminPraticienController::new
+
+
+
+#RAPPORTS#######################################################################################################################
+admin.rapports:
+    path: /admin/rapports
+    controller: App\Controller\Admin\AdminRapportController:index

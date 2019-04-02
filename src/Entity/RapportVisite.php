@@ -2,7 +2,18 @@
 
 namespace App\Entity;
 
+use App\Entity\Offrir;
+use App\Entity\Visiteur;
+use App\Entity\Praticien;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\OneToOne;
+use Doctrine\ORM\Mapping\JoinTable;
+use Doctrine\ORM\Mapping\ManyToOne;
+use Doctrine\ORM\Mapping\OneToMany;
+use Doctrine\ORM\Mapping\JoinColumn;
+use Doctrine\ORM\Mapping\ManyToMany;
+use Doctrine\Common\Collections\ArrayCollection;
+
 
 /**
  * RapportVisite
@@ -13,13 +24,8 @@ use Doctrine\ORM\Mapping as ORM;
 class RapportVisite
 {
     /**
-     * @var string
-     *
-     * @ORM\Column(name="VIS_MATRICULE", type="string", length=10, nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\ManyToOne(targetEntity="App\Entity\Visiteur", inversedBy="visMatricule")
-     * @ORM\OneToMany(targetEntity="App\Entity\Offrir", mappedBy="visMatricule")
+     * @ManyToOne(targetEntity="Visiteur")
+     * @JoinColumn(name="VIS_MATRICULE", referencedColumnName="VIS_MATRICULE")
      */
     private $visMatricule;
 
@@ -32,12 +38,10 @@ class RapportVisite
      * @ORM\OneToMany(targetEntity="App\Entity\Offrir", mappedBy="rapNum")
      */
     private $rapNum;
-
     /**
-     * @var int
-     *
-     * @ORM\Column(name="PRA_NUM", type="integer", nullable=false)
-     * @ORM\OneToMany(targetEntity="App\Entity\Praticien", mappedBy="praNum")
+     * @var Praticien|null
+     * @OneToOne(targetEntity="Praticien")
+     * @JoinColumn(name="PRA_NUM", referencedColumnName="PRA_NUM")
      */
     private $praNum;
 
@@ -62,9 +66,21 @@ class RapportVisite
      */
     private $rapMotif;
     
-    public $meds ;
+   /**
+    * @var ArrayCollection
+    * @ORM\OneToMany(targetEntity="Offrir", mappedBy="VIS_MATRICULE")
+    */
+    public $meds;
+    /**
+    * @var ArrayCollection
+    * @ORM\OneToMany(targetEntity="Offrir", mappedBy="RAP_NUM")
+    */
+    public $meds2;
 
-    public function getVisMatricule(): ?string
+
+    public $totalmeds;
+
+    public function getVisMatricule(): ?Visiteur
     {
         return $this->visMatricule;
     }
@@ -74,7 +90,7 @@ class RapportVisite
         return $this->rapNum;
     }
 
-    public function getPraNum(): ?int
+    public function getPraNum(): ?Praticien
     {
         return $this->praNum;
     }
@@ -84,6 +100,10 @@ class RapportVisite
         $this->praNum = $praNum;
 
         return $this;
+    }
+
+    public function getRapDateStr(): string{
+        return $this->rapDate->format('Y-m-d H:i:s');
     }
 
     public function getRapDate(): ?\DateTimeInterface
@@ -122,5 +142,14 @@ class RapportVisite
         return $this;
     }
 
+    public function getMeds() : ArrayCollection{
+        return $this->meds;
+    }
+
+    public function getOffrir()
+    {
+        $this->totalmeds = new ArrayCollection(array_merge($this->meds->toArray(), $this->meds2->toArray()));
+        return $this->totalmeds;
+    }
 
 }

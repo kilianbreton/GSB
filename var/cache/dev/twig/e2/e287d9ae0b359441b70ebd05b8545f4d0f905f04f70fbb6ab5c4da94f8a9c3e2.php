@@ -75,13 +75,13 @@ class __TwigTemplate_48683cc83a18d74f5af8e24dc3246533d793713a9558eaa3e86c51fc8ef
         echo "\">Praticien</a>
       </li>
       <li class=\"nav-item\">
-        <a class=\"nav-link disabled\" href=\"#\" tabindex=\"-1\" aria-disabled=\"true\">Disabled</a>
+        <a class=\"nav-link\" href=\"";
+        // line 22
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin.rapports");
+        echo "\">Rapports</a>
       </li>
     </ul>
-    <form class=\"form-inline my-2 my-lg-0\">
-      <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
-      <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>
-    </form>
+  
   </div>
 </nav>
     <div class=\"container\">
@@ -90,7 +90,7 @@ class __TwigTemplate_48683cc83a18d74f5af8e24dc3246533d793713a9558eaa3e86c51fc8ef
 
 
 ";
-        // line 36
+        // line 33
         $this->displayBlock('content', $context, $blocks);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -128,7 +128,7 @@ class __TwigTemplate_48683cc83a18d74f5af8e24dc3246533d793713a9558eaa3e86c51fc8ef
 
     public function getDebugInfo()
     {
-        return array (  94 => 36,  74 => 19,  65 => 13,  54 => 4,  45 => 3,  15 => 1,);
+        return array (  94 => 33,  80 => 22,  74 => 19,  65 => 13,  54 => 4,  45 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -154,13 +154,10 @@ class __TwigTemplate_48683cc83a18d74f5af8e24dc3246533d793713a9558eaa3e86c51fc8ef
         <a class=\"nav-link\" href=\"{{ path('admin.praticien') }}\">Praticien</a>
       </li>
       <li class=\"nav-item\">
-        <a class=\"nav-link disabled\" href=\"#\" tabindex=\"-1\" aria-disabled=\"true\">Disabled</a>
+        <a class=\"nav-link\" href=\"{{ path('admin.rapports') }}\">Rapports</a>
       </li>
     </ul>
-    <form class=\"form-inline my-2 my-lg-0\">
-      <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
-      <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>
-    </form>
+  
   </div>
 </nav>
     <div class=\"container\">

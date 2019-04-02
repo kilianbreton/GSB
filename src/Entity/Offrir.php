@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\JoinColumn;
 
 /**
  * Offrir
@@ -18,7 +19,8 @@ class Offrir
      * @ORM\Column(name="VIS_MATRICULE", type="string", length=10, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\ManyToOne(targetEntity="App\Entity\RapportVisite", inversedBy="visMatricule")
+     * @ORM\ManyToOne(targetEntity="App\Entity\RapportVisite", inversedBy="VIS_Matricule")
+     *
      */
     private $visMatricule;
 
@@ -28,7 +30,8 @@ class Offrir
      * @ORM\Column(name="RAP_NUM", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\ManyToOne(targetEntity="App\Entity\RapportVisite", inversedBy="rapNum")
+     * @ORM\ManyToOne(targetEntity="RapportVisite", inversedBy="RAP_NUM")
+     * @JoinColumn(name="RAP_NUM", referencedColumnName="RAP_NUM")
      */
     private $rapNum;
 
@@ -43,10 +46,8 @@ class Offrir
     private $medDepotlegal;
 
     /**
-     * @var int|null
-     *
-     * @ORM\Column(name="OFF_QTE", type="integer", nullable=true)
-     */
+    * @ORM\ManyToOne(targetEntity=Medicament::class)
+    */
     private $offQte;
 
     public function getVisMatricule(): ?string

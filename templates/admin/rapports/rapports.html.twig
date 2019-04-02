@@ -1,0 +1,43 @@
+{% extends 'admin/index.html.twig' %}
+{% block content %}
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Num</th>
+                    <th>Visiteur</th>
+                    <th>Praticien</th>
+                    <th>Date</th>
+                    <th>Motif</th>
+                    <th>Bilan</th>
+                    <th>PDF</th>
+                </tr>
+            </thead>
+            {% for rap in rapports %}
+            <tbody>
+                <tr>
+                    <th>{{ rap.getRapNum }}</th>
+                    <th>{{ rap.getVisMatricule.getVisLogin }}</th>
+                    <th>{{ rap.getPraNum.getPraNom }}</th>
+                    <th>{{ rap.getRapDateStr }}</th>
+                    <th>{{ rap.getRapMotif }}</th>
+                    <th>{{ rap.getRapBilan}}</th>
+                    <th><a href="#">PDF</a></th>
+                   
+                    <th>
+                        <a href="{{ path('edit.praticien', {id: rap.getPraNum.getPraNum }) }}" class="btn btn-secondary">Editer</a>
+                        <form method="POST" action="{{ path('del.praticien', {id: rap.getPraNum.getPraNum}) }}" style="display: inline-block" onsubmit="return confirm('Êtes vous sûr ?')">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_TOKEN" value="{{ csrf_token("delete_vis" ~ rap.getPraNum.getPraNum) }}">
+                            <button class="btn btn-danger">Supprimer</button>
+                        </form>
+                    </th>
+                </tr> 
+            <tbody>
+            {% endfor %}
+        </table>
+        <div class="text-right">
+            <a href="{{ path('new.praticien') }}" class="btn btn-primary">Créer</a>
+        </div>
+    </div>
+{% endblock %}
