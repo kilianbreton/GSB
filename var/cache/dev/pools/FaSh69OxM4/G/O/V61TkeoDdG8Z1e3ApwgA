@@ -23,7 +23,7 @@
                     3 => 'App\\Entity\\RapportVisite',
                 ],
                 'inversedBy' => [
-                    3 => 'VIS_Matricule',
+                    3 => 'meds',
                 ],
             ],
         ],

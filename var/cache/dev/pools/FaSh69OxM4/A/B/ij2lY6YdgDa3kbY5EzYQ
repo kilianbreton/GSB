@@ -20,10 +20,10 @@
                     2 => 'NONE',
                 ],
                 'targetEntity' => [
-                    3 => 'App\\Entity\\Medicament',
+                    3 => 'RapportVisite',
                 ],
                 'inversedBy' => [
-                    3 => 'medDepotlegal',
+                    3 => 'meds',
                 ],
             ],
         ],

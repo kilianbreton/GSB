@@ -68,3 +68,10 @@ new.praticien:
 admin.rapports:
     path: /admin/rapports
     controller: App\Controller\Admin\AdminRapportController:index
+
+
+
+#MEDICAMENTS#######################################################################################################################
+medicaments:
+    path: /medicaments
+    controller: App\Controller\MedicamentController:index

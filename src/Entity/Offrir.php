@@ -19,7 +19,7 @@ class Offrir
      * @ORM\Column(name="VIS_MATRICULE", type="string", length=10, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\ManyToOne(targetEntity="App\Entity\RapportVisite", inversedBy="VIS_Matricule")
+     * @ORM\ManyToOne(targetEntity="App\Entity\RapportVisite", inversedBy="meds")
      *
      */
     private $visMatricule;
@@ -30,24 +30,25 @@ class Offrir
      * @ORM\Column(name="RAP_NUM", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\ManyToOne(targetEntity="RapportVisite", inversedBy="RAP_NUM")
+     * @ORM\ManyToOne(targetEntity="RapportVisite", inversedBy="meds")
      * @JoinColumn(name="RAP_NUM", referencedColumnName="RAP_NUM")
      */
     private $rapNum;
 
     /**
-     * @var string
+     *  @var Medicament|null
      *
      * @ORM\Column(name="MED_DEPOTLEGAL", type="string", length=10, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\ManyToOne(targetEntity="App\Entity\Medicament", inversedBy="medDepotlegal")
+     * @ORM\ManyToOne(targetEntity="RapportVisite", inversedBy="meds")
      */
     private $medDepotlegal;
 
     /**
-    * @ORM\ManyToOne(targetEntity=Medicament::class)
-    */
+     * @var int
+     * @ORM\Column(name="OFF_QTE", type="integer")
+     */
     private $offQte;
 
     public function getVisMatricule(): ?string
@@ -60,7 +61,7 @@ class Offrir
         return $this->rapNum;
     }
 
-    public function getMedDepotlegal(): ?string
+    public function getMedDepotlegal(): ?Medicament
     {
         return $this->medDepotlegal;
     }

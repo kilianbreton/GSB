@@ -25,7 +25,7 @@
                     3 => 'RapportVisite',
                 ],
                 'inversedBy' => [
-                    3 => 'RAP_NUM',
+                    3 => 'meds',
                 ],
                 'referencedColumnName' => [
                     4 => 'RAP_NUM',

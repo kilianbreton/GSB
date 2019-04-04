@@ -1,6 +1,6 @@
 <?php
 
-namespace ContainerZyEW4Er;
+namespace ContainerGzreW07;
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -62,6 +62,7 @@ class srcApp_KernelDevDebugContainer extends Container
             'App\\Controller\\Admin\\AdminRapportController' => 'getAdminRapportControllerService.php',
             'App\\Controller\\Admin\\AdminVisiteursController' => 'getAdminVisiteursControllerService.php',
             'App\\Controller\\IndexController' => 'getIndexControllerService.php',
+            'App\\Controller\\MedicamentController' => 'getMedicamentControllerService.php',
             'App\\Controller\\SecurityController' => 'getSecurityControllerService.php',
             'Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController' => 'getRedirectControllerService.php',
             'Symfony\\Bundle\\FrameworkBundle\\Controller\\TemplateController' => 'getTemplateControllerService.php',

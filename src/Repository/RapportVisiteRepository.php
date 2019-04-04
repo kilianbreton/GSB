@@ -2,10 +2,11 @@
 
 namespace App\Repository;
 
-use App\Entity\RapportVisite;
+use App\Entity\Offrir;
 use App\Entity\Visiteur;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use App\Entity\RapportVisite;
 use Symfony\Bridge\Doctrine\RegistryInterface;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method Visiteur|null find($id, $lockMode = null, $lockVersion = null)
@@ -37,17 +38,20 @@ class RapportVisiteRepository extends ServiceEntityRepository
     }
     */
 
-    /*
-    public function findOneBySomeField($value): ?Visiteur
+   
+    public function findByNumVisMed($num, $vis)
     {
         return $this->createQueryBuilder('v')
-            ->andWhere('v.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('v.RAP_NUM = :num')
+            ->andWhere('v.VIS_MATRICULE = :vis')
+            ->andWhere('v.MED_DEPOTLEGAL = :med')
+            ->setParameter('num', $num)
+            ->setParameter('vis', $vis)
             ->getQuery()
-            ->getOneOrNullResult()
-        ;
+            ->getResult()
+            ;
     }
-    */
+
 
     
 }

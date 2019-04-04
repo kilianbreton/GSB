@@ -2,15 +2,17 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Offrir;
 use App\Entity\Visiteur;
 use App\Form\VisiteurType;
+use App\Entity\RapportVisite;
 use App\Repository\VisiteurRepository;
 use App\Repository\RapportVisiteRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use App\Entity\RapportVisite;
+use App\Repository\OffrirRepository;
 
 class AdminRapportController extends AbstractController
 {
@@ -25,10 +27,14 @@ class AdminRapportController extends AbstractController
     public function index()
     {
         $repo = $this->getDoctrine()->getRepository(RapportVisite::class);
+        $repo2 = $this->getDoctrine()->getRepository(Offrir::class);
+
         $rapports = $repo->findAll();
         dump($rapports);
-        
-      
+       
+        foreach($rapports as &$rap){
+            dump($rap->getMeds($repo2));
+        } 
         return $this->render('admin/rapports/rapports.html.twig',[
             "rapports" => $rapports  
         ]);

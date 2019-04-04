@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Medicament
  *
- * @ORM\Table(name="medicament", indexes={@ORM\Index(name="FAM_CODE", columns={"FAM_CODE"})})
+ * @ORM\Table(name="medicament", indexes={@ORM\Index(name="FAM_CODE", columns={"FAM_CODE"}), @ORM\Index(name="MED_DEPOTLEGAL", columns={"MED_DEPOTLEGAL"})})
  * @ORM\Entity
  */
 class Medicament
@@ -18,12 +18,7 @@ class Medicament
      * @ORM\Column(name="MED_DEPOTLEGAL", type="string", length=10, nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
-     * @ORM\OneToMany(targetEntity="App\Entity\Offrir", mappedBy="medDepotlegal")
-     * @ORM\OneToMany(targetEntity="App\Entity\Prescrire", mappedBy="medDepotlegal")
-     * @ORM\OneToMany(targetEntity="App\Entity\Formuler", mappedBy="medDepotlegal")
-     * @ORM\OneToMany(targetEntity="App\Entity\Constituer", mappedBy="medDepotlegal")
-     * @ORM\OneToMany(targetEntity="App\Entity\Interagir", mappedBy="$medPerturbateur")
-     * @ORM\OneToMany(targetEntity="App\Entity\Interagir", mappedBy="$medMedPerturbe")
+     * @ORM\OneToMany(targetEntity="Offrir", mappedBy="mdeDepotlegal")
      */
     private $medDepotlegal;
 

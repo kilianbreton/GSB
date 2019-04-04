@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Depot Legal</th>
+                    <th>Famille</th>
+                    <th>Composition</th>
+                    <th>Effets</th>
+                    <th>Contre indication</th>
+                    <th>Coef</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            {% for medic in medicaments %}
+            <tbody>
+                <tr>
+                    <th>{{ medic.getMedDepotLegal }}</th>
+                    <th>{{ medic.getMedNomCommercial }}</th>
+                    <th>{{ medic.getFamCode }}</th>
+                    <th>{{ medic.getMedComposition }}</th>
+                    <th>{{ medic.getMedEffets }}</th>
+                    <th>{{ medic.getMedContreIndic }}</th>
+                    
+                   
+                </tr> 
+            <tbody>
+            {% endfor %}
+        </table>
+     
+    </div>
+{% endblock %}

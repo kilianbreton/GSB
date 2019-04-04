@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Visiteur;
 use App\Entity\Medicament;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;

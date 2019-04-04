@@ -6,10 +6,12 @@ use App\Entity\Offrir;
 use App\Entity\Visiteur;
 use App\Entity\Praticien;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\Mapping\OneToOne;
 use Doctrine\ORM\Mapping\JoinTable;
 use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\OneToMany;
+use App\Repository\OffrirRepository;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\ManyToMany;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -35,7 +37,6 @@ class RapportVisite
      * @ORM\Column(name="RAP_NUM", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\OneToMany(targetEntity="App\Entity\Offrir", mappedBy="rapNum")
      */
     private $rapNum;
     /**
@@ -67,16 +68,12 @@ class RapportVisite
     private $rapMotif;
     
    /**
-    * @var ArrayCollection
-    * @ORM\OneToMany(targetEntity="Offrir", mappedBy="VIS_MATRICULE")
+    * 
+    * @ORM\OneToMany(targetEntity="Offrir", mappedBy="MED_DEPOTLEGAL", indexBy="RAP_NUM")
+    * @var Offrir[]
     */
     public $meds;
-    /**
-    * @var ArrayCollection
-    * @ORM\OneToMany(targetEntity="Offrir", mappedBy="RAP_NUM")
-    */
-    public $meds2;
-
+   
 
     public $totalmeds;
 
@@ -142,14 +139,15 @@ class RapportVisite
         return $this;
     }
 
-    public function getMeds() : ArrayCollection{
-        return $this->meds;
-    }
+    public function getMeds(EntityRepository $repo) : array{
 
+        return $repo->findByVisRap($this->rapNum,$this->visMatricule);
+    }
+/*
     public function getOffrir()
     {
         $this->totalmeds = new ArrayCollection(array_merge($this->meds->toArray(), $this->meds2->toArray()));
         return $this->totalmeds;
     }
-
+*/
 }
