@@ -400,7 +400,7 @@ class Visiteur extends \App\Entity\Visiteur implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function setSecCode(?string $secCode): \App\Entity\Visiteur
+    public function setSecCode(?\App\Entity\Secteur $secCode): \App\Entity\Visiteur
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setSecCode', [$secCode]);
@@ -411,7 +411,7 @@ class Visiteur extends \App\Entity\Visiteur implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function setLabCode(string $labCode): \App\Entity\Visiteur
+    public function setLabCode(\App\Entity\Labo $labCode): \App\Entity\Visiteur
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setLabCode', [$labCode]);

@@ -68,7 +68,7 @@ class AdminPraticienController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->flush();
             $this->addFlash("success","Le praticien a bien été modifé");
-            return $this->redirectToRoute("admin.praticiens");
+            return $this->redirectToRoute("admin.praticien");
         }
 
 
@@ -101,16 +101,18 @@ class AdminPraticienController extends AbstractController
        // $praticien = $this->repository->find($id);
        $praticien = $this->getUser(); 
        $form = $this->createForm(praticienType::class,$praticien);
-        
+       dump($form);
+       die();
         $form->handleRequest($request);
-
-        if($form->isSubmitted() && $form->isValid()){
+       
+        
+        if($form->isSubmitted() && $form->isValid() && 1==2){
             $em = $this->getDoctrine()->getManager();
             $em->flush();
             $this->addFlash("success","Le praticien a bien été modifé");
             return $this->redirectToRoute("admin.praticiens");
         }
-
+        
 
         return $this->render('admin/praticiens/edit.html.twig', [
             'current_menu' => 'praticien',

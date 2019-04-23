@@ -334,7 +334,7 @@ class Praticien extends \App\Entity\Praticien implements \Doctrine\ORM\Proxy\Pro
     /**
      * {@inheritDoc}
      */
-    public function setTypCode(string $typCode): \App\Entity\Praticien
+    public function setTypCode(\App\Entity\TypePraticien $typCode): \App\Entity\Praticien
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTypCode', [$typCode]);

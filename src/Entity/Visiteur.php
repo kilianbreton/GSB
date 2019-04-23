@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Serializable;
+use App\Entity\Labo;
+use App\Entity\Secteur;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -230,16 +232,16 @@ class Visiteur implements UserInterface,\Serializable
         return $this;
     }
 
-    public function setSecCode(?string $secCode): self
+    public function setSecCode(?Secteur $secCode): self
     {
-        $this->secCode = $secCode;
+        $this->secCode = $secCode->getSecCode();
 
         return $this;
     }
 
-    public function setLabCode(string $labCode): self
+    public function setLabCode(Labo $labCode): self
     {
-        $this->labCode = $labCode;
+        $this->labCode = $labCode->getLabCode();
 
         return $this;
     }

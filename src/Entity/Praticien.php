@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Entity\TypePraticien;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -151,14 +152,16 @@ class Praticien
         return $this;
     }
 
+    
     public function getTypCode(): ?string
     {
         return $this->typCode;
     }
 
-    public function setTypCode(string $typCode): self
+
+    public function setTypCode(TypePraticien $typCode): self
     {
-        $this->typCode = $typCode;
+        $this->typCode = $typCode->getTypCode();
 
         return $this;
     }
