@@ -19,30 +19,6 @@ class PraticienRepository extends ServiceEntityRepository
         parent::__construct($registry, Praticien::class);
     }
 
-    // /**
-    //  * @return Praticien[] Returns an array of Visiteur objects
-    //  */
-    
-    public function findByTypCode($value)
-    {
-        return $this->createQueryBuilder('v')
-            ->andWhere('v.TYP_CODE = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    
 
-    /*
-    public function findOneBySomeField($value): ?Visiteur
-    {
-        return $this->createQueryBuilder('v')
-            ->andWhere('v.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
+
 }

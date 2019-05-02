@@ -20,7 +20,7 @@ class triePraticienController extends AbstractController
     {
         $repo = $this->getDoctrine()->getRepository(Praticien::class);
         /*$praticiens = $repo->findByTypCode($request->request->get('triePrat'));*/
-        $praticiens = $repo->findByTypCode('PH');
+        $praticiens = $repo->findAll();
         dump($praticiens);
         dump($request);
         return $this->render('triePraticien.html.twig',[

@@ -47,12 +47,12 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
         ";
         // line 8
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 13
+        // line 39
         echo "          
     </head>
     <body>
     <h1>";
-        // line 16
+        // line 42
         $this->displayBlock('h1', $context, $blocks);
         echo "</h1>
     
@@ -60,16 +60,16 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 \t\t\t<ul id=\"navigation\">
 \t\t\t\t<li><a  href=\"index.php\">ACCUEIL</a></li>
 \t\t\t\t<li><a  href=";
-        // line 21
+        // line 47
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("medicament");
         echo ">MÉDICAMENT</a></li>
 \t\t\t\t<li><a  href=\"visiteur.php\">VISITEUR</a></li>
 \t\t\t\t<li><a  href=";
-        // line 23
+        // line 49
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("praticien");
         echo ">PRATICIEN</a></li>
 \t\t\t\t<li><a  href=";
-        // line 24
+        // line 50
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("triePraticien");
         echo ">TRIE PRATICIEN</a></li>
 \t\t\t\t<li><a  href=\"rapport_visite.php\">COMPTE-RENDUS</a></li>
@@ -77,24 +77,24 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 \t\t</nav>
 \t\t
         ";
-        // line 29
+        // line 55
         $this->displayBlock('body', $context, $blocks);
-        // line 30
+        // line 56
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 31
+        // line 57
         echo "        
 \t    
 \t    ";
-        // line 33
+        // line 59
         $this->displayBlock('praticien', $context, $blocks);
-        // line 34
+        // line 60
         echo "\t    ";
         $this->displayBlock('triePraticien', $context, $blocks);
-        // line 35
+        // line 61
         echo "\t    ";
         $this->displayBlock('medicament', $context, $blocks);
-        // line 36
+        // line 62
         echo "\t    
        <!--  <div id=\"piedDePage\">\t
         \t<footer>
@@ -155,6 +155,32 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
         echo "\">
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
 \t\t<meta charset=\"UTF-8\">
+\t\t
+     \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/CSS/dataTables.bootstrap.min.css\">
+    \t
+  \t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/CSS/jquery.dataTables.min.css\">
+
+\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/CSS/dataTables.bootstrap4.min.css\">
+
+    
+    \t
+\t\t<script type=\"text/javascript\" charset=\"utf8\" src=\"/js/jquery.js\"></script>\t\t
+   \t\t
+   \t\t<script type=\"text/javascript\" charset=\"utf8\" src=\"/js/dataTables.dataTables.js\"></script>\t
+
+   \t\t<script type=\"text/javascript\" charset=\"utf8\" src=\"/js/dataTables.bootstrap4.min.js\"></script>
+   \t
+   \t\t<script type=\"text/javascript\" charset=\"utf8\" src=\"/js/jquery.dataTables.min.js\"></script>\t 
+   \t\t
+   \t\t<script type=\"text/javascript\">
+            \$(document).ready(function () {
+                \$('#table_id').DataTable();
+            });
+            
+            \$('#table_id').DataTable( {
+                paging: true
+            });
+        </script>\t
         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -164,7 +190,7 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 
     }
 
-    // line 16
+    // line 42
     public function block_h1($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -181,7 +207,7 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 
     }
 
-    // line 29
+    // line 55
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -198,7 +224,7 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 
     }
 
-    // line 30
+    // line 56
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -215,7 +241,7 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 
     }
 
-    // line 33
+    // line 59
     public function block_praticien($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -232,7 +258,7 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 
     }
 
-    // line 34
+    // line 60
     public function block_triePraticien($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -249,7 +275,7 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 
     }
 
-    // line 35
+    // line 61
     public function block_medicament($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -278,7 +304,7 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 
     public function getDebugInfo()
     {
-        return array (  253 => 35,  236 => 34,  219 => 33,  202 => 30,  185 => 29,  168 => 16,  154 => 10,  149 => 9,  140 => 8,  122 => 7,  98 => 36,  95 => 35,  92 => 34,  90 => 33,  86 => 31,  83 => 30,  81 => 29,  73 => 24,  69 => 23,  64 => 21,  56 => 16,  51 => 13,  49 => 8,  45 => 7,  37 => 1,);
+        return array (  279 => 61,  262 => 60,  245 => 59,  228 => 56,  211 => 55,  194 => 42,  154 => 10,  149 => 9,  140 => 8,  122 => 7,  98 => 62,  95 => 61,  92 => 60,  90 => 59,  86 => 57,  83 => 56,  81 => 55,  73 => 50,  69 => 49,  64 => 47,  56 => 42,  51 => 39,  49 => 8,  45 => 7,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -295,6 +321,32 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
         <link rel=\"stylesheet\" href=\"{{ asset('CSS/Menu.css') }}\">
         <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
 \t\t<meta charset=\"UTF-8\">
+\t\t
+     \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/CSS/dataTables.bootstrap.min.css\">
+    \t
+  \t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/CSS/jquery.dataTables.min.css\">
+
+\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"/CSS/dataTables.bootstrap4.min.css\">
+
+    
+    \t
+\t\t<script type=\"text/javascript\" charset=\"utf8\" src=\"/js/jquery.js\"></script>\t\t
+   \t\t
+   \t\t<script type=\"text/javascript\" charset=\"utf8\" src=\"/js/dataTables.dataTables.js\"></script>\t
+
+   \t\t<script type=\"text/javascript\" charset=\"utf8\" src=\"/js/dataTables.bootstrap4.min.js\"></script>
+   \t
+   \t\t<script type=\"text/javascript\" charset=\"utf8\" src=\"/js/jquery.dataTables.min.js\"></script>\t 
+   \t\t
+   \t\t<script type=\"text/javascript\">
+            \$(document).ready(function () {
+                \$('#table_id').DataTable();
+            });
+            
+            \$('#table_id').DataTable( {
+                paging: true
+            });
+        </script>\t
         {% endblock %}          
     </head>
     <body>
