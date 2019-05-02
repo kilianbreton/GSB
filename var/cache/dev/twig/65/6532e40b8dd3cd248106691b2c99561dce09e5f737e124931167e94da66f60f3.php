@@ -50,7 +50,7 @@ class __TwigTemplate_3f7bd37b1fe6c75174826d10650c01b575d8c6b8355779cb1d1e1f4c1eb
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "h1"));
 
-        echo "Trie praticien";
+        echo "Tri praticien";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -69,36 +69,10 @@ class __TwigTemplate_3f7bd37b1fe6c75174826d10650c01b575d8c6b8355779cb1d1e1f4c1eb
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "triePraticien"));
 
         echo "   
-    \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/CSS/jquery.dataTables.css\">
-    \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/CSS/jquery.dataTables.min.css\">
-    \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/CSS/dataTables.bootstrap.css\">
-    \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/CSS/dataTables.bootstrap.min.css\">
-    \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/CSS/dataTables.bootstrap4.css\">
-    \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/CSS/dataTables.bootstrap4.min.css\">
-
-
-    \t
-\t\t<script type=\"text/javascript\" charset=\"utf8\" src=\"/js/jquery.js\"></script>\t\t
-\t\t
-\t\t
-\t\t<script type=\"text/javascript\" charset=\"utf8\" src=\"/js/jquery.dataTables.js\"></script>\t
-   \t\t<script type=\"text/javascript\" charset=\"utf8\" src=\"/js/jquery.dataTables.min.js\"></script>\t
+    \t   \t\t
    \t\t
-\t\t<script type=\"text/javascript\" charset=\"utf8\" src=\"/js/dataTables.dataTables.js\"></script>\t
-\t\t
-   \t\t<script type=\"text/javascript\" charset=\"utf8\" src=\"/js/dataTables.bootstrap.js\"></script>
-   \t\t<script type=\"text/javascript\" charset=\"utf8\" src=\"/js/dataTables.bootstrap.min.js\"></script>
-   \t\t\t
-   \t\t<script type=\"text/javascript\" charset=\"utf8\" src=\"/js/dataTables.bootstrap4.js\"></script>\t
-   \t\t<script type=\"text/javascript\" charset=\"utf8\" src=\"/js/dataTables.bootstrap4.min.js\"></script>
-
-   \t\t
-
-    \t
-   <div class=\"container\">
-        
-        <table id=\"table_id\" class=\"table\">
-        
+   <div class=\"container\">        
+        <table id=\"table_id\" class=\"display\" style=\"width:100%\">
             <thead class=\"thead-dark\">
                 <tr>
                     <th>Nom</th>
@@ -110,65 +84,62 @@ class __TwigTemplate_3f7bd37b1fe6c75174826d10650c01b575d8c6b8355779cb1d1e1f4c1eb
                     <th>Type</th>
                 </tr>
             </thead>
-            ";
-        // line 49
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["praticiens"]) || array_key_exists("praticiens", $context) ? $context["praticiens"] : (function () { throw new Twig_Error_Runtime('Variable "praticiens" does not exist.', 49, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["prati"]) {
-            // line 50
-            echo "            <tbody>
-                <tr>
-                    <th>";
-            // line 52
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["prati"], "getPraNom", []), "html", null, true);
-            echo "</th>
-                    <th>";
-            // line 53
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["prati"], "getPraPrenom", []), "html", null, true);
-            echo "</th>
-                    <th>";
-            // line 54
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["prati"], "getPraAdresse", []), "html", null, true);
-            echo "</th>
-                    <th>";
-            // line 55
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["prati"], "getPraVille", []), "html", null, true);
-            echo "</th>
-                    <th>";
-            // line 56
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["prati"], "getPraCp", []), "html", null, true);
-            echo "</th>
-                    <th>";
-            // line 57
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["prati"], "getPraCoefnotoriete", []), "html", null, true);
-            echo "</th>
-                    <th>";
-            // line 58
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["prati"], "getTypCode", []), "html", null, true);
-            echo "</th>
-                </tr> 
+            
             <tbody>
-             ";
+            ";
+        // line 25
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["praticiens"]) || array_key_exists("praticiens", $context) ? $context["praticiens"] : (function () { throw new Twig_Error_Runtime('Variable "praticiens" does not exist.', 25, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["prati"]) {
+            // line 26
+            echo "               \t   <tr>
+                    \t<td>";
+            // line 27
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["prati"], "getPraNom", []), "html", null, true);
+            echo "</td>
+
+                   \t\t<td>";
+            // line 29
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["prati"], "getPraPrenom", []), "html", null, true);
+            echo "</td>
+
+                    \t<td>";
+            // line 31
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["prati"], "getPraAdresse", []), "html", null, true);
+            echo "</td>
+
+                   \t\t<td>";
+            // line 33
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["prati"], "getPraVille", []), "html", null, true);
+            echo "</td>
+
+                    \t<td>";
+            // line 35
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["prati"], "getPraCp", []), "html", null, true);
+            echo "</td>
+
+                    \t<td>";
+            // line 37
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["prati"], "getPraCoefnotoriete", []), "html", null, true);
+            echo "</td>
+
+                    \t<td>";
+            // line 39
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["prati"], "getTypCode", []), "html", null, true);
+            echo "</td>
+                    </tr> 
+     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['prati'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 62
-        echo "        </table>
+        // line 42
+        echo "            <tbody>
+        
+        </table>
 \t</div>
 \t
 \t
-<script>
-\$(document).ready( function () {
-    \$('#table_id').DataTable();
-} );
-
-\$('#table_id').DataTable( {
-    paging: true
-} );
-
-
-</script>\t
 
 ";
         
@@ -191,7 +162,7 @@ class __TwigTemplate_3f7bd37b1fe6c75174826d10650c01b575d8c6b8355779cb1d1e1f4c1eb
 
     public function getDebugInfo()
     {
-        return array (  157 => 62,  147 => 58,  143 => 57,  139 => 56,  135 => 55,  131 => 54,  127 => 53,  123 => 52,  119 => 50,  115 => 49,  63 => 7,  45 => 4,  15 => 2,);
+        return array (  137 => 42,  128 => 39,  123 => 37,  118 => 35,  113 => 33,  108 => 31,  103 => 29,  98 => 27,  95 => 26,  91 => 25,  63 => 7,  45 => 4,  15 => 2,);
     }
 
     public function getSourceContext()
@@ -199,40 +170,14 @@ class __TwigTemplate_3f7bd37b1fe6c75174826d10650c01b575d8c6b8355779cb1d1e1f4c1eb
         return new Twig_Source("  
 {% extends 'base.html.twig' %}
 
-{% block h1 %}Trie praticien{% endblock %}
+{% block h1 %}Tri praticien{% endblock %}
 
 
 {% block triePraticien %}   
-    \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/CSS/jquery.dataTables.css\">
-    \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/CSS/jquery.dataTables.min.css\">
-    \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/CSS/dataTables.bootstrap.css\">
-    \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/CSS/dataTables.bootstrap.min.css\">
-    \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/CSS/dataTables.bootstrap4.css\">
-    \t<link rel=\"stylesheet\" type=\"text/css\" href=\"/CSS/dataTables.bootstrap4.min.css\">
-
-
-    \t
-\t\t<script type=\"text/javascript\" charset=\"utf8\" src=\"/js/jquery.js\"></script>\t\t
-\t\t
-\t\t
-\t\t<script type=\"text/javascript\" charset=\"utf8\" src=\"/js/jquery.dataTables.js\"></script>\t
-   \t\t<script type=\"text/javascript\" charset=\"utf8\" src=\"/js/jquery.dataTables.min.js\"></script>\t
+    \t   \t\t
    \t\t
-\t\t<script type=\"text/javascript\" charset=\"utf8\" src=\"/js/dataTables.dataTables.js\"></script>\t
-\t\t
-   \t\t<script type=\"text/javascript\" charset=\"utf8\" src=\"/js/dataTables.bootstrap.js\"></script>
-   \t\t<script type=\"text/javascript\" charset=\"utf8\" src=\"/js/dataTables.bootstrap.min.js\"></script>
-   \t\t\t
-   \t\t<script type=\"text/javascript\" charset=\"utf8\" src=\"/js/dataTables.bootstrap4.js\"></script>\t
-   \t\t<script type=\"text/javascript\" charset=\"utf8\" src=\"/js/dataTables.bootstrap4.min.js\"></script>
-
-   \t\t
-
-    \t
-   <div class=\"container\">
-        
-        <table id=\"table_id\" class=\"table\">
-        
+   <div class=\"container\">        
+        <table id=\"table_id\" class=\"display\" style=\"width:100%\">
             <thead class=\"thead-dark\">
                 <tr>
                     <th>Nom</th>
@@ -244,34 +189,31 @@ class __TwigTemplate_3f7bd37b1fe6c75174826d10650c01b575d8c6b8355779cb1d1e1f4c1eb
                     <th>Type</th>
                 </tr>
             </thead>
+            
+            <tbody>
             {% for prati in praticiens %}
+               \t   <tr>
+                    \t<td>{{ prati.getPraNom }}</td>
+
+                   \t\t<td>{{ prati.getPraPrenom }}</td>
+
+                    \t<td>{{ prati.getPraAdresse }}</td>
+
+                   \t\t<td>{{ prati.getPraVille }}</td>
+
+                    \t<td>{{ prati.getPraCp }}</td>
+
+                    \t<td>{{ prati.getPraCoefnotoriete }}</td>
+
+                    \t<td>{{ prati.getTypCode }}</td>
+                    </tr> 
+     {% endfor %}
             <tbody>
-                <tr>
-                    <th>{{ prati.getPraNom }}</th>
-                    <th>{{ prati.getPraPrenom }}</th>
-                    <th>{{ prati.getPraAdresse }}</th>
-                    <th>{{ prati.getPraVille }}</th>
-                    <th>{{ prati.getPraCp }}</th>
-                    <th>{{ prati.getPraCoefnotoriete }}</th>
-                    <th>{{ prati.getTypCode }}</th>
-                </tr> 
-            <tbody>
-             {% endfor %}
+        
         </table>
 \t</div>
 \t
 \t
-<script>
-\$(document).ready( function () {
-    \$('#table_id').DataTable();
-} );
-
-\$('#table_id').DataTable( {
-    paging: true
-} );
-
-
-</script>\t
 
 {% endblock %}", "triePraticien.html.twig", "C:\\Users\\HENQUINET.SIO\\git\\GSB\\templates\\triePraticien.html.twig");
     }

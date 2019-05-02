@@ -1,40 +1,14 @@
   
 {% extends 'base.html.twig' %}
 
-{% block h1 %}Trie praticien{% endblock %}
+{% block h1 %}Tri praticien{% endblock %}
 
 
 {% block triePraticien %}   
-    	<link rel="stylesheet" type="text/css" href="/CSS/jquery.dataTables.css">
-    	<link rel="stylesheet" type="text/css" href="/CSS/jquery.dataTables.min.css">
-    	<link rel="stylesheet" type="text/css" href="/CSS/dataTables.bootstrap.css">
-    	<link rel="stylesheet" type="text/css" href="/CSS/dataTables.bootstrap.min.css">
-    	<link rel="stylesheet" type="text/css" href="/CSS/dataTables.bootstrap4.css">
-    	<link rel="stylesheet" type="text/css" href="/CSS/dataTables.bootstrap4.min.css">
-
-
-    	
-		<script type="text/javascript" charset="utf8" src="/js/jquery.js"></script>		
-		
-		
-		<script type="text/javascript" charset="utf8" src="/js/jquery.dataTables.js"></script>	
-   		<script type="text/javascript" charset="utf8" src="/js/jquery.dataTables.min.js"></script>	
+    	   		
    		
-		<script type="text/javascript" charset="utf8" src="/js/dataTables.dataTables.js"></script>	
-		
-   		<script type="text/javascript" charset="utf8" src="/js/dataTables.bootstrap.js"></script>
-   		<script type="text/javascript" charset="utf8" src="/js/dataTables.bootstrap.min.js"></script>
-   			
-   		<script type="text/javascript" charset="utf8" src="/js/dataTables.bootstrap4.js"></script>	
-   		<script type="text/javascript" charset="utf8" src="/js/dataTables.bootstrap4.min.js"></script>
-
-   		
-
-    	
-   <div class="container">
-        
-        <table id="table_id" class="table">
-        
+   <div class="container">        
+        <table id="table_id" class="display" style="width:100%">
             <thead class="thead-dark">
                 <tr>
                     <th>Nom</th>
@@ -46,33 +20,30 @@
                     <th>Type</th>
                 </tr>
             </thead>
+            
+            <tbody>
             {% for prati in praticiens %}
+               	   <tr>
+                    	<td>{{ prati.getPraNom }}</td>
+
+                   		<td>{{ prati.getPraPrenom }}</td>
+
+                    	<td>{{ prati.getPraAdresse }}</td>
+
+                   		<td>{{ prati.getPraVille }}</td>
+
+                    	<td>{{ prati.getPraCp }}</td>
+
+                    	<td>{{ prati.getPraCoefnotoriete }}</td>
+
+                    	<td>{{ prati.getTypCode }}</td>
+                    </tr> 
+    		{% endfor %}
             <tbody>
-                <tr>
-                    <th>{{ prati.getPraNom }}</th>
-                    <th>{{ prati.getPraPrenom }}</th>
-                    <th>{{ prati.getPraAdresse }}</th>
-                    <th>{{ prati.getPraVille }}</th>
-                    <th>{{ prati.getPraCp }}</th>
-                    <th>{{ prati.getPraCoefnotoriete }}</th>
-                    <th>{{ prati.getTypCode }}</th>
-                </tr> 
-            <tbody>
-             {% endfor %}
+        
         </table>
 	</div>
 	
 	
-<script>
-$(document).ready( function () {
-    $('#table_id').DataTable();
-} );
-
-$('#table_id').DataTable( {
-    paging: true
-} );
-
-
-</script>	
 
 {% endblock %}
