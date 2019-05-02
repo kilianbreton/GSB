@@ -2,12 +2,10 @@ index:
     path: /
     controller: App\Controller\MainController::addAction
 
+
+    
 praticien:
     path: /praticien
-    controller: App\Controller\MainController::addAction
-    
-triePraticien:
-    path: /triePraticien
     controller: App\Controller\triePraticienController::triePrat
     
 #triePraticien:

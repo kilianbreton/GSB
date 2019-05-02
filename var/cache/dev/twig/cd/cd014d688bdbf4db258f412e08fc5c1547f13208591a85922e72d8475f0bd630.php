@@ -20,7 +20,6 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
             'body' => [$this, 'block_body'],
             'javascripts' => [$this, 'block_javascripts'],
             'praticien' => [$this, 'block_praticien'],
-            'triePraticien' => [$this, 'block_triePraticien'],
             'medicament' => [$this, 'block_medicament'],
         ];
     }
@@ -68,33 +67,26 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
         // line 49
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("praticien");
         echo ">PRATICIEN</a></li>
-\t\t\t\t<li><a  href=";
-        // line 50
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("triePraticien");
-        echo ">TRIE PRATICIEN</a></li>
 \t\t\t\t<li><a  href=\"rapport_visite.php\">COMPTE-RENDUS</a></li>
 \t\t\t</ul>
 \t\t</nav>
 \t\t
         ";
-        // line 55
+        // line 54
         $this->displayBlock('body', $context, $blocks);
-        // line 56
+        // line 55
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 57
+        // line 56
         echo "        
 \t    
 \t    ";
-        // line 59
+        // line 58
         $this->displayBlock('praticien', $context, $blocks);
-        // line 60
-        echo "\t    ";
-        $this->displayBlock('triePraticien', $context, $blocks);
-        // line 61
+        // line 59
         echo "\t    ";
         $this->displayBlock('medicament', $context, $blocks);
-        // line 62
+        // line 60
         echo "\t    
        <!--  <div id=\"piedDePage\">\t
         \t<footer>
@@ -207,7 +199,7 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 
     }
 
-    // line 55
+    // line 54
     public function block_body($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -224,7 +216,7 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 
     }
 
-    // line 56
+    // line 55
     public function block_javascripts($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -241,7 +233,7 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 
     }
 
-    // line 59
+    // line 58
     public function block_praticien($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -258,24 +250,7 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 
     }
 
-    // line 60
-    public function block_triePraticien($context, array $blocks = [])
-    {
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "triePraticien"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "triePraticien"));
-
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 61
+    // line 59
     public function block_medicament($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -304,7 +279,7 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 
     public function getDebugInfo()
     {
-        return array (  279 => 61,  262 => 60,  245 => 59,  228 => 56,  211 => 55,  194 => 42,  154 => 10,  149 => 9,  140 => 8,  122 => 7,  98 => 62,  95 => 61,  92 => 60,  90 => 59,  86 => 57,  83 => 56,  81 => 55,  73 => 50,  69 => 49,  64 => 47,  56 => 42,  51 => 39,  49 => 8,  45 => 7,  37 => 1,);
+        return array (  254 => 59,  237 => 58,  220 => 55,  203 => 54,  186 => 42,  146 => 10,  141 => 9,  132 => 8,  114 => 7,  90 => 60,  87 => 59,  85 => 58,  81 => 56,  78 => 55,  76 => 54,  68 => 49,  63 => 47,  55 => 42,  50 => 39,  48 => 8,  44 => 7,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -358,7 +333,6 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
 \t\t\t\t<li><a  href={{ path('medicament') }}>MÉDICAMENT</a></li>
 \t\t\t\t<li><a  href=\"visiteur.php\">VISITEUR</a></li>
 \t\t\t\t<li><a  href={{ path('praticien') }}>PRATICIEN</a></li>
-\t\t\t\t<li><a  href={{ path('triePraticien') }}>TRIE PRATICIEN</a></li>
 \t\t\t\t<li><a  href=\"rapport_visite.php\">COMPTE-RENDUS</a></li>
 \t\t\t</ul>
 \t\t</nav>
@@ -368,7 +342,6 @@ class __TwigTemplate_2deceab04a3e47d3e3172a36bcc8a5b561c8ab9d7887de64c5a1b2e7dd0
         
 \t    
 \t    {% block praticien %}{% endblock %}
-\t    {% block triePraticien %}{% endblock %}
 \t    {% block medicament %}{% endblock %}
 \t    
        <!--  <div id=\"piedDePage\">\t

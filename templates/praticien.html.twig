@@ -1,38 +1,49 @@
-
+  
 {% extends 'base.html.twig' %}
 
 {% block h1 %}Praticien{% endblock %}
 
 
+{% block praticien %}   
+    	   		
+   		
+   <div class="container">        
+        <table id="table_id" class="table" style="width:100%">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Adresse</th>
+                    <th>Ville</th>
+                    <th>CP</th>
+                    <th>Coef</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+            {% for prati in praticiens %}
+               	   <tr>
+                    	<td>{{ prati.getPraNom }}</td>
 
-{% block praticien %}    
- <div class="container">
-                 {{ form_start(selectprat) }}
-   				 {{ form_end(selectprat) }}
+                   		<td>{{ prati.getPraPrenom }}</td>
 
-   				<table class="table">
-   					<thead class="thead-dark">
-           				<tr>
-                            <th>Nom</th>
-                            <th>Prenom</th>
-                            <th>Adresse</th>
-                            <th>Ville</th>
-                            <th>CP</th>
-                            <th>Coef</th>
-                            <th>Type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>{{ prat.getPraNom }}</th>
-                            <th>{{ prat.getPraPrenom }}</th>
-                            <th>{{ prat.getPraAdresse }}</th>
-                            <th>{{ prat.getPraVille }}</th>
-                            <th>{{ prat.getPraCp }}</th>
-                            <th>{{ prat.getPraCoefnotoriete }}</th>
-                            <th>{{ prat.getTypCode }}</th>
-                   		</tr> 
-               		</tbody>
-   				</table>
-   </div>	
+                    	<td>{{ prati.getPraAdresse }}</td>
+
+                   		<td>{{ prati.getPraVille }}</td>
+
+                    	<td>{{ prati.getPraCp }}</td>
+
+                    	<td>{{ prati.getPraCoefnotoriete }}</td>
+
+                    	<td>{{ prati.getTypCode }}</td>
+                    </tr> 
+    		{% endfor %}
+            <tbody>
+        
+        </table>
+	</div>
+	
+	
+
 {% endblock %}

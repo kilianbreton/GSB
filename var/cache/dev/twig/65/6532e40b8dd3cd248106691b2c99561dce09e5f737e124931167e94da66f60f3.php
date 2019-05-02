@@ -72,7 +72,7 @@ class __TwigTemplate_3f7bd37b1fe6c75174826d10650c01b575d8c6b8355779cb1d1e1f4c1eb
     \t   \t\t
    \t\t
    <div class=\"container\">        
-        <table id=\"table_id\" class=\"display\" style=\"width:100%\">
+        <table id=\"table_id\" class=\"table\" style=\"width:100%\">
             <thead class=\"thead-dark\">
                 <tr>
                     <th>Nom</th>
@@ -128,7 +128,7 @@ class __TwigTemplate_3f7bd37b1fe6c75174826d10650c01b575d8c6b8355779cb1d1e1f4c1eb
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["prati"], "getTypCode", []), "html", null, true);
             echo "</td>
                     </tr> 
-     ";
+    \t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['prati'], $context['_parent'], $context['loop']);
@@ -177,7 +177,7 @@ class __TwigTemplate_3f7bd37b1fe6c75174826d10650c01b575d8c6b8355779cb1d1e1f4c1eb
     \t   \t\t
    \t\t
    <div class=\"container\">        
-        <table id=\"table_id\" class=\"display\" style=\"width:100%\">
+        <table id=\"table_id\" class=\"table\" style=\"width:100%\">
             <thead class=\"thead-dark\">
                 <tr>
                     <th>Nom</th>
@@ -207,7 +207,7 @@ class __TwigTemplate_3f7bd37b1fe6c75174826d10650c01b575d8c6b8355779cb1d1e1f4c1eb
 
                     \t<td>{{ prati.getTypCode }}</td>
                     </tr> 
-     {% endfor %}
+    \t\t{% endfor %}
             <tbody>
         
         </table>

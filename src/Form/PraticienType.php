@@ -25,7 +25,6 @@ class PraticienType extends AbstractType
 
               ->add('rechercher', SubmitType::class, ['label' => 'rechercher'])
          
-
               ->getForm();
               
         ;
