@@ -2,26 +2,32 @@
 
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
-            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ManyToOne'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ManyToOne')),
+            clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+            clone ($p['Doctrine\\ORM\\Mapping\\ManyToOne'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ManyToOne')),
             clone ($p['Doctrine\\ORM\\Mapping\\JoinColumn'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\JoinColumn')),
         ],
         null,
         [
             'stdClass' => [
-                'targetEntity' => [
-                    'Visiteur',
-                ],
                 'name' => [
-                    1 => 'VIS_MATRICULE',
+                    'VIS_MATRICULE',
+                    2 => 'VIS_MATRICULE',
+                ],
+                'length' => [
+                    10,
+                ],
+                'targetEntity' => [
+                    1 => 'Visiteur',
                 ],
                 'referencedColumnName' => [
-                    1 => 'VIS_MATRICULE',
+                    2 => 'VIS_MATRICULE',
                 ],
             ],
         ],
         [
             $o[0],
             $o[1],
+            $o[2],
         ],
         []
     );

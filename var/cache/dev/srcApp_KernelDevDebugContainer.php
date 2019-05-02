@@ -16,6 +16,6 @@ if (!\class_exists(srcApp_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerUFgsDgL\srcApp_KernelDevDebugContainer([
     'container.build_hash' => 'UFgsDgL',
-    'container.build_id' => '84ba85e5',
-    'container.build_time' => 1556789963,
+    'container.build_id' => '5839095e',
+    'container.build_time' => 1556800020,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerUFgsDgL');

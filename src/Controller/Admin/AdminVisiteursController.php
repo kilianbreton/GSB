@@ -27,6 +27,7 @@ class AdminVisiteursController extends AbstractController
         $repo = $this->getDoctrine()->getRepository(Visiteur::class);
 
         $visiteurs = $repo->findAll();
+        dump($visiteurs);
         return $this->render('admin/visiteurs/visiteurs.html.twig',[
             "visiteurs" => $visiteurs  
         ]);

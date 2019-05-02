@@ -31,13 +31,13 @@ class RapportVisiteType extends AbstractType
     {
         $builder
         
-        ->add('visMatricule', EntityType::class, [
+      /*  ->add('visMatricule', EntityType::class, [
           'class'=> Visiteur::class,
            'choice_label'=> 'visMatricule'
-        ])
+        ])*/
          ->add('praNum', EntityType::class, [
             'class'=> Praticien::class,
-             'choice_label'=> 'praNum',
+             'choice_label'=> 'praNom',
          ])
          ->add('rapDate', DateType::class, [
  
@@ -48,8 +48,7 @@ class RapportVisiteType extends AbstractType
          ->add('rapMotif', TextareaType::class, [
              
          ])
-         ->add('data',TextareaType::class,[
-            
+         ->add('data',HiddenType::class,[
          ])
 
         ;

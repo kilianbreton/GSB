@@ -26,6 +26,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 class RapportVisite
 {
     /**
+     * @ORM\Column(name="VIS_MATRICULE", type="string", length=10, nullable=false)
      * @ManyToOne(targetEntity="Visiteur")
      * @JoinColumn(name="VIS_MATRICULE", referencedColumnName="VIS_MATRICULE")
      */
@@ -33,14 +34,15 @@ class RapportVisite
 
     /**
      * @var int
-     *
      * @ORM\Column(name="RAP_NUM", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
      */
     private $rapNum;
+
     /**
      * @var Praticien|null
+     * @ORM\Column(name="PRA_NUM", type="integer", nullable=false)
      * @OneToOne(targetEntity="Praticien")
      * @JoinColumn(name="PRA_NUM", referencedColumnName="PRA_NUM")
      */
@@ -87,7 +89,7 @@ class RapportVisite
 
     public $totalmeds;
 
-    public function getVisMatricule(): ?Visiteur
+    public function getVisMatricule(): ?string
     {
         return $this->visMatricule;
     }
@@ -97,12 +99,16 @@ class RapportVisite
         return $this->rapNum;
     }
 
-    public function getPraNum(): ?Praticien
+    public function setRapNum(int $num){
+        $this->rapNum = $num;
+    }
+
+    public function getPraNum(): ?int
     {
         return $this->praNum;
     }
 
-    public function setPraNum(int $praNum): self
+    public function setPraNum(?Praticien $praNum): self
     {
         $this->praNum = $praNum;
 
@@ -113,9 +119,9 @@ class RapportVisite
         return $this->rapDate->format('Y-m-d H:i:s');
     }
 
-    public function getRapDate(): ?\DateTimeInterface
+    public function getRapDate(): string
     {
-        return $this->rapDate;
+        return $this->rapDate->format('Y-m-d H:i:s');;
     }
 
     public function setRapDate(?\DateTimeInterface $rapDate): self
@@ -154,10 +160,9 @@ class RapportVisite
         return $repo->findByVisRap($this->rapNum,$this->visMatricule);
     }
 
-    public function setVisMatricule(string $vismat){
-        $this->visMatricule = $vismat;
+    public function setVisMatricule(?Visiteur $vismat){
+        $this->visMatricule = $vismat->getVisMatricule();
     }
-
 /*
     public function getOffrir()
     {

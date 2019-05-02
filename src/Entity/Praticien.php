@@ -20,7 +20,6 @@ class Praticien
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      * @ORM\OneToMany(targetEntity="App\Entity\Inviter", mappedBy="praNum")
-     * @ORM\OneToMany(targetEntity="App\Entity\RapportVisite", mappedBy="praNum")
      * @ORM\OneToMany(targetEntity="App\Entity\Posseder", mappedBy="praNum")
      */
     private $praNum;

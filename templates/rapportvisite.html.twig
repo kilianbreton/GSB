@@ -10,26 +10,15 @@ RAPPORT VISTE
   <input type='submit' id='submit' hidden/>
   <br/>
   <select id='med_select'>
+	    {% for med in meds %}
+       <option id="{{ med.getMedDepotLegal }}">{{med.getMedNomCommercial}}</option>
+      {% endfor %}
   </select>
   <br/>
   quantite : <input id='qte' />
   <input id='listemedic' hidden />
     <script>
-    var listemedic = document.getElementById("listemedic");
-   	  var test = [];
-   	  
-      {% for med in meds %}
-    
-       test.push({{ med.medNomcommercial|json_encode()|raw }});
-       
-    
-      {% endfor %}
-      var medSelect = document.getElementById('med_select');
-      test.forEach(function(element){
-		medSelect.innerHTML += '<option>'+element+'</option>';
-       });
-      
-
+  
   	function envoyerMedicaments(){
   		var xhr = new XMLHttpRequest();
   		xhr.open("POST", '/rapportvisite', true);
@@ -50,11 +39,13 @@ RAPPORT VISTE
 	
 	function ajouterLigne()
 	{
-		var medicindex = document.getElementById('med_select').selectedIndex;
-		var medic = document.getElementById('med_select').value;
+		var med = document.getElementById('med_select');
+		var medicindex = med.selectedIndex;
+		var medic = med.value;
+		//var selected = document.getElementById("mySelect").options[medicindex].id
 		var qte = document.getElementById('qte').value
 		var tableau = document.getElementById("tableau");
-		
+		var listemedic = document.getElementById("rapport_visite_data");
 		
 		listemedic.value = listemedic.value + medicindex + "," + qte + ";";
 		var ligne = tableau.insertRow(-1);//on a ajouté une ligne

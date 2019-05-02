@@ -15,29 +15,76 @@ class RapportVisiteController extends AbstractController
 {
     
    
+
+
+
+    public function list(Request $request){
+        $visiteur = $this->getUser(); 
+        $rapports = $this->getDoctrine()->getRepository(RapportVisite::class)->findByVisMatricule($visiteur->getVisMatricule());
+        dump($rapports);
+        return $this->render('rapports.html.twig',[
+            "rapports" => $rapports 
+        ]);
+    }
+
+
+
  
     public function index(Request $request)
-    {
-        $listmedic = $request->query->get('listemedic');
-        $ret = '';
-        
+    {   
         $meds = $this->getDoctrine()->getRepository(Medicament::class)->findAll();
+        $visiteur = $this->getUser(); 
+        $rapports = $this->getDoctrine()->getRepository(RapportVisite::class)->findByVisMatricule($visiteur->getVisMatricule());
         $rapport = new RapportVisite();
         $form = $this->createForm(RapportVisiteType::class,$rapport);
         $form->handleRequest($request);
+        dump($rapport);
 
         if($form->isSubmitted() && $form->isValid()){
+           
+
+            //Set composite PrimaryKey-----------------------------------------------------------------------------
+            $rapport->setRapNum($rapports[count($rapports) - 1]->getRapNum() + 1);
+            $rapport->setVisMatricule($visiteur);
+        
+            //Manage Offrir----------------------------------------------------------------------------------------
+            $data = $this->Parse($rapport->getData(), $meds, $rapport);
+            dump($data);
+           
+            //Persist----------------------------------------------------------------------------------------------
             $em = $this->getDoctrine()->getManager();
+            foreach($data as $off){
+                $em->persist($off);
+            }
+                
+            $em->persist($rapport);
             $em->flush();
-            dump($rapport);
-            return new Response('test');
+            
+          
+
             // return $this->redirectToRoute("admin.visiteurs");
         }
 
-        $ret = $this->render('rapportvisite.html.twig',['form'=>$form->createView(),'meds'=>$meds]);
+        return $this->render('rapportvisite.html.twig',['form'=>$form->createView(),'meds'=>$meds]);
         
         
    
-        return $ret;
     }
+
+    
+    private function Parse($f, $meds, $rapport){
+        $tab1 = explode(";", $f);
+        $tab = array();
+        for($i=0; $i<count($tab1)-1; $i++){
+            $tinfo = explode(",", $tab1[$i]);
+           // $tab[$i][0] = $tinfo[0];
+            $tab[$i] = new Offrir();
+            $tab[$i]->setVisMatricule($rapport->getVisMatricule());
+            $tab[$i]->setRapNum($rapport->getRapNum());
+            $tab[$i]->setMedDepotLegal($meds[$tinfo[0]]->getMedDepotLegal());
+            $tab[$i]->setOffQte($tinfo[1]);
+        }
+        return $tab;
+    }
+
 }

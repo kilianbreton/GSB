@@ -72,39 +72,29 @@ class __TwigTemplate_99a6b9519c3b1c3facce2d27d1cdbc61e75f5b8886e474cb9add943de33
   <input type='submit' id='submit' hidden/>
   <br/>
   <select id='med_select'>
-  </select>
-  <br/>
-  quantite : <input id='qte' />
-  <input id='listemedic' hidden />
-    <script>
-    var listemedic = document.getElementById(\"listemedic\");
-   \t  var test = [];
-   \t  
-      ";
-        // line 21
+\t    ";
+        // line 13
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["meds"]) || array_key_exists("meds", $context) ? $context["meds"] : (function () { throw new Twig_Error_Runtime('Variable "meds" does not exist.', 21, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["meds"]) || array_key_exists("meds", $context) ? $context["meds"] : (function () { throw new Twig_Error_Runtime('Variable "meds" does not exist.', 13, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["med"]) {
-            // line 22
-            echo "    
-       test.push(";
-            // line 23
-            echo json_encode(twig_get_attribute($this->env, $this->source, $context["med"], "medNomcommercial", []));
-            echo ");
-       
-    
+            // line 14
+            echo "       <option id=\"";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["med"], "getMedDepotLegal", []), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["med"], "getMedNomCommercial", []), "html", null, true);
+            echo "</option>
       ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['med'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 27
-        echo "      var medSelect = document.getElementById('med_select');
-      test.forEach(function(element){
-\t\tmedSelect.innerHTML += '<option>'+element+'</option>';
-       });
-      
-
+        // line 16
+        echo "  </select>
+  <br/>
+  quantite : <input id='qte' />
+  <input id='listemedic' hidden />
+    <script>
+  
   \tfunction envoyerMedicaments(){
   \t\tvar xhr = new XMLHttpRequest();
   \t\txhr.open(\"POST\", '/rapportvisite', true);
@@ -125,11 +115,13 @@ class __TwigTemplate_99a6b9519c3b1c3facce2d27d1cdbc61e75f5b8886e474cb9add943de33
 \t
 \tfunction ajouterLigne()
 \t{
-\t\tvar medicindex = document.getElementById('med_select').selectedIndex;
-\t\tvar medic = document.getElementById('med_select').value;
+\t\tvar med = document.getElementById('med_select');
+\t\tvar medicindex = med.selectedIndex;
+\t\tvar medic = med.value;
+\t\t//var selected = document.getElementById(\"mySelect\").options[medicindex].id
 \t\tvar qte = document.getElementById('qte').value
 \t\tvar tableau = document.getElementById(\"tableau\");
-\t\t
+\t\tvar listemedic = document.getElementById(\"rapport_visite_data\");
 \t\t
 \t\tlistemedic.value = listemedic.value + medicindex + \",\" + qte + \";\";
 \t\tvar ligne = tableau.insertRow(-1);//on a ajouté une ligne
@@ -190,7 +182,7 @@ class __TwigTemplate_99a6b9519c3b1c3facce2d27d1cdbc61e75f5b8886e474cb9add943de33
 
     public function getDebugInfo()
     {
-        return array (  102 => 27,  92 => 23,  89 => 22,  85 => 21,  69 => 8,  65 => 7,  61 => 6,  57 => 5,  53 => 3,  44 => 2,  15 => 1,);
+        return array (  92 => 16,  81 => 14,  77 => 13,  69 => 8,  65 => 7,  61 => 6,  57 => 5,  53 => 3,  44 => 2,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -207,26 +199,15 @@ RAPPORT VISTE
   <input type='submit' id='submit' hidden/>
   <br/>
   <select id='med_select'>
+\t    {% for med in meds %}
+       <option id=\"{{ med.getMedDepotLegal }}\">{{med.getMedNomCommercial}}</option>
+      {% endfor %}
   </select>
   <br/>
   quantite : <input id='qte' />
   <input id='listemedic' hidden />
     <script>
-    var listemedic = document.getElementById(\"listemedic\");
-   \t  var test = [];
-   \t  
-      {% for med in meds %}
-    
-       test.push({{ med.medNomcommercial|json_encode()|raw }});
-       
-    
-      {% endfor %}
-      var medSelect = document.getElementById('med_select');
-      test.forEach(function(element){
-\t\tmedSelect.innerHTML += '<option>'+element+'</option>';
-       });
-      
-
+  
   \tfunction envoyerMedicaments(){
   \t\tvar xhr = new XMLHttpRequest();
   \t\txhr.open(\"POST\", '/rapportvisite', true);
@@ -247,11 +228,13 @@ RAPPORT VISTE
 \t
 \tfunction ajouterLigne()
 \t{
-\t\tvar medicindex = document.getElementById('med_select').selectedIndex;
-\t\tvar medic = document.getElementById('med_select').value;
+\t\tvar med = document.getElementById('med_select');
+\t\tvar medicindex = med.selectedIndex;
+\t\tvar medic = med.value;
+\t\t//var selected = document.getElementById(\"mySelect\").options[medicindex].id
 \t\tvar qte = document.getElementById('qte').value
 \t\tvar tableau = document.getElementById(\"tableau\");
-\t\t
+\t\tvar listemedic = document.getElementById(\"rapport_visite_data\");
 \t\t
 \t\tlistemedic.value = listemedic.value + medicindex + \",\" + qte + \";\";
 \t\tvar ligne = tableau.insertRow(-1);//on a ajouté une ligne

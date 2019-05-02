@@ -19,6 +19,10 @@ profile:
 
 rapport:
     path: /rapports
+    controller: App\Controller\RapportVisiteController::list
+
+newrapport:
+    path: /newrapport
     controller: App\Controller\RapportVisiteController::index
 
 #VISITEURS#########################################################################################################

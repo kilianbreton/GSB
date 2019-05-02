@@ -1,0 +1,41 @@
+{% extends 'index.html.twig' %}
+
+{% block content %}   
+    	   		
+   		
+   <div class="container">        
+        <table id="table_id" class="display" style="width:100%">
+            <thead class="thead-dark">
+                <tr>
+                    <th>N°</th>
+                    <th>Praticien</th>
+                    <th>Date</th>
+                    <th>Motif</th>
+                    <th>Bilan</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+            {% for rapport in rapports %}
+               	   <tr>
+                    	<td>{{ rapport.getRapNum}}</td>
+
+                   		<td>{{ rapport.getPraNum}}</td>
+
+                    	<td>{{ rapport.getRapDate }}</td>
+
+                   		<td>{{ rapport.getRapMotif}}</td>
+
+                    	<td>{{ rapport.getRapBilan }}</td>
+
+                    
+                    </tr> 
+    		{% endfor %}
+            <tbody>
+        
+        </table>
+	</div>
+	
+	
+
+{% endblock %}

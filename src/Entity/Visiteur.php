@@ -118,7 +118,7 @@ class Visiteur implements UserInterface,\Serializable
         return $this->visMatricule;
     }
 
-    public function setVisMatricule(Visiteur $vismat){
+    public function setVisMatricule(?Visiteur $vismat){
         $this->visMatricule = $vismat->getVisMatricule();
     }
 
