@@ -1504,3 +1504,13 @@ e98dc7,127.0.0.1,GET,http://localhost:8000/praticien,1556789578,8bfff8,200
 d73744,127.0.0.1,GET,http://localhost:8000/praticien,1556789611,58c271,200
 58c271,127.0.0.1,GET,http://localhost:8000/praticien,1556789611,,500
 b48692,127.0.0.1,GET,http://localhost:8000/praticien,1556789655,,200
+5eb992,127.0.0.1,GET,http://localhost:8000/index.php/,1556789742,a38191,200
+a38191,127.0.0.1,GET,http://localhost:8000/index.php/,1556789742,,500
+f1468b,127.0.0.1,GET,http://localhost:8000/medicament,1556789745,,200
+e29646,127.0.0.1,GET,http://localhost:8000/praticien,1556789751,,200
+4ffe49,127.0.0.1,GET,http://localhost:8000/medicament,1556789756,,200
+576aaa,127.0.0.1,GET,http://localhost:8000/medicament,1556790195,,200
+3c1650,127.0.0.1,GET,http://localhost:8000/medicament,1556790224,,200
+f7e93b,127.0.0.1,GET,http://localhost:8000/medicament,1556790265,,200
+31bcdc,127.0.0.1,GET,http://localhost:8000/medicament,1556790300,,200
+2e1b85,127.0.0.1,GET,http://localhost:8000/medicament,1556790419,,200

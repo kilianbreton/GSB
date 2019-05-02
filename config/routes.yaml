@@ -12,9 +12,7 @@ praticien:
     #path: /triePraticien/{type}
     #controller: App\Controller\triePraticienController::triePraticien
 
-    
+
 medicament:
     path: /medicament
-    controller: App\Controller\MainController::addAction2
-
-    
+    controller: App\Controller\trieMedocController::trieMedoc
