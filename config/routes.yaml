@@ -16,7 +16,14 @@ logout:
 profile:
     path: /profile
     controller: App\Controller\Admin\AdminVisiteursController::editMe
+
+rapport:
+    path: /rapports
+    controller: App\Controller\RapportVisiteController::index
+
 #VISITEURS#########################################################################################################
+
+
 admin:
     path: /admin
     controller: App\Controller\AdminIndexController::index

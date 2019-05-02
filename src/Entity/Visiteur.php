@@ -118,6 +118,10 @@ class Visiteur implements UserInterface,\Serializable
         return $this->visMatricule;
     }
 
+    public function setVisMatricule(Visiteur $vismat){
+        $this->visMatricule = $vismat->getVisMatricule();
+    }
+
     public function getVisLogin(): ?string
     {
         return $this->visLogin;
@@ -228,21 +232,18 @@ class Visiteur implements UserInterface,\Serializable
     public function setVisSalt(string $visSalt): self
     {
         $this->visSalt = $visSalt;
-
         return $this;
     }
 
     public function setSecCode(?Secteur $secCode): self
     {
         $this->secCode = $secCode->getSecCode();
-
         return $this;
     }
 
     public function setLabCode(Labo $labCode): self
     {
         $this->labCode = $labCode->getLabCode();
-
         return $this;
     }
 

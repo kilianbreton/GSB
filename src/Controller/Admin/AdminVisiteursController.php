@@ -99,7 +99,7 @@ class AdminVisiteursController extends AbstractController
        // $visiteur = $this->repository->find($id);
        $visiteur = $this->getUser(); 
        $form = $this->createForm(VisiteurType::class,$visiteur);
-        
+         
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
@@ -109,12 +109,13 @@ class AdminVisiteursController extends AbstractController
             return $this->redirectToRoute("admin.visiteurs");
         }
 
-
-        return $this->render('admin/visiteurs/edit.html.twig', [
+       
+        return $this->render('edit.html.twig', [
             'current_menu' => 'visiteur',
             'visiteur'      => $visiteur,
-            'form'         => $form->createView()
+             'form'         => $form->createView()
         ]);
+        
 
     } 
 

@@ -37,6 +37,7 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
         'logout' => [[], [], [], [['text', '/logout']], [], []],
         'profile' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::editMe'], [], [['text', '/profile']], [], []],
+        'rapport' => [[], ['_controller' => 'App\\Controller\\RapportVisiteController::index'], [], [['text', '/rapports']], [], []],
         'admin' => [[], ['_controller' => 'App\\Controller\\AdminIndexController::index'], [], [['text', '/admin']], [], []],
         'admin.visiteurs' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::index'], [], [['text', '/admin/visiteur']], [], []],
         'del.visiteurs' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/del_vis']], [], []],

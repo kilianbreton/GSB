@@ -433,6 +433,21 @@
         <argument type="service" id=".service_locator.KTVqfp6.App\Controller\MedicamentController"/>
       </call>
     </service>
+    <service id="App\Controller\PraticienController" class="App\Controller\PraticienController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id="App\Repository\PraticienRepository"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.KTVqfp6.App\Controller\PraticienController"/>
+      </call>
+    </service>
+    <service id="App\Controller\RapportVisiteController" class="App\Controller\RapportVisiteController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.KTVqfp6.App\Controller\RapportVisiteController"/>
+      </call>
+    </service>
     <service id="App\Controller\SecurityController" class="App\Controller\SecurityController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -441,6 +456,9 @@
       </call>
     </service>
     <service id="App\Form\PraticienType" class="App\Form\PraticienType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\RapportVisiteType" class="App\Form\RapportVisiteType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\VisiteurType" class="App\Form\VisiteurType" autowire="true" autoconfigure="true">
@@ -724,6 +742,7 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\PraticienType</argument>
+        <argument>App\Form\RapportVisiteType</argument>
         <argument>App\Form\VisiteurType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
@@ -968,7 +987,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.POVju5c"/>
+      <argument type="service" id=".service_locator.wjeHQIi"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4472,11 +4491,19 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MedicamentController" class="App\Controller\MedicamentController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MedicamentController" class="App\Controller\MedicamentController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\MedicamentController" class="App\Controller\MedicamentController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\PraticienController" class="App\Controller\PraticienController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\PraticienController" class="App\Controller\PraticienController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\PraticienController" class="App\Controller\PraticienController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RapportVisiteController" class="App\Controller\RapportVisiteController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RapportVisiteController" class="App\Controller\RapportVisiteController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\RapportVisiteController" class="App\Controller\RapportVisiteController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PraticienType" class="App\Form\PraticienType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\PraticienType" class="App\Form\PraticienType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RapportVisiteType" class="App\Form\RapportVisiteType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\RapportVisiteType" class="App\Form\RapportVisiteType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\VisiteurType" class="App\Form\VisiteurType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\VisiteurType" class="App\Form\VisiteurType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MedicamentRepository" class="App\Repository\MedicamentRepository" autowire="true" abstract="true"/>
@@ -4721,10 +4748,11 @@
       <argument type="service" id="debug.argument_resolver.variadic.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.POVju5c" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.wjeHQIi" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\PraticienType" type="service" id="App\Form\PraticienType"/>
+        <argument key="App\Form\RapportVisiteType" type="service" id="App\Form\RapportVisiteType"/>
         <argument key="App\Form\VisiteurType" type="service" id="App\Form\VisiteurType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>
@@ -4952,6 +4980,18 @@
     <service id=".service_locator.KTVqfp6.App\Controller\MedicamentController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\MedicamentController"/>
       <argument>App\Controller\MedicamentController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.KTVqfp6" method="withContext"/>
+    </service>
+    <service id=".service_locator.KTVqfp6.App\Controller\PraticienController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\PraticienController"/>
+      <argument>App\Controller\PraticienController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.KTVqfp6" method="withContext"/>
+    </service>
+    <service id=".service_locator.KTVqfp6.App\Controller\RapportVisiteController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\RapportVisiteController"/>
+      <argument>App\Controller\RapportVisiteController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.KTVqfp6" method="withContext"/>
     </service>

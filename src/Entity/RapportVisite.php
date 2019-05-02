@@ -73,7 +73,17 @@ class RapportVisite
     * @var Offrir[]
     */
     public $meds;
-   
+
+    private $dataToParse;
+
+    public function getData() : ?string{
+        return $this->dataToParse;
+    }
+
+    public function setData(string $data){
+        $this->dataToParse = $data;
+    }
+
 
     public $totalmeds;
 
@@ -143,6 +153,11 @@ class RapportVisite
 
         return $repo->findByVisRap($this->rapNum,$this->visMatricule);
     }
+
+    public function setVisMatricule(string $vismat){
+        $this->visMatricule = $vismat;
+    }
+
 /*
     public function getOffrir()
     {

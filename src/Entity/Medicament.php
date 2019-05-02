@@ -65,6 +65,7 @@ class Medicament
      */
     private $medPrixechantillon;
 
+   
     public function getMedDepotlegal(): ?string
     {
         return $this->medDepotlegal;
