@@ -1,11 +1,16 @@
-
+{#} Page médicament {#} 
 {% extends 'base.html.twig' %}
 
-{% block h1 %}M�dicament{% endblock %}
+{% block title %}Médicament{% endblock %}
 
+{% block h1 %}Médicament{% endblock %}
 
+{% block medicament %}   
 
-{% block medicament %}    
+<!--  UTF-8 --> 
+<head>
+	<meta charset="UTF-8">
+</head>
 
    <div class="container">        
         <table id="table_id" class="table" style="width:100%">
@@ -20,28 +25,20 @@
                     <th>Prix</th>
                 </tr>
             </thead>
-            
             <tbody>
             {% for medi in medoc %}
                	   <tr>
                     	<td>{{ medi.getMedDepotlegal }}</td>
-
                    		<td>{{ medi.getMedNomcommercial }}</td>
-
                     	<td>{{ medi.getFamCode }}</td>
-
                    		<td>{{ medi.getMedComposition }}</td>
-
                     	<td>{{ medi.getMedEffets }}</td>
-
                     	<td>{{ medi.getMedContreindic }}</td>
-
                     	<td>{{ medi.getMedPrixechantillon }}</td>
                     </tr> 
     		{% endfor %}
             <tbody>
-        
         </table>
-	</div>
-				    
+	</div> 
+	   
 {% endblock %}

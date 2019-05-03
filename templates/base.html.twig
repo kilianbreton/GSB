@@ -1,32 +1,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-
-
-
         <title>{% block title %}GSB{% endblock %}</title>
         {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('CSS/base.css') }}">
         <link rel="stylesheet" href="{{ asset('CSS/Menu.css') }}">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="icon" type="image/png" href="/image/gsb.png" />
 		<meta charset="UTF-8">
 		
      	<link rel="stylesheet" type="text/css" href="/CSS/dataTables.bootstrap.min.css">
-    	
   		<link rel="stylesheet" type="text/css" href="/CSS/jquery.dataTables.min.css">
-
 		<link rel="stylesheet" type="text/css" href="/CSS/dataTables.bootstrap4.min.css">
-
-    
     	
 		<script type="text/javascript" charset="utf8" src="/js/jquery.js"></script>		
-   		
    		<script type="text/javascript" charset="utf8" src="/js/dataTables.dataTables.js"></script>	
-
    		<script type="text/javascript" charset="utf8" src="/js/dataTables.bootstrap4.min.js"></script>
-   	
    		<script type="text/javascript" charset="utf8" src="/js/jquery.dataTables.min.js"></script>	 
    		
+   		<!-- script affichage des tables pour trier -->
    		<script type="text/javascript">
             $(document).ready(function () {
                 $('#table_id').DataTable();
@@ -36,39 +28,27 @@
                 paging: true
             });
         </script>	
+               
         {% endblock %}          
     </head>
     <body>
     <h1>{% block h1 %}{% endblock %}</h1>
     
+    	<!-- nav en haut des pages -->
 		<nav>
 			<ul id="navigation">
-				<li><a  href="index.php">ACCUEIL</a></li>
+				<li><a  href={{ path('accueil') }}>ACCUEIL</a></li>
 				<li><a  href={{ path('medicament') }}>MÉDICAMENT</a></li>
 				<li><a  href="visiteur.php">VISITEUR</a></li>
 				<li><a  href={{ path('praticien') }}>PRATICIEN</a></li>
 				<li><a  href="rapport_visite.php">COMPTE-RENDUS</a></li>
 			</ul>
 		</nav>
-		
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-        
-	    
+      
+      	<!-- Insertion des pages -->
+	    {% block accueil %}{% endblock %}
 	    {% block praticien %}{% endblock %}
 	    {% block medicament %}{% endblock %}
-	    
-       <!--  <div id="piedDePage">	
-        	<footer>
-        		<div id="bloc1">
-            		<ul id="liens">
-            			<li><a href="#" title="Contact" >Contact</a></li>
-            			<li><a href="#" title="Developpeur" >Developpeur</a></li>
-            			<li><a href="#" title="Developpeur" >CGU</a></li>
-            		</ul>		
-        			<p>Galaxy Swiss Bourdin | Version 2.25 | 2019</p>		
-        		</div>
-        	</footer>
-        </div> -->
+
     </body>
 </html>

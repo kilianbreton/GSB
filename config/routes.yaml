@@ -1,17 +1,14 @@
 index:
     path: /
-    controller: App\Controller\MainController::addAction
+    controller: App\Controller\MainController::main
 
-
+accueil:
+    path: /accueil
+    controller: App\Controller\MainController::main
     
 praticien:
     path: /praticien
     controller: App\Controller\triePraticienController::triePrat
-    
-#triePraticien:
-    #path: /triePraticien/{type}
-    #controller: App\Controller\triePraticienController::triePraticien
-
 
 medicament:
     path: /medicament

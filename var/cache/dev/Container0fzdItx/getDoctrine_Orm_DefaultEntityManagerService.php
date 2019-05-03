@@ -45,6 +45,7 @@ $a->setNamingStrategy(new \Doctrine\ORM\Mapping\UnderscoreNamingStrategy());
 $a->setQuoteStrategy(new \Doctrine\ORM\Mapping\DefaultQuoteStrategy());
 $a->setEntityListenerResolver(new \Doctrine\Bundle\DoctrineBundle\Mapping\ContainerAwareEntityListenerResolver($this));
 $a->setRepositoryFactory(new \Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory(new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
+    'App\\Repository\\MedicamentRepository' => ['privates', 'App\\Repository\\MedicamentRepository', 'getMedicamentRepositoryService.php', true],
     'App\\Repository\\PraticienRepository' => ['privates', 'App\\Repository\\PraticienRepository', 'getPraticienRepositoryService.php', true],
 ])));
 

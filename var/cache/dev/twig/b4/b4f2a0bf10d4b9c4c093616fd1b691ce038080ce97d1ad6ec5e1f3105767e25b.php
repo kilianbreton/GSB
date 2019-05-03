@@ -14,6 +14,7 @@ class __TwigTemplate_5882f2c3f3f0f76b69d3e148afdd8903710b3cde7ed8aa6832bda00f098
         // line 2
         $this->parent = $this->loadTemplate("base.html.twig", "medicament.html.twig", 2);
         $this->blocks = [
+            'title' => [$this, 'block_title'],
             'h1' => [$this, 'block_h1'],
             'medicament' => [$this, 'block_medicament'],
         ];
@@ -42,6 +43,24 @@ class __TwigTemplate_5882f2c3f3f0f76b69d3e148afdd8903710b3cde7ed8aa6832bda00f098
     }
 
     // line 4
+    public function block_title($context, array $blocks = [])
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+
+        echo "MÃ©dicament";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 6
     public function block_h1($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -50,7 +69,7 @@ class __TwigTemplate_5882f2c3f3f0f76b69d3e148afdd8903710b3cde7ed8aa6832bda00f098
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "h1"));
 
-        echo "Médicament";
+        echo "MÃ©dicament";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -68,60 +87,81 @@ class __TwigTemplate_5882f2c3f3f0f76b69d3e148afdd8903710b3cde7ed8aa6832bda00f098
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "medicament"));
 
-        echo "    
- <div class=\"container\">
-                 ";
-        // line 10
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["selectmed"]) || array_key_exists("selectmed", $context) ? $context["selectmed"] : (function () { throw new Twig_Error_Runtime('Variable "selectmed" does not exist.', 10, $this->source); })()), 'form_start');
-        echo "
+        echo "   
+<!--  UTF-8 --> 
+<head>
+\t<meta charset=\"UTF-8\">
+</head>
 
-   \t\t\t\t ";
-        // line 12
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["selectmed"]) || array_key_exists("selectmed", $context) ? $context["selectmed"] : (function () { throw new Twig_Error_Runtime('Variable "selectmed" does not exist.', 12, $this->source); })()), 'form_end');
-        echo "
-   \t\t\t\t 
-   \t\t\t\t  <table class=\"table\">
-   \t\t\t\t\t<thead class=\"thead-dark\">
-           \t\t\t\t<tr>
-                            <th>Dépot légal</th>
-                            <th>Nom</th>
-                            <th>Code</th>
-                            <th>Composition</th>
-                            <th>Effets</th>
-                            <th>Contre indications</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>";
-        // line 27
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["medoc"]) || array_key_exists("medoc", $context) ? $context["medoc"] : (function () { throw new Twig_Error_Runtime('Variable "medoc" does not exist.', 27, $this->source); })()), "getMedDepotlegal", []), "html", null, true);
-        echo "</th>
-                            <th>";
-        // line 28
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["medoc"]) || array_key_exists("medoc", $context) ? $context["medoc"] : (function () { throw new Twig_Error_Runtime('Variable "medoc" does not exist.', 28, $this->source); })()), "getMedNomcommercial", []), "html", null, true);
-        echo "</th>
-                            <th>";
-        // line 29
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["medoc"]) || array_key_exists("medoc", $context) ? $context["medoc"] : (function () { throw new Twig_Error_Runtime('Variable "medoc" does not exist.', 29, $this->source); })()), "getFamCode", []), "html", null, true);
-        echo "</th>
-                            <th>";
+
+   <div class=\"container\">        
+        <table id=\"table_id\" class=\"table\" style=\"width:100%\">
+            <thead class=\"thead-dark\">
+                <tr>
+                    <th>Nom</th>
+                    <th>Nom commercial</th>
+                    <th>Code</th>
+                    <th>Composition</th>
+                    <th>Effets</th>
+                    <th>Contre-indications</th>
+                    <th>Prix</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+            ";
         // line 30
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["medoc"]) || array_key_exists("medoc", $context) ? $context["medoc"] : (function () { throw new Twig_Error_Runtime('Variable "medoc" does not exist.', 30, $this->source); })()), "getMedComposition", []), "html", null, true);
-        echo "</th>
-                            <th>";
-        // line 31
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["medoc"]) || array_key_exists("medoc", $context) ? $context["medoc"] : (function () { throw new Twig_Error_Runtime('Variable "medoc" does not exist.', 31, $this->source); })()), "getMedEffets", []), "html", null, true);
-        echo "</th>
-                            <th>";
-        // line 32
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["medoc"]) || array_key_exists("medoc", $context) ? $context["medoc"] : (function () { throw new Twig_Error_Runtime('Variable "medoc" does not exist.', 32, $this->source); })()), "getMedContreindic", []), "html", null, true);
-        echo "</th>
-                   \t\t</tr> 
-               \t\t</tbody>
-   \t\t\t\t</table>
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["medoc"]) || array_key_exists("medoc", $context) ? $context["medoc"] : (function () { throw new Twig_Error_Runtime('Variable "medoc" does not exist.', 30, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["medi"]) {
+            // line 31
+            echo "               \t   <tr>
+                    \t<td>";
+            // line 32
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["medi"], "getMedDepotlegal", []), "html", null, true);
+            echo "</td>
 
-   </div>\t\t\t\t    
+                   \t\t<td>";
+            // line 34
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["medi"], "getMedNomcommercial", []), "html", null, true);
+            echo "</td>
+
+                    \t<td>";
+            // line 36
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["medi"], "getFamCode", []), "html", null, true);
+            echo "</td>
+
+                   \t\t<td>";
+            // line 38
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["medi"], "getMedComposition", []), "html", null, true);
+            echo "</td>
+
+                    \t<td>";
+            // line 40
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["medi"], "getMedEffets", []), "html", null, true);
+            echo "</td>
+
+                    \t<td>";
+            // line 42
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["medi"], "getMedContreindic", []), "html", null, true);
+            echo "</td>
+
+                    \t<td>";
+            // line 44
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["medi"], "getMedPrixechantillon", []), "html", null, true);
+            echo "</td>
+                    </tr> 
+    \t\t";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['medi'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 47
+        echo "            <tbody>
+        
+        </table>
+\t</div>
+\t\t\t\t    
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -143,48 +183,62 @@ class __TwigTemplate_5882f2c3f3f0f76b69d3e148afdd8903710b3cde7ed8aa6832bda00f098
 
     public function getDebugInfo()
     {
-        return array (  118 => 32,  114 => 31,  110 => 30,  106 => 29,  102 => 28,  98 => 27,  80 => 12,  75 => 10,  63 => 8,  45 => 4,  15 => 2,);
+        return array (  160 => 47,  151 => 44,  146 => 42,  141 => 40,  136 => 38,  131 => 36,  126 => 34,  121 => 32,  118 => 31,  114 => 30,  82 => 8,  64 => 6,  46 => 4,  15 => 2,);
     }
 
     public function getSourceContext()
     {
-        return new Twig_Source("
+        return new Twig_Source("{#} Page mÃ©dicament {#} 
 {% extends 'base.html.twig' %}
 
-{% block h1 %}Médicament{% endblock %}
+{% block title %}MÃ©dicament{% endblock %}
+
+{% block h1 %}MÃ©dicament{% endblock %}
+
+{% block medicament %}   
+<!--  UTF-8 --> 
+<head>
+\t<meta charset=\"UTF-8\">
+</head>
 
 
+   <div class=\"container\">        
+        <table id=\"table_id\" class=\"table\" style=\"width:100%\">
+            <thead class=\"thead-dark\">
+                <tr>
+                    <th>Nom</th>
+                    <th>Nom commercial</th>
+                    <th>Code</th>
+                    <th>Composition</th>
+                    <th>Effets</th>
+                    <th>Contre-indications</th>
+                    <th>Prix</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+            {% for medi in medoc %}
+               \t   <tr>
+                    \t<td>{{ medi.getMedDepotlegal }}</td>
 
-{% block medicament %}    
- <div class=\"container\">
-                 {{ form_start(selectmed) }}
+                   \t\t<td>{{ medi.getMedNomcommercial }}</td>
 
-   \t\t\t\t {{ form_end(selectmed) }}
-   \t\t\t\t 
-   \t\t\t\t  <table class=\"table\">
-   \t\t\t\t\t<thead class=\"thead-dark\">
-           \t\t\t\t<tr>
-                            <th>Dépot légal</th>
-                            <th>Nom</th>
-                            <th>Code</th>
-                            <th>Composition</th>
-                            <th>Effets</th>
-                            <th>Contre indications</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>{{ medoc.getMedDepotlegal }}</th>
-                            <th>{{ medoc.getMedNomcommercial }}</th>
-                            <th>{{ medoc.getFamCode }}</th>
-                            <th>{{ medoc.getMedComposition }}</th>
-                            <th>{{ medoc.getMedEffets }}</th>
-                            <th>{{ medoc.getMedContreindic }}</th>
-                   \t\t</tr> 
-               \t\t</tbody>
-   \t\t\t\t</table>
+                    \t<td>{{ medi.getFamCode }}</td>
 
-   </div>\t\t\t\t    
+                   \t\t<td>{{ medi.getMedComposition }}</td>
+
+                    \t<td>{{ medi.getMedEffets }}</td>
+
+                    \t<td>{{ medi.getMedContreindic }}</td>
+
+                    \t<td>{{ medi.getMedPrixechantillon }}</td>
+                    </tr> 
+    \t\t{% endfor %}
+            <tbody>
+        
+        </table>
+\t</div>
+\t\t\t\t    
 {% endblock %}
 ", "medicament.html.twig", "C:\\Users\\HENQUINET.SIO\\git\\GSB\\templates\\medicament.html.twig");
     }
