@@ -1,0 +1,88 @@
+{% extends 'index.html.twig' %}
+{% block content %}
+RAPPORT VISTE
+
+  {{ form_start(form) }}
+	{{ form_widget(form) }}
+       <button class="btn btn-primary">{{ button|default('Enregistrer') }}</button>
+  {{ form_end(form) }}
+  <a id='envoyerXHR' href="javascript:envoyerMedicaments();">Envoyer</a> 
+  <input type='submit' id='submit' hidden/>
+  <br/>
+  <select id='med_select'>
+	    {% for med in meds %}
+       <option id="{{ med.getMedDepotLegal }}">{{med.getMedNomCommercial}}</option>
+      {% endfor %}
+  </select>
+  <br/>
+  quantite : <input id='qte' />
+  <input id='listemedic' hidden />
+    <script>
+  
+  	function envoyerMedicaments(){
+  		var xhr = new XMLHttpRequest();
+  		xhr.open("POST", '/rapportvisite', true);
+
+  		//Send the proper header information along with the request
+  		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+  		xhr.onreadystatechange = function() { // Call a function when the state changes.
+  		    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+  		        // Request finished. Do processing here.
+  		    }
+  		}
+  		xhr.send("listemedic="+listemedic.value);
+	
+  		document.getElementById('submit').click();
+  	 }
+	
+	
+	function ajouterLigne()
+	{
+		var med = document.getElementById('med_select');
+		var medicindex = med.selectedIndex;
+		var medic = med.value;
+		//var selected = document.getElementById("mySelect").options[medicindex].id
+		var qte = document.getElementById('qte').value
+		var tableau = document.getElementById("tableau");
+		var listemedic = document.getElementById("rapport_visite_data");
+		
+		listemedic.value = listemedic.value + medicindex + "," + qte + ";";
+		var ligne = tableau.insertRow(-1);//on a ajouté une ligne
+
+		var colonne1 = ligne.insertCell(0);//on a une ajouté une cellule
+		colonne1.innerHTML += medic;//on y met le contenu de titre
+
+		var colonne2 = ligne.insertCell(1);//on ajoute la seconde cellule
+		colonne2.innerHTML += qte;
+		
+	}
+	
+	function effacerTableau()
+	{
+		listemedic.value = '';
+		var tableau = document.getElementById("tableau");
+		var tableRows = tableau.getElementsByTagName('tr');
+		var rowCount = tableRows.length;
+		for(var x = rowCount-1; x>0; x--){
+			tableau.deleteRow(x);
+		}
+		
+	}
+    
+</script>
+</div>
+<a id="myLink" href="javascript:ajouterLigne();">Ajouter</a> <!-- appelle la fonction javascript ajouterligne()-->
+	<div id="tab_ech">
+		Offre d'echantillons : <br/>
+			
+		<table id="tableau" border='1px solid black'>
+			<tr>
+				<th>Medicament</th>
+				<th>Nombre d'echantillons</th>
+			</tr>
+		</table>
+	</div>
+	<a id="myLink" href="javascript:effacerTableau();">Effacer le tableau</a>
+</div>
+{% endblock %}

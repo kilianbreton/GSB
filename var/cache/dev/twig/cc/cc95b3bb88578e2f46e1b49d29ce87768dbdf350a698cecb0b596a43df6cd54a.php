@@ -916,6 +916,6 @@ class __TwigTemplate_9486c73f5f5115d42a4eb3e99d526561bac8bfde8b9c4e5def847825fe4
         </tbody>
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/translation.html.twig", "C:\\wamp64\\www\\gsbMVC\\GSB\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\translation.html.twig");
+", "@WebProfiler/Collector/translation.html.twig", "C:\\wamp64\\www\\GSB\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Collector\\translation.html.twig");
     }
 }

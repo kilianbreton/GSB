@@ -37,6 +37,9 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
         'logout' => [[], [], [], [['text', '/logout']], [], []],
         'profile' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::editMe'], [], [['text', '/profile']], [], []],
+        'rapport' => [[], ['_controller' => 'App\\Controller\\RapportVisiteController::list'], [], [['text', '/rapports']], [], []],
+        'showrapport' => [['id'], ['_controller' => 'App\\Controller\\RapportVisiteController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/showrapport']], [], []],
+        'newrapport' => [[], ['_controller' => 'App\\Controller\\RapportVisiteController::index'], [], [['text', '/newrapport']], [], []],
         'admin' => [[], ['_controller' => 'App\\Controller\\AdminIndexController::index'], [], [['text', '/admin']], [], []],
         'admin.visiteurs' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::index'], [], [['text', '/admin/visiteur']], [], []],
         'del.visiteurs' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/del_vis']], [], []],
@@ -47,6 +50,7 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
         'edit.praticien' => [['id'], ['_controller' => 'App\\Controller\\Admin\\AdminPraticienController::edit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/edit_prat']], [], []],
         'new.praticien' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminPraticienController::new'], [], [['text', '/admin/new_prat']], [], []],
         'admin.rapports' => [[], ['_controller' => 'App\\Controller\\Admin\\AdminRapportController:index'], [], [['text', '/admin/rapports']], [], []],
+        'admin.delrap' => [['idv', 'idr'], ['_controller' => 'App\\Controller\\Admin\\AdminRapportController:del'], [], [['variable', '/', '[^/]++', 'idr', true], ['variable', '/', '[^/]++', 'idv', true], ['text', '/admin/delrapport']], [], []],
         'medicaments' => [[], ['_controller' => 'App\\Controller\\MedicamentController:index'], [], [['text', '/medicaments']], [], []],
     ];
         }

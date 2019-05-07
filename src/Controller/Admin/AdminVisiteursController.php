@@ -27,6 +27,7 @@ class AdminVisiteursController extends AbstractController
         $repo = $this->getDoctrine()->getRepository(Visiteur::class);
 
         $visiteurs = $repo->findAll();
+        dump($visiteurs);
         return $this->render('admin/visiteurs/visiteurs.html.twig',[
             "visiteurs" => $visiteurs  
         ]);
@@ -78,11 +79,11 @@ class AdminVisiteursController extends AbstractController
 
     }
 
-
+ 
     public function delete($id,Request $request){
         $visiteur = $this->repository->find($id);
  
-        if($visiteur != null && $this->isCsrfTokenValid('delete_vis'.$visiteur->getMat(),$request->get('_TOKEN'))){
+        if($visiteur != null && $this->isCsrfTokenValid('delete_vis'.$visiteur->getVisMatricule(),$request->get('_TOKEN'))){
             dump("supp");
             $em = $this->getDoctrine()->getManager();
             $em->remove($visiteur);
@@ -99,7 +100,7 @@ class AdminVisiteursController extends AbstractController
        // $visiteur = $this->repository->find($id);
        $visiteur = $this->getUser(); 
        $form = $this->createForm(VisiteurType::class,$visiteur);
-        
+         
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
@@ -109,12 +110,13 @@ class AdminVisiteursController extends AbstractController
             return $this->redirectToRoute("admin.visiteurs");
         }
 
-
-        return $this->render('admin/visiteurs/edit.html.twig', [
+       
+        return $this->render('edit.html.twig', [
             'current_menu' => 'visiteur',
             'visiteur'      => $visiteur,
-            'form'         => $form->createView()
+             'form'         => $form->createView()
         ]);
+        
 
     } 
 

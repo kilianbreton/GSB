@@ -16,7 +16,22 @@ logout:
 profile:
     path: /profile
     controller: App\Controller\Admin\AdminVisiteursController::editMe
+
+rapport:
+    path: /rapports
+    controller: App\Controller\RapportVisiteController::list
+
+showrapport:
+    path: /showrapport/{id}
+    controller: App\Controller\RapportVisiteController::show
+
+newrapport:
+    path: /newrapport
+    controller: App\Controller\RapportVisiteController::index
+
 #VISITEURS#########################################################################################################
+
+
 admin:
     path: /admin
     controller: App\Controller\AdminIndexController::index
@@ -69,7 +84,9 @@ admin.rapports:
     path: /admin/rapports
     controller: App\Controller\Admin\AdminRapportController:index
 
-
+admin.delrap:
+    path: /admin/delrapport/{idv}/{idr}
+    controller: App\Controller\Admin\AdminRapportController:del
 
 #MEDICAMENTS#######################################################################################################################
 medicaments:

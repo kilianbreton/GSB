@@ -1,0 +1,42 @@
+{% extends 'index.html.twig' %}
+
+{% block content %}   
+   <div class="container">        
+        
+        <h1>Rapport de visite N° {{rapport.getRapNum}}</h1>
+
+        <h3>Praticien : </h3>
+
+        <h4>Motif :</h4>
+        <p>{{rapport.getRapMotif}}</p>
+
+        <h4>Bilan :</h4>
+        <p>{{rapport.getRapBilan}}</p>
+
+
+        <table id="table_id" class="display" style="width:100%">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Depot Legal</th>
+                    <th>Nom</th>
+                    <th>Qte</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+            {% for m in medics %}
+               	<tr>
+                    <td>{{m[0][0].getMedDepotlegal}}</td>
+                    <td>{{m[0][0].getMedNomCommercial}}</td>
+                    <td>{{m[1]}}</td>
+                    
+                </tr> 
+    		{% endfor %}
+            <tbody>
+        
+        </table>
+	</div>
+	
+	
+
+{% endblock %}

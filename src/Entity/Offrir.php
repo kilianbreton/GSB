@@ -61,10 +61,31 @@ class Offrir
         return $this->rapNum;
     }
 
-    public function getMedDepotlegal(): ?Medicament
+    public function getMedDepotlegal(): ?string
     {
         return $this->medDepotlegal;
     }
+    
+    public function setMedDepotLegal(string $med) : self
+    {
+        $this->medDepotlegal = $med;
+        return $this;
+    }
+
+    
+    public function setVisMatricule(string $mat) : self
+    {
+        $this->visMatricule = $mat;
+        return $this;
+    }
+
+    public function setRapNum(int $num) : self
+    {
+        $this->rapNum = $num;
+        return $this;
+    }
+
+    
 
     public function getOffQte(): ?int
     {

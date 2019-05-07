@@ -12,15 +12,15 @@ class __TwigTemplate_b7b328c5672c3984f4555c84de87f4c0d491d722f767b4fb3167404159d
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "admin/visiteurs/edit.html.twig", 1);
+        $this->parent = $this->loadTemplate("admin/index.html.twig", "admin/visiteurs/edit.html.twig", 1);
         $this->blocks = [
-            'body' => [$this, 'block_body'],
+            'content' => [$this, 'block_content'],
         ];
     }
 
     protected function doGetParent(array $context)
     {
-        return "base.html.twig";
+        return "admin/index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -41,13 +41,13 @@ class __TwigTemplate_b7b328c5672c3984f4555c84de87f4c0d491d722f767b4fb3167404159d
     }
 
     // line 3
-    public function block_body($context, array $blocks = [])
+    public function block_content($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 4
         echo "   
@@ -87,9 +87,9 @@ class __TwigTemplate_b7b328c5672c3984f4555c84de87f4c0d491d722f767b4fb3167404159d
 
     public function getSourceContext()
     {
-        return new Twig_Source("{% extends 'base.html.twig' %}
+        return new Twig_Source("{% extends 'admin/index.html.twig' %}
 
-{% block body %}
+{% block content %}
    
     <div class=\"container\">
         {{ include('admin/visiteurs/form.html.twig', {form: form, button: 'Enregistrer'}) }}
@@ -98,6 +98,6 @@ class __TwigTemplate_b7b328c5672c3984f4555c84de87f4c0d491d722f767b4fb3167404159d
 
 
 
-{% endblock %}", "admin/visiteurs/edit.html.twig", "C:\\wamp64\\www\\gsbMVC\\GSB\\templates\\admin\\visiteurs\\edit.html.twig");
+{% endblock %}", "admin/visiteurs/edit.html.twig", "C:\\wamp64\\www\\GSB\\templates\\admin\\visiteurs\\edit.html.twig");
     }
 }

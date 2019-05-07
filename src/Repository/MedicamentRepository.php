@@ -48,6 +48,16 @@ class MedicamentRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function findByMedDepotlegal($med): ?Medicament
+    {
+        return $this->createQueryBuilder('m')
+            ->andWhere('m.MED_DEPOTLEGAL = :MED')
+            ->andWhere('v.RAP_NUM = :rap')
+            ->setParameter('med', $med)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
 
     //'SELECT PRA_NOM, PRA_PRENOM FROM PRATICIEN'
     public function findAll()

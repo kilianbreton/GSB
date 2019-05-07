@@ -26,20 +26,24 @@ class AdminRapportController extends AbstractController
 
     public function index()
     {
-        $repo = $this->getDoctrine()->getRepository(RapportVisite::class);
-        $repo2 = $this->getDoctrine()->getRepository(Offrir::class);
-
-        $rapports = $repo->findAll();
-        dump($rapports);
-       
-        foreach($rapports as &$rap){
-            dump($rap->getMeds($repo2));
-        } 
+        $rapports = $this->getDoctrine()->getRepository(RapportVisite::class)->findAll();
         return $this->render('admin/rapports/rapports.html.twig',[
-            "rapports" => $rapports  
+            "rapports" => $rapports 
         ]);
     }
 
+
+    public function del(Request $req, $idr, $idv){
+        $rapport = $this->getDoctrine()->getRepository(RapportVisite::class)->findByRapNum([$idv,$idr]);
+        if($rapport != null){
+            dump($rapport);
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($rapport[0]);
+            $em->flush();
+            $this->addFlash("success","Le visiteur a bien été supprimé");
+        }
+        return $this->redirectToRoute("admin.rapports");
+    }
 
     public function new(Request $request)
     {
@@ -90,7 +94,7 @@ class AdminRapportController extends AbstractController
     public function delete($id,Request $request){
         $RapportVisite = $this->repository->find($id);
  
-        if($RapportVisite != null && $this->isCsrfTokenValid('delete_vis'.$RapportVisite->getMat(),$request->get('_TOKEN'))){
+        if($RapportVisite != null && $this->isCsrfTokenValid('delete_vis'.$RapportVisite->getVisMatricule(),$request->get('_TOKEN'))){
             dump("supp");
             $em = $this->getDoctrine()->getManager();
             $em->remove($RapportVisite);

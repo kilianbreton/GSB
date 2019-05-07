@@ -1,0 +1,12 @@
+{% extends 'index.html.twig' %}
+
+{% block content %}
+   
+    <div class="container">
+        {{ include('admin/visiteurs/form.html.twig', {form: form, button: 'Enregistrer'}) }}
+
+    </div>
+
+
+
+{% endblock %}

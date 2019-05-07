@@ -47,7 +47,7 @@ class AdminPraticienController extends AbstractController
             $em->persist($praticien);
             $em->flush();
             $this->addFlash("success","Le praticien a bien été créé");
-            return $this->redirectToRoute("admin.praticiens");
+            return $this->redirectToRoute("admin.praticien");
         }
 
         return $this->render('admin/praticiens/new.html.twig', [
@@ -92,7 +92,7 @@ class AdminPraticienController extends AbstractController
             $this->addFlash("success","Le praticien a bien été supprimé");
         }
 
-        return $this->redirectToRoute('admin.praticiens');
+        return $this->redirectToRoute('admin.praticien');
     }
     
 

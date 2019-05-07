@@ -12,15 +12,15 @@ class __TwigTemplate_8333e93425b469c9f04b879b2a00debb59f4ad37ef723fb9193acca9651
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "admin/visiteurs/visiteurs.html.twig", 1);
+        $this->parent = $this->loadTemplate("admin/index.html.twig", "admin/visiteurs/visiteurs.html.twig", 1);
         $this->blocks = [
-            'body' => [$this, 'block_body'],
+            'content' => [$this, 'block_content'],
         ];
     }
 
     protected function doGetParent(array $context)
     {
-        return "base.html.twig";
+        return "admin/index.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -41,13 +41,13 @@ class __TwigTemplate_8333e93425b469c9f04b879b2a00debb59f4ad37ef723fb9193acca9651
     }
 
     // line 2
-    public function block_body($context, array $blocks = [])
+    public function block_content($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 3
         echo "    <div class=\"container\">
@@ -77,35 +77,35 @@ class __TwigTemplate_8333e93425b469c9f04b879b2a00debb59f4ad37ef723fb9193acca9651
                 <tr>
                     <th>";
             // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vis"], "getMat", []), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vis"], "getVisMatricule", []), "html", null, true);
             echo "</th>
                     <th>";
             // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vis"], "getLogin", []), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vis"], "getVisLogin", []), "html", null, true);
             echo "</th>
                     <th>";
             // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vis"], "getNom", []), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vis"], "getVisNom", []), "html", null, true);
             echo "</th>
                     <th>";
             // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vis"], "getPrenom", []), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vis"], "getVisPrenom", []), "html", null, true);
             echo "</th>
                     <th>";
             // line 27
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vis"], "getAdresse", []), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vis"], "getVisAdresse", []), "html", null, true);
             echo "</th>
                     <th>";
             // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vis"], "getCp", []), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vis"], "getVisCp", []), "html", null, true);
             echo "</th>
                     <th>";
             // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vis"], "getVille", []), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vis"], "getVisVille", []), "html", null, true);
             echo "</th>
                     <th>";
             // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vis"], "getDateEmbauche", []), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["vis"], "getVisDateembaucheStr", []), "html", null, true);
             echo "</th>
                     <th>";
             // line 31
@@ -118,16 +118,16 @@ class __TwigTemplate_8333e93425b469c9f04b879b2a00debb59f4ad37ef723fb9193acca9651
                     <th>
                         <a href=\"";
             // line 34
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("edit.visiteurs", ["id" => twig_get_attribute($this->env, $this->source, $context["vis"], "getMat", [])]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("edit.visiteurs", ["id" => twig_get_attribute($this->env, $this->source, $context["vis"], "getVisMatricule", [])]), "html", null, true);
             echo "\" class=\"btn btn-secondary\">Editer</a>
                         <form method=\"POST\" action=\"";
             // line 35
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("del.visiteurs", ["id" => twig_get_attribute($this->env, $this->source, $context["vis"], "getMat", [])]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("del.visiteurs", ["id" => twig_get_attribute($this->env, $this->source, $context["vis"], "getVisMatricule", [])]), "html", null, true);
             echo "\" style=\"display: inline-block\" onsubmit=\"return confirm('Êtes vous sûr ?')\">
                             <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
                             <input type=\"hidden\" name=\"_TOKEN\" value=\"";
             // line 37
-            echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete_vis" . twig_get_attribute($this->env, $this->source, $context["vis"], "getMat", []))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken(("delete_vis" . twig_get_attribute($this->env, $this->source, $context["vis"], "getVisMatricule", []))), "html", null, true);
             echo "\">
                             <button class=\"btn btn-danger\">Supprimer</button>
                         </form>
@@ -141,7 +141,13 @@ class __TwigTemplate_8333e93425b469c9f04b879b2a00debb59f4ad37ef723fb9193acca9651
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 44
         echo "        </table>
+        <div class=\"text-right\">
+            <a href=\"";
+        // line 46
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("new.visiteurs");
+        echo "\" class=\"btn btn-primary\">Créer</a>
         </div>
+    </div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -163,13 +169,13 @@ class __TwigTemplate_8333e93425b469c9f04b879b2a00debb59f4ad37ef723fb9193acca9651
 
     public function getDebugInfo()
     {
-        return array (  143 => 44,  130 => 37,  125 => 35,  121 => 34,  116 => 32,  112 => 31,  108 => 30,  104 => 29,  100 => 28,  96 => 27,  92 => 26,  88 => 25,  84 => 24,  80 => 23,  76 => 21,  72 => 20,  53 => 3,  44 => 2,  15 => 1,);
+        return array (  147 => 46,  143 => 44,  130 => 37,  125 => 35,  121 => 34,  116 => 32,  112 => 31,  108 => 30,  104 => 29,  100 => 28,  96 => 27,  92 => 26,  88 => 25,  84 => 24,  80 => 23,  76 => 21,  72 => 20,  53 => 3,  44 => 2,  15 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Twig_Source("{% extends 'base.html.twig' %}
-{% block body %}
+        return new Twig_Source("{% extends 'admin/index.html.twig' %}
+{% block content %}
     <div class=\"container\">
         <table class=\"table table-striped\">
             <thead>
@@ -190,21 +196,21 @@ class __TwigTemplate_8333e93425b469c9f04b879b2a00debb59f4ad37ef723fb9193acca9651
             {% for vis in visiteurs %}
             <tbody>
                 <tr>
-                    <th>{{ vis.getMat }}</th>
-                    <th>{{ vis.getLogin }}</th>
-                    <th>{{ vis.getNom }}</th>
-                    <th>{{ vis.getPrenom }}</th>
-                    <th>{{ vis.getAdresse }}</th>
-                    <th>{{ vis.getCp }}</th>
-                    <th>{{ vis.getVille }}</th>
-                    <th>{{ vis.getDateEmbauche }}</th>
+                    <th>{{ vis.getVisMatricule }}</th>
+                    <th>{{ vis.getVisLogin }}</th>
+                    <th>{{ vis.getVisNom }}</th>
+                    <th>{{ vis.getVisPrenom }}</th>
+                    <th>{{ vis.getVisAdresse }}</th>
+                    <th>{{ vis.getVisCp }}</th>
+                    <th>{{ vis.getVisVille }}</th>
+                    <th>{{ vis.getVisDateembaucheStr }}</th>
                     <th>{{ vis.getLabCode }}</th>
                     <th>{{ vis.getSecCode }}</th>
                     <th>
-                        <a href=\"{{ path('edit.visiteurs', {id: vis.getMat}) }}\" class=\"btn btn-secondary\">Editer</a>
-                        <form method=\"POST\" action=\"{{ path('del.visiteurs', {id: vis.getMat}) }}\" style=\"display: inline-block\" onsubmit=\"return confirm('Êtes vous sûr ?')\">
+                        <a href=\"{{ path('edit.visiteurs', {id: vis.getVisMatricule}) }}\" class=\"btn btn-secondary\">Editer</a>
+                        <form method=\"POST\" action=\"{{ path('del.visiteurs', {id: vis.getVisMatricule}) }}\" style=\"display: inline-block\" onsubmit=\"return confirm('Êtes vous sûr ?')\">
                             <input type=\"hidden\" name=\"_method\" value=\"DELETE\">
-                            <input type=\"hidden\" name=\"_TOKEN\" value=\"{{ csrf_token(\"delete_vis\" ~ vis.getMat) }}\">
+                            <input type=\"hidden\" name=\"_TOKEN\" value=\"{{ csrf_token(\"delete_vis\" ~ vis.getVisMatricule) }}\">
                             <button class=\"btn btn-danger\">Supprimer</button>
                         </form>
                     </th>
@@ -212,7 +218,10 @@ class __TwigTemplate_8333e93425b469c9f04b879b2a00debb59f4ad37ef723fb9193acca9651
             <tbody>
             {% endfor %}
         </table>
+        <div class=\"text-right\">
+            <a href=\"{{ path('new.visiteurs') }}\" class=\"btn btn-primary\">Créer</a>
         </div>
-{% endblock %}", "admin/visiteurs/visiteurs.html.twig", "C:\\wamp64\\www\\gsbMVC\\GSB\\templates\\admin\\visiteurs\\visiteurs.html.twig");
+    </div>
+{% endblock %}", "admin/visiteurs/visiteurs.html.twig", "C:\\wamp64\\www\\GSB\\templates\\admin\\visiteurs\\visiteurs.html.twig");
     }
 }

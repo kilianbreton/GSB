@@ -37,7 +37,7 @@ class OffrirRepository extends ServiceEntityRepository
     */
 
   
-    public function findByVisRap($vis,$rap): ?Visiteur
+    public function findByRapNum($vis,$rap): ?Visiteur
     {
         return $this->createQueryBuilder('v')
             ->andWhere('v.VIS_MATRICULE = :vis')

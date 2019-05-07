@@ -396,6 +396,6 @@ class __TwigTemplate_d54aee83f1f8141481ab9e498b0c22072279342ce27e284e1aed3943d50
         </div>
     {% endfor %}
 {% endblock %}
-", "@Debug/Profiler/dump.html.twig", "C:\\wamp64\\www\\gsbMVC\\GSB\\vendor\\symfony\\debug-bundle\\Resources\\views\\Profiler\\dump.html.twig");
+", "@Debug/Profiler/dump.html.twig", "C:\\wamp64\\www\\GSB\\vendor\\symfony\\debug-bundle\\Resources\\views\\Profiler\\dump.html.twig");
     }
 }

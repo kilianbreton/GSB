@@ -25,6 +25,8 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             '/login' => [[['_route' => 'login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
             '/logout' => [[['_route' => 'logout'], null, null, null, false, false, null]],
             '/profile' => [[['_route' => 'profile', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::editMe'], null, null, null, false, false, null]],
+            '/rapports' => [[['_route' => 'rapport', '_controller' => 'App\\Controller\\RapportVisiteController::list'], null, null, null, false, false, null]],
+            '/newrapport' => [[['_route' => 'newrapport', '_controller' => 'App\\Controller\\RapportVisiteController::index'], null, null, null, false, false, null]],
             '/admin' => [[['_route' => 'admin', '_controller' => 'App\\Controller\\AdminIndexController::index'], null, null, null, false, false, null]],
             '/admin/visiteur' => [[['_route' => 'admin.visiteurs', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::index'], null, null, null, false, false, null]],
             '/admin/new_vis' => [[['_route' => 'new.visiteurs', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::new'], null, null, null, false, false, null]],
@@ -50,14 +52,18 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
                             .'|(*:159)'
                         .')'
                     .')'
+                    .'|/showrapport/([^/]++)(*:190)'
                     .'|/admin/(?'
-                        .'|del_(?'
-                            .'|vis/([^/]++)(*:198)'
-                            .'|prat/([^/]++)(*:219)'
+                        .'|del(?'
+                            .'|_(?'
+                                .'|vis/([^/]++)(*:230)'
+                                .'|prat/([^/]++)(*:251)'
+                            .')'
+                            .'|rapport/([^/]++)/([^/]++)(*:285)'
                         .')'
                         .'|edit_(?'
-                            .'|vis/([^/]++)(*:248)'
-                            .'|prat/([^/]++)(*:269)'
+                            .'|vis/([^/]++)(*:314)'
+                            .'|prat/([^/]++)(*:335)'
                         .')'
                     .')'
                 .')/?$}sDu',
@@ -70,10 +76,12 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
             136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'], ['token'], null, null, false, false, null]],
             149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'], ['token'], null, null, false, false, null]],
             159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-            198 => [[['_route' => 'del.visiteurs', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::delete'], ['id'], null, null, false, true, null]],
-            219 => [[['_route' => 'del.praticien', '_controller' => 'App\\Controller\\Admin\\AdminPraticienController::delete'], ['id'], null, null, false, true, null]],
-            248 => [[['_route' => 'edit.visiteurs', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::edit'], ['id'], null, null, false, true, null]],
-            269 => [[['_route' => 'edit.praticien', '_controller' => 'App\\Controller\\Admin\\AdminPraticienController::edit'], ['id'], null, null, false, true, null]],
+            190 => [[['_route' => 'showrapport', '_controller' => 'App\\Controller\\RapportVisiteController::show'], ['id'], null, null, false, true, null]],
+            230 => [[['_route' => 'del.visiteurs', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::delete'], ['id'], null, null, false, true, null]],
+            251 => [[['_route' => 'del.praticien', '_controller' => 'App\\Controller\\Admin\\AdminPraticienController::delete'], ['id'], null, null, false, true, null]],
+            285 => [[['_route' => 'admin.delrap', '_controller' => 'App\\Controller\\Admin\\AdminRapportController:del'], ['idv', 'idr'], null, null, false, true, null]],
+            314 => [[['_route' => 'edit.visiteurs', '_controller' => 'App\\Controller\\Admin\\AdminVisiteursController::edit'], ['id'], null, null, false, true, null]],
+            335 => [[['_route' => 'edit.praticien', '_controller' => 'App\\Controller\\Admin\\AdminPraticienController::edit'], ['id'], null, null, false, true, null]],
         ];
     }
 }

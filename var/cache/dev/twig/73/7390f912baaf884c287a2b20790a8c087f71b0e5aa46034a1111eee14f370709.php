@@ -70,6 +70,6 @@ class __TwigTemplate_dfa9a970d2e7c76ceacc20e7af0bb0cbf674a84c0018ce71babbe1046a1
     {{ form_widget(form) }}
        <button class=\"btn btn-primary\">{{ button|default('Enregistrer') }}</button>
 {{ form_end(form)}}
-", "admin/visiteurs/form.html.twig", "C:\\wamp64\\www\\gsbMVC\\GSB\\templates\\admin\\visiteurs\\form.html.twig");
+", "admin/visiteurs/form.html.twig", "C:\\wamp64\\www\\GSB\\templates\\admin\\visiteurs\\form.html.twig");
     }
 }
